@@ -33,7 +33,7 @@ export default function EventsPage() {
       <div className="hw-page-container hw-page-section">
         {/* Upcoming */}
         {upcoming.length > 0 && (
-          <section className="mb-20 md:mb-28">
+          <section>
             <ScrollReveal>
               <h2
                 className="text-xs tracking-[0.4em] uppercase mb-8"
@@ -70,8 +70,9 @@ export default function EventsPage() {
 
                     <div className="hidden sm:block w-px self-stretch" style={{ background: "rgba(204,17,51,0.22)" }} />
 
-                    {/* Info */}
-                    <div className="flex-1 min-w-0">
+                    {/* Info + action */}
+                    <div className="flex-1 min-w-0 flex flex-col md:flex-row md:items-center md:justify-between gap-6 md:gap-8">
+                      <div className="min-w-0">
                       <div className="flex flex-wrap items-start gap-3 mb-3">
                         <h3
                           className="font-normal leading-tight"
@@ -95,25 +96,39 @@ export default function EventsPage() {
                           {event.type}
                         </span>
                       </div>
-                      <p
-                        className="text-xs tracking-wide mb-4"
-                        style={{ color: "var(--accent-red)", fontFamily: "var(--font-space-grotesk)" }}
-                      >
-                        {event.venue !== "TBA" ? `${event.venue} · ` : ""}{event.city}
-                        {event.time && ` · ${event.time}`}
-                      </p>
+                      <div className="mb-4 flex flex-wrap items-center gap-2.5">
+                        <p
+                          className="text-xs tracking-wide"
+                          style={{ color: "var(--accent-red)", fontFamily: "var(--font-space-grotesk)" }}
+                        >
+                          {event.venue !== "TBA" ? event.venue : "Venue TBA"}
+                          {event.time && ` · ${event.time}`}
+                        </p>
+                        <span
+                          className="inline-flex items-center justify-center min-w-[78px] text-xs tracking-[0.08em] uppercase px-3 py-1.5 rounded-full whitespace-nowrap"
+                          style={{
+                            color: "var(--accent-red)",
+                            border: "1px solid rgba(204,17,51,0.45)",
+                            background: "rgba(204,17,51,0.08)",
+                            fontFamily: "var(--font-space-grotesk)",
+                          }}
+                        >
+                          {event.city}
+                        </span>
+                      </div>
                       <p
                         className="text-sm leading-relaxed"
                         style={{ color: "var(--text-secondary)", fontFamily: "var(--font-space-grotesk)" }}
                       >
                         {event.description}
                       </p>
-                      {event.ticketUrl && (
+                      </div>
+                      {event.ticketUrl ? (
                         <a
                           href={event.ticketUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="hw-btn-red inline-block mt-5 text-xs tracking-[0.2em] uppercase px-6 py-3"
+                          className="hw-btn-red inline-flex items-center justify-center self-start md:self-stretch md:ml-auto text-xs md:text-sm font-bold tracking-[0.16em] uppercase px-6 md:px-7 py-3 md:py-0 md:min-h-full md:min-w-[160px] whitespace-nowrap leading-none"
                           style={{
                             background: "var(--accent-red)",
                             color: "#fff",
@@ -122,6 +137,8 @@ export default function EventsPage() {
                         >
                           Get Tickets
                         </a>
+                      ) : (
+                        <span />
                       )}
                     </div>
                   </div>
@@ -129,6 +146,13 @@ export default function EventsPage() {
               ))}
             </div>
           </section>
+        )}
+
+        {upcoming.length > 0 && past.length > 0 && (
+          <div
+            aria-hidden
+            style={{ height: "clamp(56px, 8vw, 120px)" }}
+          />
         )}
 
         {/* Past */}
@@ -167,8 +191,13 @@ export default function EventsPage() {
                       {event.title}
                     </span>
                     <span
-                      className="text-xs tracking-widest uppercase flex-shrink-0"
-                      style={{ color: "var(--text-secondary)", fontFamily: "var(--font-space-grotesk)" }}
+                      className="inline-flex items-center justify-center min-w-[78px] text-xs tracking-[0.08em] uppercase px-3 py-1.5 rounded-full flex-shrink-0 whitespace-nowrap"
+                      style={{
+                        color: "var(--accent-red)",
+                        border: "1px solid rgba(204,17,51,0.45)",
+                        background: "rgba(204,17,51,0.08)",
+                        fontFamily: "var(--font-space-grotesk)",
+                      }}
                     >
                       {event.city}
                     </span>

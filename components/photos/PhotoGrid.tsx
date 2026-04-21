@@ -7,6 +7,7 @@ export type Photo = {
   src: string;
   alt: string;
   event?: string;
+  credits?: string;
   width: number;
   height: number;
 };
@@ -129,12 +130,16 @@ export default function PhotoGrid({ photos }: Props) {
                   className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-end p-3"
                   style={{ background: "linear-gradient(to top, rgba(10,0,5,0.7) 0%, transparent 50%)" }}
                 >
-                  <p
-                    className="text-xs tracking-wide"
-                    style={{ color: "#fff", fontFamily: "var(--font-space-grotesk)" }}
-                  >
-                    {photo.alt}
-                  </p>
+                  <div>
+                    {photo.credits && (
+                      <p
+                        className="text-[10px] tracking-[0.08em] uppercase"
+                        style={{ color: "rgba(255,255,255,0.78)", fontFamily: "var(--font-space-grotesk)" }}
+                      >
+                        Credit: {photo.credits}
+                      </p>
+                    )}
+                  </div>
                 </div>
               </div>
             ))
@@ -163,6 +168,14 @@ export default function PhotoGrid({ photos }: Props) {
               className="w-full h-auto"
               style={{ maxHeight: "80vh", objectFit: "contain" }}
             />
+            {lightbox.credits && (
+              <p
+                className="mt-3 text-xs tracking-[0.08em] uppercase"
+                style={{ color: "var(--text-secondary)", fontFamily: "var(--font-space-grotesk)" }}
+              >
+                Credit: {lightbox.credits}
+              </p>
+            )}
             <button
               onClick={() => setLightbox(null)}
               className="absolute -top-10 right-0 text-sm tracking-widest uppercase"

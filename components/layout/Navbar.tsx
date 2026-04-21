@@ -39,17 +39,10 @@ function DiscordIcon() {
       width="18"
       height="18"
       viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      fill="currentColor"
       aria-hidden="true"
     >
-      <rect x="2" y="3" width="20" height="18" rx="6" />
-      <path d="M8.5 15.5c.9.7 2.1 1.1 3.5 1.1s2.6-.4 3.5-1.1" />
-      <circle cx="9.3" cy="11.2" r="1.1" />
-      <circle cx="14.7" cy="11.2" r="1.1" />
+      <path d="M20.317 4.369A19.791 19.791 0 0 0 15.885 3c-.191.328-.403.775-.552 1.124a18.27 18.27 0 0 0-5.169 0 11.64 11.64 0 0 0-.56-1.124 19.736 19.736 0 0 0-4.438 1.372C2.358 8.57 1.596 12.664 1.977 16.706a19.935 19.935 0 0 0 5.304 2.709c.43-.585.814-1.208 1.142-1.864a13.088 13.088 0 0 1-1.798-.861c.151-.111.299-.227.44-.347 3.47 1.63 7.235 1.63 10.664 0 .143.12.291.236.44.347a13.06 13.06 0 0 1-1.801.861c.328.656.712 1.279 1.142 1.864a19.879 19.879 0 0 0 5.31-2.709c.447-4.684-.763-8.744-3.503-12.337Zm-10.77 9.872c-1.037 0-1.887-.948-1.887-2.11 0-1.162.832-2.11 1.887-2.11 1.064 0 1.905.957 1.887 2.11 0 1.162-.832 2.11-1.887 2.11Zm4.907 0c-1.037 0-1.887-.948-1.887-2.11 0-1.162.832-2.11 1.887-2.11 1.064 0 1.905.957 1.887 2.11 0 1.162-.823 2.11-1.887 2.11Z" />
     </svg>
   );
 }
@@ -94,11 +87,11 @@ export default function Navbar() {
           {/* Logo */}
           <Link
             href="/"
-            className="flex flex-col leading-none select-none"
+            className="flex max-w-[calc(100vw-8.5rem)] flex-col leading-none select-none"
             onClick={() => setOpen(false)}
           >
             <span
-              className="text-xl md:text-2xl font-normal tracking-wider"
+              className="truncate text-base sm:text-xl md:text-2xl font-normal tracking-[0.06em] sm:tracking-wider"
               style={{ fontFamily: "var(--font-bebas)", color: "var(--text-primary)" }}
             >
               Human Wannabes
@@ -186,7 +179,7 @@ export default function Navbar() {
 
       {/* Mobile fullscreen overlay */}
       <div
-        className="fixed inset-0 z-40 flex flex-col md:hidden transition-all duration-300"
+        className="fixed inset-0 z-[60] flex flex-col md:hidden transition-all duration-300"
         style={{
           background: "var(--bg-base)",
           opacity: open ? 1 : 0,
@@ -196,11 +189,15 @@ export default function Navbar() {
       >
         {/* Top bar inside overlay */}
         <div
-          className="flex items-center justify-between px-6 h-16 border-b flex-shrink-0"
-          style={{ borderColor: "rgba(204,17,51,0.2)" }}
+          className="flex items-center justify-between px-6 sm:px-8 h-16 border-b flex-shrink-0"
+          style={{
+            borderColor: "rgba(204,17,51,0.2)",
+            paddingLeft: "max(1.5rem, calc(env(safe-area-inset-left) + 1rem))",
+            paddingRight: "max(1.5rem, calc(env(safe-area-inset-right) + 1rem))",
+          }}
         >
           <span
-            className="text-2xl"
+            className="max-w-[calc(100vw-9rem)] truncate text-lg tracking-[0.06em]"
             style={{ fontFamily: "var(--font-bebas)", color: "var(--text-primary)" }}
           >
             Human Wannabes
@@ -216,17 +213,19 @@ export default function Navbar() {
         </div>
 
         {/* Nav items */}
-        <div className="flex flex-col px-6 pt-10 gap-2 flex-1">
+        <div className="flex flex-col pt-10 gap-2 flex-1">
           {navLinks.map((l) => (
             <Link
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
-              className="py-4 text-4xl font-normal tracking-wider border-b"
+              className="block border-b px-6 sm:px-8 py-4 text-4xl font-normal tracking-wider"
               style={{
                 fontFamily: "var(--font-bebas)",
                 color: pathname === l.href ? "var(--accent-red)" : "var(--text-primary)",
                 borderColor: "rgba(204,17,51,0.15)",
+                paddingLeft: "max(1.5rem, calc(env(safe-area-inset-left) + 1rem))",
+                paddingRight: "max(1.5rem, calc(env(safe-area-inset-right) + 1rem))",
               }}
             >
               {l.label}
@@ -236,8 +235,12 @@ export default function Navbar() {
 
         {/* Social links at bottom */}
         <div
-          className="flex items-center gap-6 px-6 py-8 border-t"
-          style={{ borderColor: "rgba(204,17,51,0.2)" }}
+          className="flex items-center gap-6 px-6 sm:px-8 py-8 border-t"
+          style={{
+            borderColor: "rgba(204,17,51,0.2)",
+            paddingLeft: "max(1.5rem, calc(env(safe-area-inset-left) + 1rem))",
+            paddingRight: "max(1.5rem, calc(env(safe-area-inset-right) + 1rem))",
+          }}
         >
           <a
             href={socialLinks.instagram}

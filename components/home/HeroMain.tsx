@@ -2,9 +2,12 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { heroBackgroundImage, socialLinks } from "@/data/band-info";
+import Image from "next/image";
+import { heroBackgroundImageCandidates, socialLinks } from "@/data/band-info";
 
 export default function HeroMain() {
+  const heroBackgroundImage = heroBackgroundImageCandidates[0];
+
   return (
     <section
       className="noise-bg relative min-h-[100svh] flex flex-col justify-center overflow-hidden py-24 md:py-28"
@@ -13,14 +16,15 @@ export default function HeroMain() {
       {/* Optional background image behind hero graphics/text */}
       {heroBackgroundImage && (
         <>
-          <div
-            className="absolute inset-0 pointer-events-none"
-            style={{
-              backgroundImage: `url(${heroBackgroundImage})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center 24%",
-              opacity: 0.28,
-            }}
+          <Image
+            src={heroBackgroundImage}
+            alt=""
+            fill
+            sizes="100vw"
+            unoptimized
+            className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+            style={{ objectPosition: "center 24%", opacity: 0.34 }}
+            aria-hidden
           />
           <div
             className="absolute inset-0 pointer-events-none"
@@ -164,11 +168,11 @@ export default function HeroMain() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.95 }}
-          className="flex flex-col sm:flex-row gap-4 md:gap-5"
+          className="flex w-full max-w-[390px] flex-col items-stretch gap-3 sm:max-w-none sm:flex-row sm:flex-wrap md:gap-5"
         >
           <Link
             href="/events"
-            className="hw-btn-red inline-flex items-center justify-center px-8 py-4 text-sm font-semibold tracking-widest uppercase min-h-[52px]"
+            className="hw-btn-red inline-flex h-14 w-full items-center justify-center whitespace-nowrap px-5 text-center text-xs font-semibold uppercase leading-none tracking-[0.18em] sm:h-auto sm:min-h-[52px] sm:w-auto sm:px-8 sm:text-sm sm:tracking-widest"
             style={{
               background: "var(--accent-red)",
               color: "#ffffff",
@@ -181,7 +185,7 @@ export default function HeroMain() {
             href="https://www.youtube.com/playlist?list=PLdoWMpbmbJL_uFuHmBrRtHgDXGgOTo1ht"
             target="_blank"
             rel="noopener noreferrer"
-            className="hw-btn-ghost inline-flex items-center justify-center px-8 py-4 text-sm font-semibold tracking-widest uppercase min-h-[52px]"
+            className="hw-btn-ghost inline-flex h-14 w-full items-center justify-center whitespace-nowrap px-5 text-center text-xs font-semibold uppercase leading-none tracking-[0.18em] sm:h-auto sm:min-h-[52px] sm:w-auto sm:px-8 sm:text-sm sm:tracking-widest"
             style={{
               background: "transparent",
               color: "var(--accent-cream)",
@@ -195,7 +199,7 @@ export default function HeroMain() {
             href={socialLinks.discord}
             target="_blank"
             rel="noopener noreferrer"
-            className="hw-btn-ghost inline-flex items-center justify-center px-8 py-4 text-sm font-semibold tracking-widest uppercase min-h-[52px]"
+            className="hw-btn-ghost inline-flex h-14 w-full items-center justify-center whitespace-nowrap px-5 text-center text-xs font-semibold uppercase leading-none tracking-[0.18em] sm:h-auto sm:min-h-[52px] sm:w-auto sm:px-8 sm:text-sm sm:tracking-widest"
             style={{
               background: "transparent",
               color: "var(--accent-cream)",

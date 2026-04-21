@@ -35,6 +35,11 @@ export const metadata: Metadata = {
   title: { default: "Human Wannabes", template: "%s | Human Wannabes" },
   description:
     "Philadelphia cover band playing anime, game, and vocaloid music. 60K+ online following, 300K+ views.",
+  icons: {
+    icon: "/icon.png?v=3",
+    shortcut: "/icon.png?v=3",
+    apple: "/icon.png?v=3",
+  },
 };
 
 export default function RootLayout({
@@ -44,6 +49,7 @@ export default function RootLayout({
     <html
       lang="en"
       data-theme="c"
+      data-scroll-behavior="smooth"
       className={`${orbitron.variable} ${bebasNeue.variable} ${spaceGrotesk.variable} ${inter.variable}`}
     >
       <body className="flex flex-col min-h-screen" style={{ background: "var(--bg-base)" }}>

@@ -18,8 +18,14 @@ export const youtubePlaylistId = "PLdoWMpbmbJL_uFuHmBrRtHgDXGgOTo1ht";
 
 // Set this to a hosted image URL (Supabase, S3, Cloudinary, etc.)
 // or to a local file in /public (e.g. "/hero/cover.webp").
-export const heroBackgroundImage =
-  "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=2000&q=80";
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const photosBucket = process.env.NEXT_PUBLIC_SUPABASE_PHOTOS_BUCKET ?? "photos";
+
+export const heroBackgroundImageCandidates = supabaseUrl
+  ? [
+      `${supabaseUrl}/storage/v1/object/public/${photosBucket}/imported/DSCF3854.png`,
+    ]
+  : [];
 
 export const bandDescription =
   "The Human Wannabes is a Philadelphia-based cover band performing anime, game, and vocaloid music — founded by music influencer Haz Studio. Since August 2025, we've built a local fan community of 400+ and host monthly live events with 100+ average turnout. Our videos have accumulated 300K+ views online.";

@@ -13,5 +13,10 @@ export function formatDate(iso: string): string {
 }
 
 export function isPast(iso: string): boolean {
-  return new Date(iso) < new Date();
+  const [year, month, day] = iso.split("-").map(Number);
+  if (!year || !month || !day) return false;
+
+  // Keep event as "upcoming" through local end-of-day.
+  const eventEndOfDay = new Date(year, month - 1, day, 23, 59, 59, 999);
+  return new Date() > eventEndOfDay;
 }

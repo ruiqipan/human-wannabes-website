@@ -91,26 +91,72 @@ export default function UpcomingEvents() {
                   >
                     {event.title}
                   </h3>
-                  <p
-                    className="text-sm"
-                    style={{ color: "var(--text-secondary)", fontFamily: "var(--font-space-grotesk)" }}
-                  >
-                    {event.venue !== "TBA" ? `${event.venue} · ` : ""}{event.city}
-                  </p>
+                  <div className="flex flex-wrap items-center gap-2.5">
+                    {event.venue !== "TBA" && (
+                      <p
+                        className="text-sm"
+                        style={{ color: "var(--text-secondary)", fontFamily: "var(--font-space-grotesk)" }}
+                      >
+                        {event.venue}
+                      </p>
+                    )}
+                    <span
+                      className="inline-flex items-center justify-center min-w-[78px] text-xs tracking-[0.08em] uppercase px-3 py-1.5 rounded-full whitespace-nowrap"
+                      style={{
+                        color: "var(--accent-red)",
+                        border: "1px solid rgba(204,17,51,0.45)",
+                        background: "rgba(204,17,51,0.08)",
+                        fontFamily: "var(--font-space-grotesk)",
+                      }}
+                    >
+                      {event.city}
+                    </span>
+                  </div>
                 </div>
 
-                {/* Type badge */}
-                <span
-                  className="self-start sm:self-center flex-shrink-0 text-xs tracking-[0.2em] uppercase px-3 py-1.5"
-                  style={{
-                    color: "var(--accent-red)",
-                    fontFamily: "var(--font-space-grotesk)",
-                    border: "1px solid rgba(204,17,51,0.45)",
-                    background: "rgba(204,17,51,0.08)",
-                  }}
-                >
-                  {event.type}
-                </span>
+                {/* Actions */}
+                <div className="self-start sm:self-center flex-shrink-0 flex items-center gap-2.5">
+                  <span
+                    className="text-xs tracking-[0.2em] uppercase px-3 py-1.5"
+                    style={{
+                      color: "var(--accent-red)",
+                      fontFamily: "var(--font-space-grotesk)",
+                      border: "1px solid rgba(204,17,51,0.45)",
+                      background: "rgba(204,17,51,0.08)",
+                    }}
+                  >
+                    {event.type}
+                  </span>
+                  {event.ticketUrl ? (
+                    <a
+                      href={event.ticketUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center text-xs tracking-[0.16em] uppercase px-4 py-2"
+                      style={{
+                        color: "#fff",
+                        fontFamily: "var(--font-space-grotesk)",
+                        background: "var(--accent-red)",
+                        border: "1px solid var(--accent-red)",
+                      }}
+                    >
+                      View Event
+                    </a>
+                  ) : (
+                    <Link
+                      href="/events"
+                      className="inline-flex items-center justify-center text-xs tracking-[0.16em] uppercase px-4 py-2"
+                      style={{
+                        color: "var(--text-secondary)",
+                        fontFamily: "var(--font-space-grotesk)",
+                        border: "1px solid rgba(204,17,51,0.35)",
+                        background: "rgba(31, 0, 13, 0.35)",
+                      }}
+                    >
+                      View Event
+                    </Link>
+                  )}
+                </div>
               </div>
             </ScrollReveal>
           ))}
