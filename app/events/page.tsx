@@ -42,21 +42,21 @@ export default function EventsPage() {
                 Upcoming
               </h2>
             </ScrollReveal>
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-4 sm:gap-6">
               {upcoming.map((event, i) => (
                 <ScrollReveal key={event.id} delay={i * 0.07}>
                   <div
-                    className="hw-card flex flex-col sm:flex-row gap-6 md:gap-8 p-7 md:p-10"
+                    className="hw-card flex flex-col sm:flex-row gap-5 md:gap-8 p-5 sm:p-7 md:p-10"
                     style={{
                       background: "var(--bg-surface)",
                       border: "1px solid rgba(204,17,51,0.18)",
                     }}
                   >
                     {/* Date */}
-                    <div className="flex-shrink-0 sm:w-24 text-center sm:text-left">
+                    <div className="flex-shrink-0 sm:w-24 text-left sm:text-left">
                       <span
                         className="block leading-none font-normal"
-                        style={{ fontFamily: "var(--font-bebas)", fontSize: "3.4rem", color: "var(--accent-red)" }}
+                        style={{ fontFamily: "var(--font-bebas)", fontSize: "clamp(2.6rem, 10vw, 3.4rem)", color: "var(--accent-red)" }}
                       >
                         {new Date(event.date).getDate()}
                       </span>
@@ -71,14 +71,14 @@ export default function EventsPage() {
                     <div className="hidden sm:block w-px self-stretch" style={{ background: "rgba(204,17,51,0.22)" }} />
 
                     {/* Info + action */}
-                    <div className="flex-1 min-w-0 flex flex-col md:flex-row md:items-center md:justify-between gap-6 md:gap-8">
+                    <div className="flex-1 min-w-0 flex flex-col md:flex-row md:items-center md:justify-between gap-5 md:gap-8">
                       <div className="min-w-0">
-                      <div className="flex flex-wrap items-start gap-3 mb-3">
+                      <div className="flex flex-col items-start gap-2 mb-3 sm:flex-row sm:flex-wrap sm:items-start sm:gap-3">
                         <h3
-                          className="font-normal leading-tight"
+                          className="font-normal leading-tight text-balance"
                           style={{
                             fontFamily: "var(--font-bebas)",
-                            fontSize: "clamp(1.6rem, 3.5vw, 2.2rem)",
+                            fontSize: "clamp(1.45rem, 7.2vw, 2.2rem)",
                             color: "var(--text-primary)",
                             letterSpacing: "0.02em",
                           }}
@@ -86,7 +86,7 @@ export default function EventsPage() {
                           {event.title}
                         </h3>
                         <span
-                        className="text-xs tracking-[0.15em] uppercase px-2.5 py-1 flex-shrink-0"
+                          className="text-[10px] sm:text-xs tracking-[0.13em] sm:tracking-[0.15em] uppercase px-2.5 py-1 flex-shrink-0"
                           style={{
                             fontFamily: "var(--font-space-grotesk)",
                             background: typeColors[event.type] ?? "rgba(204,17,51,0.9)",
@@ -96,16 +96,16 @@ export default function EventsPage() {
                           {event.type}
                         </span>
                       </div>
-                      <div className="mb-4 flex flex-wrap items-center gap-2.5">
+                      <div className="mb-3 flex flex-wrap items-center gap-2">
                         <p
-                          className="text-xs tracking-wide"
+                          className="text-[11px] sm:text-xs tracking-wide"
                           style={{ color: "var(--accent-red)", fontFamily: "var(--font-space-grotesk)" }}
                         >
                           {event.venue !== "TBA" ? event.venue : "Venue TBA"}
                           {event.time && ` · ${event.time}`}
                         </p>
                         <span
-                          className="inline-flex items-center justify-center min-w-[78px] text-xs tracking-[0.08em] uppercase px-3 py-1.5 rounded-full whitespace-nowrap"
+                          className="inline-flex items-center justify-center min-w-[74px] text-[10px] sm:text-xs tracking-[0.07em] sm:tracking-[0.08em] uppercase px-2.5 sm:px-3 py-1.5 rounded-full whitespace-nowrap"
                           style={{
                             color: "var(--accent-red)",
                             border: "1px solid rgba(204,17,51,0.45)",
@@ -117,7 +117,7 @@ export default function EventsPage() {
                         </span>
                       </div>
                       <p
-                        className="text-sm leading-relaxed"
+                        className="text-[13px] sm:text-sm leading-relaxed"
                         style={{ color: "var(--text-secondary)", fontFamily: "var(--font-space-grotesk)" }}
                       >
                         {event.description}
@@ -128,7 +128,7 @@ export default function EventsPage() {
                           href={event.ticketUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="hw-btn-red inline-flex items-center justify-center self-start md:self-stretch md:ml-auto text-xs md:text-sm font-bold tracking-[0.16em] uppercase px-6 md:px-7 py-3 md:py-0 md:min-h-full md:min-w-[160px] whitespace-nowrap leading-none"
+                          className="hw-btn-red inline-flex w-full min-h-[54px] items-center justify-center text-[11px] sm:text-xs md:text-sm font-bold tracking-[0.14em] md:tracking-[0.16em] uppercase px-4 sm:px-6 md:px-7 py-3 md:py-0 mt-1 md:mt-0 md:w-auto md:self-stretch md:ml-auto md:min-h-full md:min-w-[160px] whitespace-nowrap leading-none"
                           style={{
                             background: "var(--accent-red)",
                             color: "#fff",
@@ -170,20 +170,20 @@ export default function EventsPage() {
               {past.map((event, i) => (
                 <ScrollReveal key={event.id} delay={i * 0.06}>
                   <div
-                    className="flex flex-col sm:flex-row items-start sm:items-center gap-4 py-6 border-b"
+                    className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 py-4 sm:py-6 border-b"
                     style={{ borderColor: "rgba(204,17,51,0.12)" }}
                   >
                     <span
-                      className="flex-shrink-0 text-sm w-36"
+                      className="flex-shrink-0 text-xs sm:text-sm w-auto sm:w-36 tracking-wide"
                       style={{ color: "var(--text-secondary)", fontFamily: "var(--font-space-grotesk)" }}
                     >
                       {formatDate(event.date)}
                     </span>
                     <span
-                      className="flex-1 font-normal"
+                      className="flex-1 font-normal leading-tight"
                       style={{
                         fontFamily: "var(--font-bebas)",
-                        fontSize: "clamp(1.2rem, 2.5vw, 1.6rem)",
+                        fontSize: "clamp(1.1rem, 5.8vw, 1.6rem)",
                         color: "var(--text-primary)",
                         letterSpacing: "0.02em",
                       }}
@@ -191,7 +191,7 @@ export default function EventsPage() {
                       {event.title}
                     </span>
                     <span
-                      className="inline-flex items-center justify-center min-w-[78px] text-xs tracking-[0.08em] uppercase px-3 py-1.5 rounded-full flex-shrink-0 whitespace-nowrap"
+                      className="inline-flex items-center justify-center min-w-[74px] text-[10px] sm:text-xs tracking-[0.07em] sm:tracking-[0.08em] uppercase px-2.5 sm:px-3 py-1.5 rounded-full flex-shrink-0 whitespace-nowrap"
                       style={{
                         color: "var(--accent-red)",
                         border: "1px solid rgba(204,17,51,0.45)",
