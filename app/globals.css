@@ -1,26 +1,200 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ─── Prototype A: Dark Neon / Cyberpunk ─── */
+[data-theme="a"] {
+  --bg-base:         #050510;
+  --bg-surface:      #0d0d1a;
+  --bg-elevated:     #12122a;
+  --text-primary:    #f0e6ff;
+  --text-secondary:  #a78bbd;
+  --accent-red:      #ff2d55;
+  --accent-purple:   #bf5af2;
+  --accent-glow:     #7b2fff;
+  --border-color:    rgba(191, 90, 242, 0.25);
+  --glow-red:        0 0 20px rgba(255, 45, 85, 0.7), 0 0 60px rgba(255, 45, 85, 0.25);
+  --glow-purple:     0 0 20px rgba(191, 90, 242, 0.8), 0 0 70px rgba(123, 47, 255, 0.3);
+  --nav-bg:          rgba(5, 5, 16, 0.85);
+}
+
+/* ─── Prototype B: Vibrant / Anime-Poster ─── */
+[data-theme="b"] {
+  --bg-base:         #1a0533;
+  --bg-surface:      #2d0a4e;
+  --bg-elevated:     #3d1264;
+  --text-primary:    #ffffff;
+  --text-secondary:  #ddb6ff;
+  --accent-red:      #ff4466;
+  --accent-purple:   #cc44ff;
+  --accent-yellow:   #ffdd33;
+  --accent-cyan:     #44ddff;
+  --border-color:    rgba(204, 68, 255, 0.3);
+  --gradient-hero:   linear-gradient(135deg, #1a0533 0%, #3d0070 50%, #700033 100%);
+  --nav-bg:          rgba(26, 5, 51, 0.85);
+}
+
+/* ─── Prototype C: Ink & Red / Dark Painterly ─── */
+[data-theme="c"] {
+  --bg-base:         #0a0005;
+  --bg-surface:      #150009;
+  --bg-elevated:     #1f000d;
+  --text-primary:    #f5f0e8;
+  --text-secondary:  #c9b99a;
+  --accent-red:      #cc1133;
+  --accent-red-bright: #ff2244;
+  --accent-cream:    #f5e6c8;
+  --border-color:    rgba(204, 17, 51, 0.3);
+  --nav-bg:          rgba(10, 0, 5, 0.9);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-bg-base:        var(--bg-base);
+  --color-bg-surface:     var(--bg-surface);
+  --color-bg-elevated:    var(--bg-elevated);
+  --color-text-primary:   var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-accent-red:     var(--accent-red);
+  --color-accent-purple:  var(--accent-purple);
+  --color-border:         var(--border-color);
+  --font-display:         var(--font-orbitron);
+  --font-display-b:       var(--font-bebas);
+  --font-ui:              var(--font-space-grotesk);
+  --font-body:            var(--font-inter);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  min-height: 100vh;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+/* Shared page layout rhythm */
+:root {
+  --page-max-width: 1120px;
+}
+
+.hw-page {
+  background: var(--bg-base);
+}
+
+.hw-page-container {
+  width: min(var(--page-max-width), calc(100% - 2.5rem));
+  margin-inline: auto;
+}
+
+.hw-page-hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-surface);
+  border-bottom: 1px solid rgba(204, 17, 51, 0.2);
+  padding-top: clamp(7.5rem, 13vw, 10rem);
+  padding-bottom: clamp(4rem, 7vw, 6.25rem);
+}
+
+.hw-page-section {
+  padding-block: clamp(4.5rem, 8vw, 7.5rem);
+}
+
+.hw-page-section-surface {
+  background: var(--bg-surface);
+  border-top: 1px solid rgba(204, 17, 51, 0.15);
+}
+
+@media (min-width: 768px) {
+  .hw-page-container {
+    width: min(var(--page-max-width), calc(100% - 5rem));
+  }
+}
+
+/* Scanline texture for theme A */
+.scanlines::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.05) 2px,
+    rgba(0, 0, 0, 0.05) 4px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Animated radial glow for theme A */
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.08); }
+}
+
+.glow-bg {
+  animation: glow-pulse 4s ease-in-out infinite;
+}
+
+/* Floating animation for theme B */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-18px) rotate(3deg); }
+  66% { transform: translateY(-8px) rotate(-2deg); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-24px) rotate(5deg); }
+}
+
+/* Red slash animation for theme C */
+@keyframes slash-in {
+  from { transform: skewX(-8deg) scaleX(0); transform-origin: left; }
+  to { transform: skewX(-8deg) scaleX(1); transform-origin: left; }
+}
+
+.slash-in {
+  animation: slash-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+}
+
+/* Noise texture for theme C */
+.noise-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ─── Hover utilities (CSS-only, safe in Server Components) ─── */
+.hw-link { transition: color 0.2s; }
+.hw-link:hover { color: var(--text-primary); }
+
+.hw-card { transition: border-color 0.2s; }
+.hw-card:hover { border-color: rgba(204, 17, 51, 0.45); }
+
+.hw-sponsor { transition: color 0.2s; }
+.hw-sponsor:hover { color: var(--text-primary); }
+
+.hw-btn-red { transition: filter 0.2s; }
+.hw-btn-red:hover { filter: brightness(1.15); }
+
+.hw-btn-ghost { transition: border-color 0.2s, background-color 0.2s; }
+.hw-btn-ghost:hover {
+  border-color: rgba(245, 230, 200, 0.8);
+  background-color: rgba(245, 230, 200, 0.06);
+}
+
+.hw-view-all { transition: color 0.2s; }
+.hw-view-all:hover { color: var(--text-primary); }
