@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Orbitron, Bebas_Neue, Space_Grotesk, Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import "./globals.css";
@@ -56,6 +57,7 @@ export default function RootLayout({
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
