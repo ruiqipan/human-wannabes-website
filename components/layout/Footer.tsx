@@ -146,7 +146,7 @@ export default function Footer() {
             className="text-xs tracking-widest uppercase"
             style={{ color: "var(--text-secondary)", fontFamily: "var(--font-space-grotesk)" }}
           >
-            Philadelphia, PA
+            Built by Ricky Pan
           </p>
         </div>
       </div>
