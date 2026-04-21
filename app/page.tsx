@@ -1,7 +1,6 @@
 import HeroMain from "@/components/home/HeroMain";
 import WhoWeAre from "@/components/home/WhoWeAre";
 import WherePlayed from "@/components/home/WherePlayed";
-import StatsBar from "@/components/home/StatsBar";
 import UpcomingEvents from "@/components/home/UpcomingEvents";
 
 export const metadata = {
@@ -10,12 +9,12 @@ export const metadata = {
 
 export default function HomePage() {
   return (
-    <div className="[&>*+*]:mt-16 md:[&>*+*]:mt-24 lg:[&>*+*]:mt-28 pb-16 md:pb-24">
+    <div className="flex flex-col gap-16 md:gap-24 lg:gap-28 pb-16 md:pb-24">
       <HeroMain />
       <WhoWeAre />
       <WherePlayed />
-      <StatsBar />
       <UpcomingEvents />
+      <div className="h-16 md:h-24 lg:h-28" />
     </div>
   );
 }

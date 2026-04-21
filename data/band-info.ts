@@ -11,6 +11,7 @@ export const socialLinks = {
   instagram: "https://www.instagram.com/humanwannabes/",
   youtube:
     "https://www.youtube.com/playlist?list=PLdoWMpbmbJL_uFuHmBrRtHgDXGgOTo1ht",
+  discord: "https://discord.gg/gMZhDTrxFq",
 };
 
 export const youtubePlaylistId = "PLdoWMpbmbJL_uFuHmBrRtHgDXGgOTo1ht";

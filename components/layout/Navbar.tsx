@@ -33,6 +33,27 @@ function YouTubeIcon() {
   );
 }
 
+function DiscordIcon() {
+  return (
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <rect x="2" y="3" width="20" height="18" rx="6" />
+      <path d="M8.5 15.5c.9.7 2.1 1.1 3.5 1.1s2.6-.4 3.5-1.1" />
+      <circle cx="9.3" cy="11.2" r="1.1" />
+      <circle cx="14.7" cy="11.2" r="1.1" />
+    </svg>
+  );
+}
+
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -140,6 +161,16 @@ export default function Navbar() {
               >
                 <YouTubeIcon />
               </a>
+              <a
+                href={socialLinks.discord}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Discord"
+                className="transition-all duration-200 opacity-50 hover:opacity-100"
+                style={{ color: "var(--text-primary)" }}
+              >
+                <DiscordIcon />
+              </a>
             </div>
             <button
               className="md:hidden flex items-center justify-center w-11 h-11"
@@ -229,6 +260,17 @@ export default function Navbar() {
           >
             <YouTubeIcon />
             YouTube
+          </a>
+          <a
+            href={socialLinks.discord}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Discord"
+            className="flex items-center gap-2 text-sm tracking-widest uppercase"
+            style={{ color: "var(--text-secondary)", fontFamily: "var(--font-space-grotesk)" }}
+          >
+            <DiscordIcon />
+            Discord
           </a>
         </div>
       </div>

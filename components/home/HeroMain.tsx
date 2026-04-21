@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { heroBackgroundImage } from "@/data/band-info";
+import { heroBackgroundImage, socialLinks } from "@/data/band-info";
 
 export default function HeroMain() {
   return (
@@ -190,6 +190,20 @@ export default function HeroMain() {
             }}
           >
             Watch on YouTube
+          </a>
+          <a
+            href={socialLinks.discord}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hw-btn-ghost inline-flex items-center justify-center px-8 py-4 text-sm font-semibold tracking-widest uppercase min-h-[52px]"
+            style={{
+              background: "transparent",
+              color: "var(--accent-cream)",
+              fontFamily: "var(--font-space-grotesk)",
+              border: "1px solid rgba(245,230,200,0.35)",
+            }}
+          >
+            Join Discord
           </a>
         </motion.div>
       </div>

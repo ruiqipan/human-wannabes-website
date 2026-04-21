@@ -28,10 +28,31 @@ function YouTubeIcon() {
   );
 }
 
+function DiscordIcon() {
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <rect x="2" y="3" width="20" height="18" rx="6" />
+      <path d="M8.5 15.5c.9.7 2.1 1.1 3.5 1.1s2.6-.4 3.5-1.1" />
+      <circle cx="9.3" cy="11.2" r="1.1" />
+      <circle cx="14.7" cy="11.2" r="1.1" />
+    </svg>
+  );
+}
+
 export default function Footer() {
   return (
     <footer
-      className="mt-10 md:mt-14"
+      className="mt-16 md:mt-24 lg:mt-28"
       style={{
         background: "var(--bg-surface)",
         borderTop: "1px solid rgba(204,17,51,0.2)",
@@ -81,6 +102,17 @@ export default function Footer() {
               >
                 <YouTubeIcon />
                 YouTube
+              </a>
+              <a
+                href={socialLinks.discord}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Discord"
+                className="hw-link flex items-center gap-2 text-xs tracking-widest uppercase"
+                style={{ color: "var(--text-secondary)", fontFamily: "var(--font-space-grotesk)" }}
+              >
+                <DiscordIcon />
+                Discord
               </a>
             </div>
           </div>

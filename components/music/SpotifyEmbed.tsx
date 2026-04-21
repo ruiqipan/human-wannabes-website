@@ -31,7 +31,7 @@ export default function SpotifyEmbed({ trackId }: Props) {
 
   return (
     <iframe
-      src={`https://open.spotify.com/embed/track/${trackId}?utm_source=generator&theme=0`}
+      src={`https://open.spotify.com/embed/track/${trackId}?utm_source=generator`}
       width="100%"
       height="352"
       frameBorder={0}
