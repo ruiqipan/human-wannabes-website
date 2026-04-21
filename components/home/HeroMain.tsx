@@ -38,10 +38,8 @@ export default function HeroMain() {
 
       {/* Diagonal red slash */}
       <motion.div
-        className="absolute pointer-events-none"
+        className="absolute pointer-events-none w-[min(1100px,140vw)] h-[45svh] max-h-[340px] md:h-[52vw] md:max-h-[360px]"
         style={{
-          width: "min(1100px, 140vw)",
-          height: "min(360px, 52vw)",
           background: "var(--accent-red)",
           transform: "skewY(-6deg)",
           top: "50%",
@@ -55,10 +53,8 @@ export default function HeroMain() {
       />
       {/* Depth slash */}
       <motion.div
-        className="absolute pointer-events-none"
+        className="absolute pointer-events-none w-[min(800px,110vw)] h-[39svh] max-h-[265px] md:h-[33vw] md:max-h-[210px]"
         style={{
-          width: "min(800px, 110vw)",
-          height: "min(210px, 33vw)",
           background: "rgba(155, 0, 22, 0.65)",
           transform: "skewY(-6deg)",
           top: "50%",
@@ -168,14 +164,12 @@ export default function HeroMain() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.95 }}
-          className="flex w-full max-w-[390px] flex-col items-stretch gap-3 sm:max-w-none sm:flex-row sm:flex-wrap md:gap-5"
+          className="flex w-full max-w-[390px] flex-col items-stretch gap-3 sm:max-w-none sm:flex-row sm:flex-wrap md:flex-nowrap md:items-center md:gap-4"
         >
           <Link
             href="/events"
-            className="hw-btn-red inline-flex h-14 w-full items-center justify-center whitespace-nowrap px-5 text-center text-xs font-semibold uppercase leading-none tracking-[0.18em] sm:h-auto sm:min-h-[52px] sm:w-auto sm:px-8 sm:text-sm sm:tracking-widest"
+            className="hw-btn-red inline-flex h-14 w-full items-center justify-center whitespace-nowrap border border-[var(--accent-red)] bg-[var(--accent-red)] px-5 text-center text-xs font-semibold uppercase leading-none tracking-[0.18em] text-white sm:min-h-[52px] sm:w-auto sm:px-8 sm:text-sm sm:tracking-widest md:min-w-[220px] md:bg-white md:px-9 md:text-[var(--accent-red)]"
             style={{
-              background: "var(--accent-red)",
-              color: "#ffffff",
               fontFamily: "var(--font-space-grotesk)",
             }}
           >
@@ -185,12 +179,9 @@ export default function HeroMain() {
             href="https://www.youtube.com/playlist?list=PLdoWMpbmbJL_uFuHmBrRtHgDXGgOTo1ht"
             target="_blank"
             rel="noopener noreferrer"
-            className="hw-btn-ghost inline-flex h-14 w-full items-center justify-center whitespace-nowrap px-5 text-center text-xs font-semibold uppercase leading-none tracking-[0.18em] sm:h-auto sm:min-h-[52px] sm:w-auto sm:px-8 sm:text-sm sm:tracking-widest"
+            className="hw-btn-ghost inline-flex h-14 w-full items-center justify-center whitespace-nowrap border px-5 text-center text-xs font-semibold uppercase leading-none tracking-[0.18em] text-[var(--accent-cream)] sm:min-h-[52px] sm:w-auto sm:px-8 sm:text-sm sm:tracking-widest md:min-w-[220px] md:border-[var(--accent-red)] md:bg-white md:text-[var(--accent-red)]"
             style={{
-              background: "transparent",
-              color: "var(--accent-cream)",
               fontFamily: "var(--font-space-grotesk)",
-              border: "1px solid rgba(245,230,200,0.35)",
             }}
           >
             Watch on YouTube
@@ -199,12 +190,9 @@ export default function HeroMain() {
             href={socialLinks.discord}
             target="_blank"
             rel="noopener noreferrer"
-            className="hw-btn-ghost inline-flex h-14 w-full items-center justify-center whitespace-nowrap px-5 text-center text-xs font-semibold uppercase leading-none tracking-[0.18em] sm:h-auto sm:min-h-[52px] sm:w-auto sm:px-8 sm:text-sm sm:tracking-widest"
+            className="hw-btn-ghost inline-flex h-14 w-full items-center justify-center whitespace-nowrap border px-5 text-center text-xs font-semibold uppercase leading-none tracking-[0.18em] text-[var(--accent-cream)] sm:min-h-[52px] sm:w-auto sm:px-8 sm:text-sm sm:tracking-widest md:min-w-[220px] md:border-[var(--accent-red)] md:bg-white md:text-[var(--accent-red)]"
             style={{
-              background: "transparent",
-              color: "var(--accent-cream)",
               fontFamily: "var(--font-space-grotesk)",
-              border: "1px solid rgba(245,230,200,0.35)",
             }}
           >
             Join Discord
