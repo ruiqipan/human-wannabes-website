@@ -26,33 +26,40 @@ create policy "public can read published photos"
   to anon, authenticated
   using (is_published = true);
 
--- Optional: authenticated users can insert/update/delete metadata.
--- Tighten these for admin-only access in production if needed.
-drop policy if exists "authenticated can insert photos metadata" on public.photos;
-create policy "authenticated can insert photos metadata"
+-- Admin-only write access (insert/update/delete).
+-- Only the verified admin email can modify photo metadata.
+drop policy if exists "admin can insert photos metadata" on public.photos;
+create policy "admin can insert photos metadata"
   on public.photos
   for insert
   to authenticated
-  with check (true);
+  with check (auth.email() = 'ruiqipan@seas.upenn.edu');
 
-drop policy if exists "authenticated can update photos metadata" on public.photos;
-create policy "authenticated can update photos metadata"
+drop policy if exists "admin can update photos metadata" on public.photos;
+create policy "admin can update photos metadata"
   on public.photos
   for update
   to authenticated
-  using (true)
-  with check (true);
+  using (auth.email() = 'ruiqipan@seas.upenn.edu')
+  with check (auth.email() = 'ruiqipan@seas.upenn.edu');
 
-drop policy if exists "authenticated can delete photos metadata" on public.photos;
-create policy "authenticated can delete photos metadata"
+drop policy if exists "admin can delete photos metadata" on public.photos;
+create policy "admin can delete photos metadata"
   on public.photos
   for delete
   to authenticated
-  using (true);
+  using (auth.email() = 'ruiqipan@seas.upenn.edu');
+
+-- Drop old overly-permissive authenticated policies if they still exist.
+drop policy if exists "authenticated can insert photos metadata" on public.photos;
+drop policy if exists "authenticated can update photos metadata" on public.photos;
+drop policy if exists "authenticated can delete photos metadata" on public.photos;
 
 -- Suggested index for ordering and feed rendering.
 create index if not exists photos_published_sort_idx
   on public.photos (is_published, sort_order, created_at desc);
 
 -- Storage bucket: create in Dashboard (name: photos), set Public bucket = true.
--- Then add Storage policies (Storage > Policies) as needed.
+-- Then add Storage policies in Dashboard > Storage > Policies:
+--   SELECT: allow anon and authenticated (public reads)
+--   INSERT/UPDATE/DELETE: restrict to authenticated where auth.email() = 'ruiqipan@seas.upenn.edu'

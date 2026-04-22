@@ -109,7 +109,7 @@ export const events: BandEvent[] = [
     title: "Game-themed Live and Open Mic @ The Lawn",
     venue: "The Lawn",
     city: "Philly",
-    date: "2026-04-25",
+    date: "2026-05-10",
     description: "Game-themed live performance and open mic event at The Lawn.",
     type: "showcase",
   },
