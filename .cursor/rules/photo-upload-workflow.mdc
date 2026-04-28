@@ -1,0 +1,17 @@
+---
+description: Direct Supabase workflow for photo uploads
+alwaysApply: true
+---
+
+# Photo Upload Workflow
+
+When the user asks to upload photos, use the local direct-upload workflow before asking for browser sign-in or credentials again.
+
+- First check for `.env.local` in the repo root.
+- If present, use `NEXT_PUBLIC_SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` from that file.
+- Never commit `.env.local` or echo the service-role key back to the user.
+- Use `node scripts/upload-photos.mjs <manifest.json>` to upload files to Supabase Storage and insert/update `public.photos` metadata.
+- Default storage target is bucket `photos` under `imported/`.
+- Default caption is `Human Wannabes live photo` unless the user specifies otherwise.
+- If `sortOrder` is omitted in the manifest, the script assigns the next available values automatically.
+- Only fall back to asking the user for credentials or browser login if `.env.local` is missing or invalid.
