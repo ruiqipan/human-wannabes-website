@@ -7,7 +7,7 @@ export type BandEvent = {
   time?: string;
   description: string;
   ticketUrl?: string;
-  type: "festival" | "showcase" | "concert" | "collab";
+  type: "festival" | "showcase" | "concert" | "collab" | "gathering";
 };
 
 /**
@@ -19,7 +19,7 @@ export type BandEvent = {
  * 5) city is a short display label for the city/location badge.
  * 6) ticketUrl should be included whenever a public event/ticket link exists
  *    (Home event button opens this URL; otherwise it falls back to /events).
- * 7) type must be one of: festival | showcase | concert | collab.
+ * 7) type must be one of: festival | showcase | concert | collab | gathering.
  * 8) description should be one concise sentence in English.
  *
  * Future update workflow:
@@ -111,7 +111,7 @@ export const events: BandEvent[] = [
     city: "Philly",
     date: "2026-05-10",
     description: "Game-themed live performance and open mic event at The Lawn.",
-    type: "showcase",
+    type: "gathering",
   },
   {
     id: "2026-full-sized-concert-off-knowneous",
@@ -124,11 +124,20 @@ export const events: BandEvent[] = [
     ticketUrl: "https://events.ticketleap.com/tickets/human-wannabes/hw-may-2026",
   },
   {
+    id: "2026-girls-band-night-25hr-studio",
+    title: "Girls Band Night by 25HR Studio",
+    venue: "21-38 44th Rd",
+    city: "NYC",
+    date: "2026-05-29",
+    description: "",
+    type: "concert",
+  },
+  {
     id: "2026-west-philly-porchfest",
     title: "West Philly PorchFest",
-    venue: "West Philly PorchFest",
+    venue: "812 S 48th St",
     city: "Philly",
-    date: "2026-05-30",
+    date: "2026-05-31",
     description: "Community festival performance as part of West Philly PorchFest.",
     type: "festival",
     ticketUrl: "https://westphillyporchfest.com/pages",

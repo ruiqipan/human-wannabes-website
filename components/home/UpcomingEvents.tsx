@@ -1,14 +1,10 @@
 import Link from "next/link";
-import { events, type BandEvent } from "@/data/events";
+import { events } from "@/data/events";
 import { isPast } from "@/lib/utils";
 
 function parseLocalDate(iso: string) {
   const [year, month, day] = iso.split("-").map(Number);
   return new Date(year, month - 1, day);
-}
-
-function getEventHref(event: BandEvent) {
-  return event.ticketUrl ?? "/events";
 }
 
 export default function UpcomingEvents() {
@@ -19,8 +15,6 @@ export default function UpcomingEvents() {
   if (!event) return null;
 
   const eventDate = parseLocalDate(event.date);
-  const eventHref = getEventHref(event);
-  const isExternal = Boolean(event.ticketUrl);
 
   const eventContent = (
     <div className="grid grid-cols-[auto_1fr] items-center gap-x-5 gap-y-6 px-5 py-7 sm:grid-cols-[auto_1px_1fr_auto] sm:gap-x-7 md:px-8 md:py-9">
@@ -46,12 +40,6 @@ export default function UpcomingEvents() {
       <div className="hidden h-20 w-px sm:block" style={{ background: "rgba(204,17,51,0.22)" }} />
 
       <div className="min-w-0">
-        <p
-          className="mb-2 text-xs uppercase tracking-[0.28em]"
-          style={{ color: "var(--accent-red)", fontFamily: "var(--font-space-grotesk)" }}
-        >
-          Next Live Date
-        </p>
         <h2
           className="text-3xl leading-none sm:text-4xl md:text-5xl"
           style={{
@@ -85,7 +73,8 @@ export default function UpcomingEvents() {
         </div>
       </div>
 
-      <span
+      <Link
+        href="/events"
         className="col-span-2 inline-flex h-11 items-center justify-center whitespace-nowrap border px-5 text-xs font-semibold uppercase tracking-[0.2em] sm:col-span-1"
         style={{
           borderColor: "rgba(245,230,200,0.45)",
@@ -93,57 +82,35 @@ export default function UpcomingEvents() {
           fontFamily: "var(--font-space-grotesk)",
         }}
       >
-        Details
-      </span>
+        All Events
+      </Link>
     </div>
   );
 
   return (
-    <section
-      className="relative border-y py-12 md:py-16"
-      style={{
-        background: "linear-gradient(180deg, rgba(31,0,13,0.92), rgba(10,0,5,0.98))",
-        borderColor: "rgba(204,17,51,0.2)",
-      }}
-    >
+    <section className="py-12 md:py-16" style={{ background: "var(--bg-base)" }}>
       <div className="hw-page-container">
-        <div className="mb-6 flex justify-end md:mb-7">
-          <Link
-            href="/events"
-            className="hw-view-all text-xs uppercase tracking-[0.28em]"
-            style={{ color: "var(--text-secondary)", fontFamily: "var(--font-space-grotesk)" }}
-          >
-            All Events →
-          </Link>
+        <div className="mb-6 md:mb-7">
+          <div>
+            <p
+              className="mb-5 text-xs uppercase tracking-[0.4em]"
+              style={{ color: "var(--accent-red)", fontFamily: "var(--font-space-grotesk)" }}
+            >
+              Next Event
+            </p>
+            <div className="h-px w-12" style={{ background: "var(--accent-red)" }} />
+          </div>
         </div>
 
-        {isExternal ? (
-          <a
-            href={eventHref}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block hw-card"
-            aria-label={`Open event details for ${event.title}`}
-            style={{
-              border: "1px solid rgba(204,17,51,0.28)",
-              background: "rgba(10,0,5,0.58)",
-            }}
-          >
-            {eventContent}
-          </a>
-        ) : (
-          <Link
-            href={eventHref}
-            className="block hw-card"
-            aria-label={`Open event details for ${event.title}`}
-            style={{
-              border: "1px solid rgba(204,17,51,0.28)",
-              background: "rgba(10,0,5,0.58)",
-            }}
-          >
-            {eventContent}
-          </Link>
-        )}
+        <div
+          className="block hw-card"
+          style={{
+            border: "1px solid rgba(204,17,51,0.28)",
+            background: "rgba(10,0,5,0.58)",
+          }}
+        >
+          {eventContent}
+        </div>
       </div>
     </section>
   );

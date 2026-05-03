@@ -32,9 +32,10 @@ export const bandDescription =
   "The Human Wannabes is a Philadelphia-based cover band performing anime, game, and vocaloid music — founded by music influencer Haz Studio. Since August 2025, we've built a local fan community of 400+ and host monthly live events with 100+ average turnout. Our videos have accumulated 300K+ views online. We are sponsored by Xvive, NUX, Mackie, and Direct Sound.";
 
 export const conventions = [
-  "Anime Otapia",
-  "Miku Only",
-  "Philadelphia Cherry Blossom Festival",
-  "Philly OtakuFest",
-  "Persona 5: The Phantom X (Music Video)",
+  "5+ local concerts",
+  "Anime Otapia 2026",
+  "Miku Only 2026",
+  "Philadelphia Cherry Blossom Festival 2026",
+  "Philly OtakuFest 2026",
+  "Persona 30th Anniversary",
 ];

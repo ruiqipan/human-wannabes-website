@@ -1,5 +1,5 @@
 import { events } from "@/data/events";
-import { isPast, formatDate } from "@/lib/utils";
+import { isPast, formatDate, parseLocalDate } from "@/lib/utils";
 import PageHero from "@/components/layout/PageHero";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import type { Metadata } from "next";
@@ -11,16 +11,17 @@ const typeColors: Record<string, string> = {
   showcase: "rgba(180,90,20,0.9)",
   concert:  "rgba(30,110,170,0.9)",
   collab:   "rgba(80,30,160,0.9)",
+  gathering: "rgba(180,90,20,0.9)",
 };
 
 export default function EventsPage() {
   const upcoming = events
     .filter((e) => !isPast(e.date))
-    .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+    .sort((a, b) => parseLocalDate(a.date).getTime() - parseLocalDate(b.date).getTime());
 
   const past = events
     .filter((e) => isPast(e.date))
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    .sort((a, b) => parseLocalDate(b.date).getTime() - parseLocalDate(a.date).getTime());
 
   return (
     <div className="hw-page">
@@ -45,6 +46,10 @@ export default function EventsPage() {
             <div className="flex flex-col gap-4 sm:gap-6">
               {upcoming.map((event, i) => (
                 <ScrollReveal key={event.id} delay={i * 0.07}>
+                  {(() => {
+                    const eventDate = parseLocalDate(event.date);
+
+                    return (
                   <div
                     className="hw-card flex flex-col sm:flex-row gap-5 md:gap-8 p-5 sm:p-7 md:p-10"
                     style={{
@@ -58,13 +63,13 @@ export default function EventsPage() {
                         className="block leading-none font-normal"
                         style={{ fontFamily: "var(--font-bebas)", fontSize: "clamp(2.6rem, 10vw, 3.4rem)", color: "var(--accent-red)" }}
                       >
-                        {new Date(event.date).getDate()}
+                        {eventDate.getDate()}
                       </span>
                       <span
                         className="block text-xs tracking-widest uppercase"
                         style={{ color: "var(--text-secondary)", fontFamily: "var(--font-space-grotesk)" }}
                       >
-                        {new Date(event.date).toLocaleString("en-US", { month: "short" })} {new Date(event.date).getFullYear()}
+                        {eventDate.toLocaleString("en-US", { month: "short" })} {eventDate.getFullYear()}
                       </span>
                     </div>
 
@@ -116,12 +121,6 @@ export default function EventsPage() {
                           {event.city}
                         </span>
                       </div>
-                      <p
-                        className="text-[13px] sm:text-sm leading-relaxed"
-                        style={{ color: "var(--text-secondary)", fontFamily: "var(--font-space-grotesk)" }}
-                      >
-                        {event.description}
-                      </p>
                       </div>
                       {event.ticketUrl ? (
                         <a
@@ -142,6 +141,8 @@ export default function EventsPage() {
                       )}
                     </div>
                   </div>
+                    );
+                  })()}
                 </ScrollReveal>
               ))}
             </div>
