@@ -143,6 +143,16 @@ export const events: BandEvent[] = [
     ticketUrl: "https://westphillyporchfest.com/pages",
   },
   {
+    id: "2026-anime-live-music-party-bluemoon-sanitizer",
+    title: "Anime Live Music Party W/ BLUEMOON SANITIZER",
+    venue: "Rock and Roll San Diego",
+    city: "San Diego",
+    date: "2026-07-07",
+    description: "Anime live music party concert with BLUEMOON SANITIZER in San Diego.",
+    type: "concert",
+    ticketUrl: "https://events.ticketleap.com/tickets/human-wannabes/anime-live-music-party-acl2026",
+  },
+  {
     id: "2025-anime-game-live-music-party-philamoca",
     title: "Anime & Game Live Music Party",
     venue: "PhilaMOCA",
