@@ -1,0 +1,23 @@
+{
+  "bucket": "photos",
+  "defaultEvent": "PhilaMOCA",
+  "defaultCaption": "Human Wannabes live photo",
+  "items": [
+    {
+      "file": "/absolute/path/to/Ricky.png",
+      "path": "imported/Ricky_-_Credit_Jimmy_Yang.png",
+      "credits": "Jimmy Yang",
+      "width": 1024,
+      "height": 797,
+      "sortOrder": 505
+    },
+    {
+      "file": "/absolute/path/to/DSC_2339.png",
+      "path": "imported/DSC_2339.png",
+      "credits": "稀粥",
+      "width": 1024,
+      "height": 682,
+      "sortOrder": 506
+    }
+  ]
+}
