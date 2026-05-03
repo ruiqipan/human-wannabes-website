@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Orbitron, Bebas_Neue, Space_Grotesk, Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import Navbar from "@/components/layout/Navbar";
@@ -31,6 +31,11 @@ const inter = Inter({
   variable: "--font-inter",
   display: "swap",
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
 
 export const metadata: Metadata = {
   title: { default: "Human Wannabes", template: "%s | Human Wannabes" },
