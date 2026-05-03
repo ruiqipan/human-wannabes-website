@@ -1,0 +1,631 @@
+⨯ ./components/home/HeroMain.tsx:174:5
+Expression expected
+  [90m172 |[0m       {[90m/* Scroll indicator */[0m}
+  [90m173 |[0m       <motion.div
+[31m[1m>[0m [90m174 |[0m     </section>
+  [90m    |[0m     [31m[1m^[0m
+  [90m175 |[0m   );
+  [90m176 |[0m }
+  [90m177 |[0m
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/home/HeroMain.tsx
+    ./app/page.tsx
+
+
+
+./components/home/HeroMain.tsx:174:6
+Unterminated regexp literal
+  [90m172 |[0m       {[90m/* Scroll indicator */[0m}
+  [90m173 |[0m       <motion.div
+[31m[1m>[0m [90m174 |[0m     </section>
+  [90m    |[0m      [31m[1m^^^^^^^^^[0m
+  [90m175 |[0m   );
+  [90m176 |[0m }
+  [90m177 |[0m
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/home/HeroMain.tsx
+    ./app/page.tsx
+
+
+⨯ ./components/home/HeroMain.tsx:174:5
+Expression expected
+  [90m172 |[0m       {[90m/* Scroll indicator */[0m}
+  [90m173 |[0m       <motion.div
+[31m[1m>[0m [90m174 |[0m     </section>
+  [90m    |[0m     [31m[1m^[0m
+  [90m175 |[0m   );
+  [90m176 |[0m }
+  [90m177 |[0m
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/home/HeroMain.tsx
+    ./app/page.tsx
+
+
+
+./components/home/HeroMain.tsx:174:6
+Unterminated regexp literal
+  [90m172 |[0m       {[90m/* Scroll indicator */[0m}
+  [90m173 |[0m       <motion.div
+[31m[1m>[0m [90m174 |[0m     </section>
+  [90m    |[0m      [31m[1m^^^^^^^^^[0m
+  [90m175 |[0m   );
+  [90m176 |[0m }
+  [90m177 |[0m
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/home/HeroMain.tsx
+    ./app/page.tsx
+
+
+⨯ ./components/home/HeroMain.tsx:174:5
+Expression expected
+  [90m172 |[0m       {[90m/* Scroll indicator */[0m}
+  [90m173 |[0m       <motion.div
+[31m[1m>[0m [90m174 |[0m     </section>
+  [90m    |[0m     [31m[1m^[0m
+  [90m175 |[0m   );
+  [90m176 |[0m }
+  [90m177 |[0m
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/home/HeroMain.tsx
+    ./app/page.tsx
+
+
+
+./components/home/HeroMain.tsx:174:6
+Unterminated regexp literal
+  [90m172 |[0m       {[90m/* Scroll indicator */[0m}
+  [90m173 |[0m       <motion.div
+[31m[1m>[0m [90m174 |[0m     </section>
+  [90m    |[0m      [31m[1m^^^^^^^^^[0m
+  [90m175 |[0m   );
+  [90m176 |[0m }
+  [90m177 |[0m
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/home/HeroMain.tsx
+    ./app/page.tsx
+
+
+[browser] Uncaught Error: ./components/home/HeroMain.tsx:174:5
+Expression expected
+  172 |       {/* Scroll indicator */}
+  173 |       <motion.div
+> 174 |     </section>
+      |     ^
+  175 |   );
+  176 | }
+  177 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/home/HeroMain.tsx
+    ./app/page.tsx
+
+
+    at <unknown> (Error: ./components/home/HeroMain.tsx:174:5)
+    at <unknown> (Error: (./components/home/HeroMain.tsx:174:5)
+[browser] ./components/home/HeroMain.tsx:174:5
+Expression expected
+  172 |       {/* Scroll indicator */}
+  173 |       <motion.div
+> 174 |     </section>
+      |     ^
+  175 |   );
+  176 | }
+  177 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/home/HeroMain.tsx
+    ./app/page.tsx 
+[browser] ./components/home/HeroMain.tsx:174:6
+Unterminated regexp literal
+  172 |       {/* Scroll indicator */}
+  173 |       <motion.div
+> 174 |     </section>
+      |      ^^^^^^^^^
+  175 |   );
+  176 | }
+  177 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/home/HeroMain.tsx
+    ./app/page.tsx 
+[browser] ./components/home/HeroMain.tsx:174:5
+Expression expected
+  172 |       {/* Scroll indicator */}
+  173 |       <motion.div
+> 174 |     </section>
+      |     ^
+  175 |   );
+  176 | }
+  177 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/home/HeroMain.tsx
+    ./app/page.tsx 
+[browser] ./components/home/HeroMain.tsx:174:6
+Unterminated regexp literal
+  172 |       {/* Scroll indicator */}
+  173 |       <motion.div
+> 174 |     </section>
+      |      ^^^^^^^^^
+  175 |   );
+  176 | }
+  177 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/home/HeroMain.tsx
+    ./app/page.tsx 
+[browser] ./components/home/HeroMain.tsx:174:5
+Expression expected
+  172 |       {/* Scroll indicator */}
+  173 |       <motion.div
+> 174 |     </section>
+      |     ^
+  175 |   );
+  176 | }
+  177 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/home/HeroMain.tsx
+    ./app/page.tsx 
+[browser] ./components/home/HeroMain.tsx:174:6
+Unterminated regexp literal
+  172 |       {/* Scroll indicator */}
+  173 |       <motion.div
+> 174 |     </section>
+      |      ^^^^^^^^^
+  175 |   );
+  176 | }
+  177 |
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/home/HeroMain.tsx
+    ./app/page.tsx 
+[browser] Image with src "/photos/main_background.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+⨯ ./app/page.tsx:4:1
+Module not found: Can't resolve '@/components/home/UpcomingEvents'
+  [90m2 |[0m [36mimport[0m [33mWhoWeAre[0m [36mfrom[0m [32m"@/components/home/WhoWeAre"[0m;
+  [90m3 |[0m [36mimport[0m [33mWherePlayed[0m [36mfrom[0m [32m"@/components/home/WherePlayed"[0m;
+[31m[1m>[0m [90m4 |[0m [36mimport[0m [33mUpcomingEvents[0m [36mfrom[0m [32m"@/components/home/UpcomingEvents"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m5 |[0m
+  [90m6 |[0m [36mexport[0m [36mconst[0m metadata = {
+  [90m7 |[0m   title: [32m"Human Wannabes"[0m,
+
+Import map: aliased to relative './components/home/UpcomingEvents' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/page.tsx:4:1
+Module not found: Can't resolve '@/components/home/UpcomingEvents'
+  [90m2 |[0m [36mimport[0m [33mWhoWeAre[0m [36mfrom[0m [32m"@/components/home/WhoWeAre"[0m;
+  [90m3 |[0m [36mimport[0m [33mWherePlayed[0m [36mfrom[0m [32m"@/components/home/WherePlayed"[0m;
+[31m[1m>[0m [90m4 |[0m [36mimport[0m [33mUpcomingEvents[0m [36mfrom[0m [32m"@/components/home/UpcomingEvents"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m5 |[0m
+  [90m6 |[0m [36mexport[0m [36mconst[0m metadata = {
+  [90m7 |[0m   title: [32m"Human Wannabes"[0m,
+
+Import map: aliased to relative './components/home/UpcomingEvents' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/page.tsx:4:1
+Module not found: Can't resolve '@/components/home/UpcomingEvents'
+  [90m2 |[0m [36mimport[0m [33mWhoWeAre[0m [36mfrom[0m [32m"@/components/home/WhoWeAre"[0m;
+  [90m3 |[0m [36mimport[0m [33mWherePlayed[0m [36mfrom[0m [32m"@/components/home/WherePlayed"[0m;
+[31m[1m>[0m [90m4 |[0m [36mimport[0m [33mUpcomingEvents[0m [36mfrom[0m [32m"@/components/home/UpcomingEvents"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m5 |[0m
+  [90m6 |[0m [36mexport[0m [36mconst[0m metadata = {
+  [90m7 |[0m   title: [32m"Human Wannabes"[0m,
+
+Import map: aliased to relative './components/home/UpcomingEvents' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/page.tsx:4:1
+Module not found: Can't resolve '@/components/home/UpcomingEvents'
+  [90m2 |[0m [36mimport[0m [33mWhoWeAre[0m [36mfrom[0m [32m"@/components/home/WhoWeAre"[0m;
+  [90m3 |[0m [36mimport[0m [33mWherePlayed[0m [36mfrom[0m [32m"@/components/home/WherePlayed"[0m;
+[31m[1m>[0m [90m4 |[0m [36mimport[0m [33mUpcomingEvents[0m [36mfrom[0m [32m"@/components/home/UpcomingEvents"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m5 |[0m
+  [90m6 |[0m [36mexport[0m [36mconst[0m metadata = {
+  [90m7 |[0m   title: [32m"Human Wannabes"[0m,
+
+Import map: aliased to relative './components/home/UpcomingEvents' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/page.tsx:4:1
+Module not found: Can't resolve '@/components/home/UpcomingEvents'
+  [90m2 |[0m [36mimport[0m [33mWhoWeAre[0m [36mfrom[0m [32m"@/components/home/WhoWeAre"[0m;
+  [90m3 |[0m [36mimport[0m [33mWherePlayed[0m [36mfrom[0m [32m"@/components/home/WherePlayed"[0m;
+[31m[1m>[0m [90m4 |[0m [36mimport[0m [33mUpcomingEvents[0m [36mfrom[0m [32m"@/components/home/UpcomingEvents"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m5 |[0m
+  [90m6 |[0m [36mexport[0m [36mconst[0m metadata = {
+  [90m7 |[0m   title: [32m"Human Wannabes"[0m,
+
+Import map: aliased to relative './components/home/UpcomingEvents' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/page.tsx:4:1
+Module not found: Can't resolve '@/components/home/UpcomingEvents'
+  [90m2 |[0m [36mimport[0m [33mWhoWeAre[0m [36mfrom[0m [32m"@/components/home/WhoWeAre"[0m;
+  [90m3 |[0m [36mimport[0m [33mWherePlayed[0m [36mfrom[0m [32m"@/components/home/WherePlayed"[0m;
+[31m[1m>[0m [90m4 |[0m [36mimport[0m [33mUpcomingEvents[0m [36mfrom[0m [32m"@/components/home/UpcomingEvents"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m5 |[0m
+  [90m6 |[0m [36mexport[0m [36mconst[0m metadata = {
+  [90m7 |[0m   title: [32m"Human Wannabes"[0m,
+
+Import map: aliased to relative './components/home/UpcomingEvents' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/page.tsx:4:1
+Module not found: Can't resolve '@/components/home/UpcomingEvents'
+  [90m2 |[0m [36mimport[0m [33mWhoWeAre[0m [36mfrom[0m [32m"@/components/home/WhoWeAre"[0m;
+  [90m3 |[0m [36mimport[0m [33mWherePlayed[0m [36mfrom[0m [32m"@/components/home/WherePlayed"[0m;
+[31m[1m>[0m [90m4 |[0m [36mimport[0m [33mUpcomingEvents[0m [36mfrom[0m [32m"@/components/home/UpcomingEvents"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m5 |[0m
+  [90m6 |[0m [36mexport[0m [36mconst[0m metadata = {
+  [90m7 |[0m   title: [32m"Human Wannabes"[0m,
+
+Import map: aliased to relative './components/home/UpcomingEvents' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/page.tsx:4:1
+Module not found: Can't resolve '@/components/home/UpcomingEvents'
+  [90m2 |[0m [36mimport[0m [33mWhoWeAre[0m [36mfrom[0m [32m"@/components/home/WhoWeAre"[0m;
+  [90m3 |[0m [36mimport[0m [33mWherePlayed[0m [36mfrom[0m [32m"@/components/home/WherePlayed"[0m;
+[31m[1m>[0m [90m4 |[0m [36mimport[0m [33mUpcomingEvents[0m [36mfrom[0m [32m"@/components/home/UpcomingEvents"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m5 |[0m
+  [90m6 |[0m [36mexport[0m [36mconst[0m metadata = {
+  [90m7 |[0m   title: [32m"Human Wannabes"[0m,
+
+Import map: aliased to relative './components/home/UpcomingEvents' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/page.tsx:4:1
+Module not found: Can't resolve '@/components/home/UpcomingEvents'
+  [90m2 |[0m [36mimport[0m [33mWhoWeAre[0m [36mfrom[0m [32m"@/components/home/WhoWeAre"[0m;
+  [90m3 |[0m [36mimport[0m [33mWherePlayed[0m [36mfrom[0m [32m"@/components/home/WherePlayed"[0m;
+[31m[1m>[0m [90m4 |[0m [36mimport[0m [33mUpcomingEvents[0m [36mfrom[0m [32m"@/components/home/UpcomingEvents"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m5 |[0m
+  [90m6 |[0m [36mexport[0m [36mconst[0m metadata = {
+  [90m7 |[0m   title: [32m"Human Wannabes"[0m,
+
+Import map: aliased to relative './components/home/UpcomingEvents' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/page.tsx:4:1
+Module not found: Can't resolve '@/components/home/UpcomingEvents'
+  [90m2 |[0m [36mimport[0m [33mWhoWeAre[0m [36mfrom[0m [32m"@/components/home/WhoWeAre"[0m;
+  [90m3 |[0m [36mimport[0m [33mWherePlayed[0m [36mfrom[0m [32m"@/components/home/WherePlayed"[0m;
+[31m[1m>[0m [90m4 |[0m [36mimport[0m [33mUpcomingEvents[0m [36mfrom[0m [32m"@/components/home/UpcomingEvents"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m5 |[0m
+  [90m6 |[0m [36mexport[0m [36mconst[0m metadata = {
+  [90m7 |[0m   title: [32m"Human Wannabes"[0m,
+
+Import map: aliased to relative './components/home/UpcomingEvents' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/page.tsx:4:1
+Module not found: Can't resolve '@/components/home/UpcomingEvents'
+  [90m2 |[0m [36mimport[0m [33mWhoWeAre[0m [36mfrom[0m [32m"@/components/home/WhoWeAre"[0m;
+  [90m3 |[0m [36mimport[0m [33mWherePlayed[0m [36mfrom[0m [32m"@/components/home/WherePlayed"[0m;
+[31m[1m>[0m [90m4 |[0m [36mimport[0m [33mUpcomingEvents[0m [36mfrom[0m [32m"@/components/home/UpcomingEvents"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m5 |[0m
+  [90m6 |[0m [36mexport[0m [36mconst[0m metadata = {
+  [90m7 |[0m   title: [32m"Human Wannabes"[0m,
+
+Import map: aliased to relative './components/home/UpcomingEvents' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/page.tsx:4:1
+Module not found: Can't resolve '@/components/home/UpcomingEvents'
+  [90m2 |[0m [36mimport[0m [33mWhoWeAre[0m [36mfrom[0m [32m"@/components/home/WhoWeAre"[0m;
+  [90m3 |[0m [36mimport[0m [33mWherePlayed[0m [36mfrom[0m [32m"@/components/home/WherePlayed"[0m;
+[31m[1m>[0m [90m4 |[0m [36mimport[0m [33mUpcomingEvents[0m [36mfrom[0m [32m"@/components/home/UpcomingEvents"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m5 |[0m
+  [90m6 |[0m [36mexport[0m [36mconst[0m metadata = {
+  [90m7 |[0m   title: [32m"Human Wannabes"[0m,
+
+Import map: aliased to relative './components/home/UpcomingEvents' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/page.tsx:4:1
+Module not found: Can't resolve '@/components/home/UpcomingEvents'
+  [90m2 |[0m [36mimport[0m [33mWhoWeAre[0m [36mfrom[0m [32m"@/components/home/WhoWeAre"[0m;
+  [90m3 |[0m [36mimport[0m [33mWherePlayed[0m [36mfrom[0m [32m"@/components/home/WherePlayed"[0m;
+[31m[1m>[0m [90m4 |[0m [36mimport[0m [33mUpcomingEvents[0m [36mfrom[0m [32m"@/components/home/UpcomingEvents"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m5 |[0m
+  [90m6 |[0m [36mexport[0m [36mconst[0m metadata = {
+  [90m7 |[0m   title: [32m"Human Wannabes"[0m,
+
+Import map: aliased to relative './components/home/UpcomingEvents' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/page.tsx:4:1
+Module not found: Can't resolve '@/components/home/UpcomingEvents'
+  [90m2 |[0m [36mimport[0m [33mWhoWeAre[0m [36mfrom[0m [32m"@/components/home/WhoWeAre"[0m;
+  [90m3 |[0m [36mimport[0m [33mWherePlayed[0m [36mfrom[0m [32m"@/components/home/WherePlayed"[0m;
+[31m[1m>[0m [90m4 |[0m [36mimport[0m [33mUpcomingEvents[0m [36mfrom[0m [32m"@/components/home/UpcomingEvents"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m5 |[0m
+  [90m6 |[0m [36mexport[0m [36mconst[0m metadata = {
+  [90m7 |[0m   title: [32m"Human Wannabes"[0m,
+
+Import map: aliased to relative './components/home/UpcomingEvents' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[browser] Uncaught Error: ./app/page.tsx:4:1
+Module not found: Can't resolve '@/components/home/UpcomingEvents'
+  2 | import WhoWeAre from "@/components/home/WhoWeAre";
+  3 | import WherePlayed from "@/components/home/WherePlayed";
+> 4 | import UpcomingEvents from "@/components/home/UpcomingEvents";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export const metadata = {
+  7 |   title: "Human Wannabes",
+
+Import map: aliased to relative './components/home/UpcomingEvents' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (Error: ./app/page.tsx:4:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (Error: (./app/page.tsx:4:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+[browser] ./app/page.tsx:4:1
+Module not found: Can't resolve '@/components/home/UpcomingEvents'
+  2 | import WhoWeAre from "@/components/home/WhoWeAre";
+  3 | import WherePlayed from "@/components/home/WherePlayed";
+> 4 | import UpcomingEvents from "@/components/home/UpcomingEvents";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export const metadata = {
+  7 |   title: "Human Wannabes",
+
+Import map: aliased to relative './components/home/UpcomingEvents' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] ./app/page.tsx:4:1
+Module not found: Can't resolve '@/components/home/UpcomingEvents'
+  2 | import WhoWeAre from "@/components/home/WhoWeAre";
+  3 | import WherePlayed from "@/components/home/WherePlayed";
+> 4 | import UpcomingEvents from "@/components/home/UpcomingEvents";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export const metadata = {
+  7 |   title: "Human Wannabes",
+
+Import map: aliased to relative './components/home/UpcomingEvents' inside of [project]/
+
+https://nextjs.org/docs/messages/module-not-found 
+[browser] Image with src "/photos/main_background.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[browser] Image with src "/photos/main_background.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[browser] Image with src "/photos/main_background.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[browser] Image with src "/photos/main_background.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+⨯ ./components/home/WhoWeAre.tsx:1:1
+Export bandCommunityDescription doesn't exist in target module
+[31m[1m>[0m [90m1 |[0m [36mimport[0m { bandCommunityDescription, bandDescription } [36mfrom[0m [32m"@/data/band-info"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m2 |[0m [36mimport[0m [33mSectionHeading[0m [36mfrom[0m [32m"@/components/ui/SectionHeading"[0m;
+  [90m3 |[0m [36mimport[0m [33mScrollReveal[0m [36mfrom[0m [32m"@/components/ui/ScrollReveal"[0m;
+  [90m4 |[0m
+
+The export bandCommunityDescription was not found in module [project]/data/band-info.ts [app-rsc] (ecmascript).
+Did you mean to import bandDescription?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/home/WhoWeAre.tsx
+    ./app/page.tsx
+
+
+⨯ ./components/home/WhoWeAre.tsx:1:1
+Export bandCommunityDescription doesn't exist in target module
+[31m[1m>[0m [90m1 |[0m [36mimport[0m { bandCommunityDescription, bandDescription } [36mfrom[0m [32m"@/data/band-info"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m2 |[0m [36mimport[0m [33mSectionHeading[0m [36mfrom[0m [32m"@/components/ui/SectionHeading"[0m;
+  [90m3 |[0m [36mimport[0m [33mScrollReveal[0m [36mfrom[0m [32m"@/components/ui/ScrollReveal"[0m;
+  [90m4 |[0m
+
+The export bandCommunityDescription was not found in module [project]/data/band-info.ts [app-rsc] (ecmascript).
+Did you mean to import bandDescription?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/home/WhoWeAre.tsx
+    ./app/page.tsx
+
+
+⨯ ./components/home/WhoWeAre.tsx:1:1
+Export bandCommunityDescription doesn't exist in target module
+[31m[1m>[0m [90m1 |[0m [36mimport[0m { bandCommunityDescription, bandDescription } [36mfrom[0m [32m"@/data/band-info"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m2 |[0m [36mimport[0m [33mSectionHeading[0m [36mfrom[0m [32m"@/components/ui/SectionHeading"[0m;
+  [90m3 |[0m [36mimport[0m [33mScrollReveal[0m [36mfrom[0m [32m"@/components/ui/ScrollReveal"[0m;
+  [90m4 |[0m
+
+The export bandCommunityDescription was not found in module [project]/data/band-info.ts [app-rsc] (ecmascript).
+Did you mean to import bandDescription?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/home/WhoWeAre.tsx
+    ./app/page.tsx
+
+
+⨯ ./components/home/WhoWeAre.tsx:1:1
+Export bandCommunityDescription doesn't exist in target module
+[31m[1m>[0m [90m1 |[0m [36mimport[0m { bandCommunityDescription, bandDescription } [36mfrom[0m [32m"@/data/band-info"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m2 |[0m [36mimport[0m [33mSectionHeading[0m [36mfrom[0m [32m"@/components/ui/SectionHeading"[0m;
+  [90m3 |[0m [36mimport[0m [33mScrollReveal[0m [36mfrom[0m [32m"@/components/ui/ScrollReveal"[0m;
+  [90m4 |[0m
+
+The export bandCommunityDescription was not found in module [project]/data/band-info.ts [app-rsc] (ecmascript).
+Did you mean to import bandDescription?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/home/WhoWeAre.tsx
+    ./app/page.tsx
+
+
+[browser] Uncaught Error: ./components/home/WhoWeAre.tsx:1:1
+Export bandCommunityDescription doesn't exist in target module
+> 1 | import { bandCommunityDescription, bandDescription } from "@/data/band-info";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import SectionHeading from "@/components/ui/SectionHeading";
+  3 | import ScrollReveal from "@/components/ui/ScrollReveal";
+  4 |
+
+The export bandCommunityDescription was not found in module [project]/data/band-info.ts [app-rsc] (ecmascript).
+Did you mean to import bandDescription?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/home/WhoWeAre.tsx
+    ./app/page.tsx
+
+
+    at <unknown> (Error: ./components/home/WhoWeAre.tsx:1:1)
+    at <unknown> (Error: (./components/home/WhoWeAre.tsx:1:1)
+[browser] ./components/home/WhoWeAre.tsx:1:1
+Export bandCommunityDescription doesn't exist in target module
+> 1 | import { bandCommunityDescription, bandDescription } from "@/data/band-info";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import SectionHeading from "@/components/ui/SectionHeading";
+  3 | import ScrollReveal from "@/components/ui/ScrollReveal";
+  4 |
+
+The export bandCommunityDescription was not found in module [project]/data/band-info.ts [app-rsc] (ecmascript).
+Did you mean to import bandDescription?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/home/WhoWeAre.tsx
+    ./app/page.tsx 
+[browser] ./components/home/WhoWeAre.tsx:1:1
+Export bandCommunityDescription doesn't exist in target module
+> 1 | import { bandCommunityDescription, bandDescription } from "@/data/band-info";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  2 | import SectionHeading from "@/components/ui/SectionHeading";
+  3 | import ScrollReveal from "@/components/ui/ScrollReveal";
+  4 |
+
+The export bandCommunityDescription was not found in module [project]/data/band-info.ts [app-rsc] (ecmascript).
+Did you mean to import bandDescription?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./components/home/WhoWeAre.tsx
+    ./app/page.tsx 

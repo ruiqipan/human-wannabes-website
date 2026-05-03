@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
@@ -87,20 +88,31 @@ export default function Navbar() {
           {/* Logo */}
           <Link
             href="/"
-            className="flex max-w-[calc(100vw-8.5rem)] flex-col leading-none select-none"
+            className="flex max-w-[calc(100vw-8.5rem)] items-center gap-2.5 leading-none select-none sm:gap-3"
             onClick={() => setOpen(false)}
           >
-            <span
-              className="truncate text-base sm:text-xl md:text-2xl font-normal tracking-[0.06em] sm:tracking-wider"
-              style={{ fontFamily: "var(--font-bebas)", color: "var(--text-primary)" }}
-            >
-              Human Wannabes
-            </span>
-            <span
-              className="text-xs tracking-[0.25em] uppercase"
-              style={{ fontFamily: "var(--font-space-grotesk)", color: "var(--accent-red)", fontSize: "0.6rem" }}
-            >
-              Philadelphia
+            <Image
+              src="/photos/hw_full_logo_transparent.png"
+              alt=""
+              width={6000}
+              height={6000}
+              className="h-11 w-11 flex-shrink-0 object-contain object-center sm:h-12 sm:w-12"
+              unoptimized
+              aria-hidden
+            />
+            <span className="flex min-w-0 flex-col">
+              <span
+                className="truncate text-base sm:text-xl md:text-2xl font-normal tracking-[0.06em] sm:tracking-wider"
+                style={{ fontFamily: "var(--font-bebas)", color: "var(--text-primary)" }}
+              >
+                Human Wannabes
+              </span>
+              <span
+                className="text-xs tracking-[0.25em] uppercase"
+                style={{ fontFamily: "var(--font-space-grotesk)", color: "var(--accent-red)", fontSize: "0.6rem" }}
+              >
+                Philadelphia
+              </span>
             </span>
           </Link>
 

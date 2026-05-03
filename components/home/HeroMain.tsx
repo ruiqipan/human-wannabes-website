@@ -10,7 +10,7 @@ export default function HeroMain() {
 
   return (
     <section
-      className="noise-bg relative min-h-[100svh] flex flex-col justify-center overflow-hidden py-24 md:py-28"
+      className="noise-bg relative min-h-[72svh] md:min-h-[78svh] flex flex-col justify-center overflow-hidden pt-24 pb-16 md:pt-28 md:pb-20"
       style={{ background: "var(--bg-base)" }}
     >
       {/* Optional background image behind hero graphics/text */}
@@ -23,7 +23,7 @@ export default function HeroMain() {
             sizes="100vw"
             unoptimized
             className="absolute inset-0 w-full h-full object-cover pointer-events-none"
-            style={{ objectPosition: "center 24%", opacity: 0.34 }}
+            style={{ objectPosition: "center 24%", opacity: 0.8 }}
             aria-hidden
           />
           <div
@@ -35,37 +35,6 @@ export default function HeroMain() {
           />
         </>
       )}
-
-      {/* Diagonal red slash */}
-      <motion.div
-        className="absolute pointer-events-none w-[min(1100px,140vw)] h-[45svh] max-h-[340px] md:h-[52vw] md:max-h-[360px]"
-        style={{
-          background: "var(--accent-red)",
-          transform: "skewY(-6deg)",
-          top: "50%",
-          left: "-5%",
-          marginTop: "-120px",
-          zIndex: 0,
-        }}
-        initial={{ scaleX: 0, transformOrigin: "left" }}
-        animate={{ scaleX: 1 }}
-        transition={{ duration: 0.75, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-      />
-      {/* Depth slash */}
-      <motion.div
-        className="absolute pointer-events-none w-[min(800px,110vw)] h-[39svh] max-h-[265px] md:h-[33vw] md:max-h-[210px]"
-        style={{
-          background: "rgba(155, 0, 22, 0.65)",
-          transform: "skewY(-6deg)",
-          top: "50%",
-          left: "-5%",
-          marginTop: "-45px",
-          zIndex: 0,
-        }}
-        initial={{ scaleX: 0, transformOrigin: "left" }}
-        animate={{ scaleX: 1 }}
-        transition={{ duration: 0.75, delay: 0.38, ease: [0.16, 1, 0.3, 1] }}
-      />
 
       {/* Ink accent dots */}
       {[
@@ -103,7 +72,7 @@ export default function HeroMain() {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="mb-10 md:mb-12"
+          className="mb-7 md:mb-9"
         >
           <span
             className="block text-xs tracking-[0.5em] uppercase mb-3"
@@ -173,7 +142,7 @@ export default function HeroMain() {
               fontFamily: "var(--font-space-grotesk)",
             }}
           >
-            Upcoming Events
+            Live Dates
           </Link>
           <a
             href="https://www.youtube.com/playlist?list=PLdoWMpbmbJL_uFuHmBrRtHgDXGgOTo1ht"
@@ -199,27 +168,6 @@ export default function HeroMain() {
           </a>
         </motion.div>
       </div>
-
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.4 }}
-        transition={{ duration: 1, delay: 1.5 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 pointer-events-none"
-      >
-        <span
-          className="text-xs tracking-[0.3em] uppercase"
-          style={{ color: "var(--text-secondary)", fontFamily: "var(--font-space-grotesk)" }}
-        >
-          Scroll
-        </span>
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 1.6, repeat: Infinity }}
-          className="w-px h-10"
-          style={{ background: "var(--accent-red)" }}
-        />
-      </motion.div>
     </section>
   );
 }

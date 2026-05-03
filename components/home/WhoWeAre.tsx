@@ -22,12 +22,6 @@ export default function WhoWeAre() {
             >
               {bandDescription}
             </p>
-            <p
-              className="text-base leading-relaxed"
-              style={{ color: "var(--text-secondary)", fontFamily: "var(--font-space-grotesk)" }}
-            >
-              Founded by music influencer Haz Studio, Human Wannabes bridges the gap between online fandom and live performance, creating a community where anime and music culture collide.
-            </p>
           </div>
         </ScrollReveal>
       </div>
