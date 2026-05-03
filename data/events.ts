@@ -137,7 +137,7 @@ export const events: BandEvent[] = [
     title: "West Philly PorchFest",
     venue: "812 S 48th St",
     city: "Philly",
-    date: "2026-05-31",
+    date: "2026-05-30",
     description: "Community festival performance as part of West Philly PorchFest.",
     type: "festival",
     ticketUrl: "https://westphillyporchfest.com/pages",
