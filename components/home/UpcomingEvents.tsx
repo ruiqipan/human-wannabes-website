@@ -7,6 +7,14 @@ function parseLocalDate(iso: string) {
   return new Date(year, month - 1, day);
 }
 
+function escapeRegExp(value: string) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function stripVenueFromTitle(title: string, venue: string) {
+  return title.replace(new RegExp(`\\s*@\\s*${escapeRegExp(venue)}$`, "i"), "");
+}
+
 export default function UpcomingEvents() {
   const event = events
     .filter((e) => !isPast(e.date))
@@ -15,6 +23,7 @@ export default function UpcomingEvents() {
   if (!event) return null;
 
   const eventDate = parseLocalDate(event.date);
+  const eventTitle = stripVenueFromTitle(event.title, event.venue);
 
   const eventContent = (
     <div className="grid grid-cols-[auto_1fr] items-center gap-x-5 gap-y-6 px-5 py-7 sm:grid-cols-[auto_1px_1fr_auto] sm:gap-x-7 md:px-8 md:py-9">
@@ -48,7 +57,7 @@ export default function UpcomingEvents() {
             letterSpacing: "0.02em",
           }}
         >
-          {event.title}
+          {eventTitle}
         </h2>
         <div className="mt-3 flex flex-wrap items-center gap-2.5">
           {event.venue !== "TBA" && (
