@@ -6,30 +6,6 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = { title: "Photos" };
 
-const eventByImageName: Record<string, string> = {
-  "816A0297": "Anime Otapia",
-  DSCF3928: "PhilaMOCA",
-};
-
-const localPhotos: NonNullable<Parameters<typeof PhotoGrid>[0]["photos"]> = [
-  {
-    src: "/photos/MG_4796.png",
-    alt: "Human Wannabes live photo",
-    event: "PhilaMOCA",
-    credits: "Jimmy Yang",
-    width: 1024,
-    height: 683,
-  },
-  {
-    src: "/photos/MG_4913.png",
-    alt: "Human Wannabes live photo",
-    event: "PhilaMOCA",
-    credits: "Jimmy Yang",
-    width: 1024,
-    height: 683,
-  },
-];
-
 type SupabasePhotoRow = {
   id: string;
   image_path: string;
@@ -44,10 +20,11 @@ async function getSupabasePhotos(): Promise<Parameters<typeof PhotoGrid>[0]["pho
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const supabaseKey =
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ??
-    process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY;
+    process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ??
+    process.env.SUPABASE_SERVICE_ROLE_KEY;
   const bucket = process.env.NEXT_PUBLIC_SUPABASE_PHOTOS_BUCKET ?? "photos";
 
-  if (!supabaseUrl || !supabaseKey) return localPhotos;
+  if (!supabaseUrl || !supabaseKey) return [];
 
   const supabase = createClient(supabaseUrl, supabaseKey, {
     auth: { persistSession: false, autoRefreshToken: false },
@@ -61,26 +38,24 @@ async function getSupabasePhotos(): Promise<Parameters<typeof PhotoGrid>[0]["pho
     .order("created_at", { ascending: false })
     .limit(60);
 
-  if (error || !data) return localPhotos;
+  if (error || !data) return [];
 
   const supabasePhotos = (data as SupabasePhotoRow[]).map((row) => {
     const { data: publicUrlData } = supabase.storage
       .from(bucket)
       .getPublicUrl(row.image_path);
-    const imageName = row.image_path.split("/").pop()?.replace(/\.[^.]+$/, "") ?? "";
-    const mappedEvent = eventByImageName[imageName];
 
     return {
       src: publicUrlData.publicUrl,
       alt: row.caption?.trim() || "Human Wannabes live photo",
-      event: mappedEvent ?? (row.event_name || undefined),
+      event: row.event_name || undefined,
       credits: row.credits || undefined,
       width: row.width || 1200,
       height: row.height || 1200,
     };
   });
 
-  return [...localPhotos, ...supabasePhotos];
+  return supabasePhotos;
 }
 
 export default async function PhotosPage() {
