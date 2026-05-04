@@ -1,3 +1,4 @@
+import SoundCloudEmbed from "@/components/music/SoundCloudEmbed";
 import SpotifyEmbed from "@/components/music/SpotifyEmbed";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import PageHero from "@/components/layout/PageHero";
@@ -7,6 +8,8 @@ export const metadata: Metadata = { title: "Music" };
 
 const SPOTIFY_TRACK_ID = "4LoBpreiTNb91E2SyXd13z";
 const SPOTIFY_SINGLE_TRACK_ID = "3OSYK1qTsbpzLpHuwiOQv6";
+const SOUNDCLOUD_PLAYER_URL =
+  "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2314372250&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true";
 
 export default function MusicPage() {
   return (
@@ -14,7 +17,7 @@ export default function MusicPage() {
       <PageHero
         eyebrow="Discography"
         title="Listen"
-        subtitle="Stream our music on Spotify. More releases coming soon."
+        subtitle="Stream our music on Spotify and SoundCloud. More releases coming soon."
       />
 
       {/* Spotify embed */}
@@ -30,28 +33,16 @@ export default function MusicPage() {
             </div>
           </ScrollReveal>
 
-          {SPOTIFY_TRACK_ID && (
-            <ScrollReveal delay={0.1}>
-              <div className="mt-8 md:mt-10 flex justify-start">
-                <a
-                  href={`https://open.spotify.com/track/${SPOTIFY_TRACK_ID}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hw-btn-red text-xs tracking-[0.25em] uppercase px-6 py-3"
-                  style={{ background: "var(--accent-red)", color: "#fff", fontFamily: "var(--font-space-grotesk)" }}
-                >
-                  Open in Spotify →
-                </a>
-              </div>
-            </ScrollReveal>
-          )}
+          <ScrollReveal>
+            <div className="mt-8 md:mt-10">
+              <SoundCloudEmbed playerUrl={SOUNDCLOUD_PLAYER_URL} title="Persona Battle Medley" />
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* More music note */}
-      <section
-        className="hw-page-section hw-page-section-surface"
-      >
+      <section className="hw-page-section hw-page-section-surface">
         <div className="hw-page-container">
           <ScrollReveal>
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 md:gap-10">
@@ -73,8 +64,10 @@ export default function MusicPage() {
                 >
                   Follow Us for New Releases
                 </h2>
-                <p className="mt-3 text-sm"
-                  style={{ color: "var(--text-secondary)", fontFamily: "var(--font-space-grotesk)" }}>
+                <p
+                  className="mt-3 text-sm"
+                  style={{ color: "var(--text-secondary)", fontFamily: "var(--font-space-grotesk)" }}
+                >
                   We regularly upload new covers and original content on YouTube and Instagram.
                 </p>
               </div>
@@ -89,7 +82,7 @@ export default function MusicPage() {
                   fontFamily: "var(--font-space-grotesk)",
                 }}
               >
-                Watch on YouTube →
+                Watch on YouTube -&gt;
               </a>
             </div>
           </ScrollReveal>
