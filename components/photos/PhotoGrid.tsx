@@ -124,6 +124,7 @@ export default function PhotoGrid({ photos }: Props) {
                   alt={photo.alt}
                   fill
                   sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                  quality={90}
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
                 />
                 <div
@@ -165,6 +166,7 @@ export default function PhotoGrid({ photos }: Props) {
               alt={lightbox.alt}
               width={lightbox.width}
               height={lightbox.height}
+              unoptimized
               className="w-full h-auto"
               style={{ maxHeight: "80vh", objectFit: "contain" }}
             />
