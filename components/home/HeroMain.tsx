@@ -65,8 +65,8 @@ export default function HeroMain() {
         style={{ background: "var(--accent-cream)", opacity: 0.07 }}
       />
 
-      {/* Main text content */}
-      <div className="relative z-10 w-full hw-page-container flex-1 flex flex-col justify-center">
+      {/* Main content */}
+      <div className="relative z-10 w-full hw-page-container flex-1 flex flex-col justify-center pb-16 md:pb-24">
         {/* Eyebrow */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
@@ -127,15 +127,14 @@ export default function HeroMain() {
         >
           Anime · Game · Vocaloid Cover Band
         </motion.p>
-      </div>
 
-      {/* CTAs — pinned to bottom of hero */}
-      <div className="relative z-10 w-full hw-page-container">
+        {/* CTAs */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.95 }}
           className="flex w-full max-w-[390px] flex-col items-stretch gap-3 sm:max-w-none sm:flex-row sm:flex-wrap md:flex-nowrap md:items-center md:gap-4"
+          style={{ marginTop: "3.5rem" }}
         >
           <Link
             href="/events"
