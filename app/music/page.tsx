@@ -6,6 +6,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = { title: "Music" };
 
 const SPOTIFY_TRACK_ID = "4LoBpreiTNb91E2SyXd13z";
+const SPOTIFY_SINGLE_TRACK_ID = "3OSYK1qTsbpzLpHuwiOQv6";
 
 export default function MusicPage() {
   return (
@@ -20,7 +21,13 @@ export default function MusicPage() {
       <section className="hw-page-section">
         <div className="hw-page-container max-w-2xl">
           <ScrollReveal>
-            <SpotifyEmbed trackId={SPOTIFY_TRACK_ID || undefined} />
+            <SpotifyEmbed trackId={SPOTIFY_SINGLE_TRACK_ID} title="Human Wannabes single on Spotify" />
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <div className="mt-8 md:mt-10">
+              <SpotifyEmbed trackId={SPOTIFY_TRACK_ID || undefined} />
+            </div>
           </ScrollReveal>
 
           {SPOTIFY_TRACK_ID && (
