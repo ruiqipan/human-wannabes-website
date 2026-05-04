@@ -197,17 +197,12 @@ body {
 .hw-card-link:hover::before { background: rgba(255,255,255,0.07); }
 .hw-card-link:active::before { background: rgba(255,255,255,0.14); }
 
-/* Mobile-only full-card link overlay */
-.hw-mobile-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-}
-.hw-desktop-cta { display: none; }
+.hw-mobile-only { display: block; }
+.hw-desktop-only { display: none; }
 
 @media (min-width: 768px) {
-  .hw-mobile-overlay { display: none; }
-  .hw-desktop-cta { display: inline-flex; position: relative; z-index: 2; }
+  .hw-mobile-only { display: none !important; }
+  .hw-desktop-only { display: block; }
 }
 
 .hw-sponsor { transition: color 0.2s; }
