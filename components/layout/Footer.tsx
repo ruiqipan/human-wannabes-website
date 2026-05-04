@@ -51,7 +51,7 @@ export default function Footer() {
         borderTop: "1px solid rgba(204,17,51,0.2)",
       }}
     >
-      <div className="hw-page-container py-16 md:py-24">
+      <div className="hw-page-container py-20 md:py-28">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20">
           {/* Brand */}
           <div className="md:col-span-1">
@@ -135,7 +135,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t" style={{ borderColor: "rgba(204,17,51,0.15)" }}>
-        <div className="hw-page-container py-4 flex flex-col sm:flex-row items-center justify-between gap-2">
+        <div className="hw-page-container py-6 md:py-8 flex flex-col sm:flex-row items-center justify-between gap-2">
           <p
             className="text-xs tracking-widest uppercase"
             style={{ color: "var(--text-secondary)", fontFamily: "var(--font-space-grotesk)" }}

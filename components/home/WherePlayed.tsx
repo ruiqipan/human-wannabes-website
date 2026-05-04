@@ -14,13 +14,6 @@ export default function WherePlayed() {
       }}
     >
       <div className="hw-page-container">
-        <div
-          aria-hidden
-          style={{
-            height: "clamp(36px, 6vw, 88px)",
-          }}
-        />
-
         <ScrollReveal>
           <SectionHeading
             eyebrow="Appearances"

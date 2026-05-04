@@ -122,7 +122,7 @@ export default function HeroMain() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.75 }}
-          className="text-sm md:text-base tracking-[0.3em] uppercase mb-12 md:mb-14"
+          className="text-sm md:text-base tracking-[0.3em] uppercase mb-16 md:mb-20"
           style={{ color: "var(--text-secondary)", fontFamily: "var(--font-space-grotesk)" }}
         >
           Anime · Game · Vocaloid Cover Band
