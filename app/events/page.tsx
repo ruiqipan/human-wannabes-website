@@ -1,5 +1,5 @@
 import { events } from "@/data/events";
-import { isPast, formatDate, parseLocalDate } from "@/lib/utils";
+import { isPast, parseLocalDate } from "@/lib/utils";
 import PageHero from "@/components/layout/PageHero";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import type { Metadata } from "next";
@@ -12,6 +12,7 @@ const typeColors: Record<string, string> = {
   concert:  "rgba(30,110,170,0.9)",
   collab:   "rgba(80,30,160,0.9)",
   gathering: "rgba(180,90,20,0.9)",
+  convention: "rgba(80,30,160,0.9)",
 };
 
 export default function EventsPage() {
@@ -28,7 +29,7 @@ export default function EventsPage() {
       <PageHero
         eyebrow="Schedule"
         title="Events"
-        subtitle="Monthly shows, festivals, and conventions across Philadelphia."
+        subtitle="Regular shows, festivals, and conventions across Philadelphia and beyond."
       />
 
       <div className="hw-page-container hw-page-section">
@@ -192,42 +193,85 @@ export default function EventsPage() {
                 Past Events
               </h2>
             </ScrollReveal>
-            <div className="flex flex-col gap-0 border-t" style={{ borderColor: "rgba(204,17,51,0.12)" }}>
+            <div className="flex flex-col gap-4 sm:gap-6">
               {past.map((event, i) => (
                 <ScrollReveal key={event.id} delay={i * 0.06}>
+                  {(() => {
+                    const eventDate = parseLocalDate(event.date);
+
+                    return (
                   <div
-                    className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 border-b"
-                    style={{ borderColor: "rgba(204,17,51,0.12)", paddingBlock: "0.75rem" }}
+                    className="hw-card flex flex-col sm:flex-row gap-5 md:gap-8 p-5 sm:p-7 md:p-10"
+                    style={{
+                      background: "var(--bg-surface)",
+                      border: "1px solid rgba(204,17,51,0.18)",
+                    }}
                   >
-                    <span
-                      className="flex-shrink-0 text-xs sm:text-sm w-auto sm:w-36 tracking-wide"
-                      style={{ color: "var(--text-secondary)", fontFamily: "var(--font-space-grotesk)" }}
-                    >
-                      {formatDate(event.date)}
-                    </span>
-                    <span
-                      className="flex-1 font-normal leading-tight"
-                      style={{
-                        fontFamily: "var(--font-bebas)",
-                        fontSize: "clamp(1.1rem, 5.8vw, 1.6rem)",
-                        color: "var(--text-primary)",
-                        letterSpacing: "0.02em",
-                      }}
-                    >
-                      {event.title}
-                    </span>
-                    <span
-                      className="inline-flex items-center justify-center min-w-[74px] text-[10px] sm:text-xs tracking-[0.07em] sm:tracking-[0.08em] uppercase px-2.5 sm:px-3 py-1.5 rounded-full flex-shrink-0 whitespace-nowrap"
-                      style={{
-                        color: "var(--accent-red)",
-                        border: "1px solid rgba(204,17,51,0.45)",
-                        background: "rgba(204,17,51,0.08)",
-                        fontFamily: "var(--font-space-grotesk)",
-                      }}
-                    >
-                      {event.city}
-                    </span>
+                    <div className="flex-shrink-0 sm:w-24 text-left sm:text-left">
+                      <span
+                        className="block leading-none font-normal"
+                        style={{ fontFamily: "var(--font-bebas)", fontSize: "clamp(2.6rem, 10vw, 3.4rem)", color: "var(--accent-red)" }}
+                      >
+                        {eventDate.getDate()}
+                      </span>
+                      <span
+                        className="block text-xs tracking-widest uppercase"
+                        style={{ color: "var(--text-secondary)", fontFamily: "var(--font-space-grotesk)" }}
+                      >
+                        {eventDate.toLocaleString("en-US", { month: "short" })} {eventDate.getFullYear()}
+                      </span>
+                    </div>
+
+                    <div className="hidden sm:block w-px self-stretch" style={{ background: "rgba(204,17,51,0.22)" }} />
+
+                    <div className="flex-1 min-w-0 flex flex-col justify-center">
+                      <div className="flex flex-col items-start gap-2 mb-3 sm:flex-row sm:flex-wrap sm:items-start sm:gap-3">
+                        <h3
+                          className="font-normal leading-tight text-balance"
+                          style={{
+                            fontFamily: "var(--font-bebas)",
+                            fontSize: "clamp(1.45rem, 7.2vw, 2.2rem)",
+                            color: "var(--text-primary)",
+                            letterSpacing: "0.02em",
+                          }}
+                        >
+                          {event.title}
+                        </h3>
+                        <span
+                          className="text-[10px] sm:text-xs tracking-[0.13em] sm:tracking-[0.15em] uppercase px-2.5 py-1 flex-shrink-0"
+                          style={{
+                            fontFamily: "var(--font-space-grotesk)",
+                            background: typeColors[event.type] ?? "rgba(204,17,51,0.9)",
+                            color: "#fff",
+                          }}
+                        >
+                          {event.type}
+                        </span>
+                      </div>
+                      <div className="mb-3 flex flex-wrap items-center gap-2">
+                        <p
+                          className="text-[11px] sm:text-xs tracking-wide"
+                          style={{ color: "var(--accent-red)", fontFamily: "var(--font-space-grotesk)" }}
+                        >
+                          {event.venue !== "TBA" ? event.venue : "Venue TBA"}
+                          {event.time && ` Â· ${event.time}`}
+                        </p>
+                        <span
+                          className="inline-flex items-center justify-center min-w-[74px] text-[10px] sm:text-xs tracking-[0.07em] sm:tracking-[0.08em] uppercase px-2.5 sm:px-3 py-1.5 rounded-full whitespace-nowrap"
+                          style={{
+                            color: "var(--accent-red)",
+                            border: "1px solid rgba(204,17,51,0.45)",
+                            background: "rgba(204,17,51,0.08)",
+                            fontFamily: "var(--font-space-grotesk)",
+                          }}
+                        >
+                          {event.city}
+                        </span>
+                      </div>
+                    </div>
                   </div>
+                    );
+                  })()}
                 </ScrollReveal>
               ))}
             </div>

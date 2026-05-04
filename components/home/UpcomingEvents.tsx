@@ -12,6 +12,7 @@ const typeColors: Record<string, string> = {
   concert:   "rgba(30,110,170,0.9)",
   collab:    "rgba(80,30,160,0.9)",
   gathering: "rgba(180,90,20,0.9)",
+  convention: "rgba(80,30,160,0.9)",
 };
 
 export default function UpcomingEvents() {

@@ -9,7 +9,7 @@ export type BandEvent = {
   ticketUrl?: string;
   detailsUrl?: string;
   comingSoon?: boolean;
-  type: "festival" | "showcase" | "concert" | "collab" | "gathering";
+  type: "festival" | "showcase" | "concert" | "collab" | "gathering" | "convention";
 };
 
 /**
@@ -21,7 +21,7 @@ export type BandEvent = {
  * 5) city is a short display label for the city/location badge.
  * 6) ticketUrl should be included whenever a public event/ticket link exists
  *    (Home event button opens this URL; otherwise it falls back to /events).
- * 7) type must be one of: festival | showcase | concert | collab | gathering.
+ * 7) type must be one of: festival | showcase | concert | collab | gathering | convention.
  * 8) description should be one concise sentence in English.
  *
  * Future update workflow:
@@ -31,22 +31,22 @@ export type BandEvent = {
 export const events: BandEvent[] = [
   {
     id: "2026-anime-otapia",
-    title: "Anime Otapia",
-    venue: "Anime Otapia",
-    city: "DMV",
+    title: "Anime Otapia 2026",
+    venue: "Montgomery County Conference Center",
+    city: "DC",
     date: "2026-01-18",
     description: "Convention performance featuring anime and game music in the DMV area.",
-    type: "festival",
+    type: "convention",
     ticketUrl: "https://anime-otapia.com/",
   },
   {
     id: "2026-vocaloid-only-night-platt-house",
-    title: "Vocaloid Only Night at Platt House",
+    title: "Vocaloid Only Live and Open Mic",
     venue: "Platt House",
     city: "Philly",
     date: "2026-01-31",
-    description: "A dedicated Vocaloid night performance at Platt House.",
-    type: "showcase",
+    description: "A dedicated Vocaloid live and open mic event at Platt House.",
+    type: "gathering",
   },
   {
     id: "2026-headline-philamoca",
@@ -60,37 +60,37 @@ export const events: BandEvent[] = [
   },
   {
     id: "2026-mikuonly-nyc",
-    title: "MikuOnly NYC",
-    venue: "MikuOnly NYC",
+    title: "Miku Only 2026",
+    venue: "Melrose Ballroom",
     city: "NYC",
     date: "2026-03-07",
     description: "Special guest performance at MikuOnly NYC.",
-    type: "festival",
+    type: "convention",
     ticketUrl: "https://www.ny-miku-only.com/",
   },
   {
     id: "2026-jrock-jpop-platt-house",
-    title: "J-Rock & J-Pop Party at Platt House, UPenn",
-    venue: "Platt House, UPenn",
+    title: "J-Rock & J-Pop Live and Open Mic",
+    venue: "Platt House",
     city: "Philly",
     date: "2026-03-15",
-    description: "J-Rock and J-Pop party set at UPenn's Platt House.",
-    type: "showcase",
+    description: "J-Rock and J-Pop live performance and open mic at Platt House.",
+    type: "gathering",
   },
   {
     id: "2026-kazha-with-human-wannabes",
     title: "Kazha w/ Human Wannabes",
-    venue: "TBA",
+    venue: "PhilaMOCA",
     city: "Philly",
     date: "2026-03-18",
     description: "Collaborative show featuring Kazha and Human Wannabes.",
-    type: "collab",
+    type: "concert",
     ticketUrl: "https://www.bandsintown.com/e/107781654?affil_code=js_www.kazha.net&app_id=js_www.kazha.net&came_from=242&utm_campaign=event&utm_medium=web&utm_source=widget",
   },
   {
     id: "2026-philadelphia-cherry-blossom-festival",
     title: "Philadelphia Cherry Blossom Festival",
-    venue: "Philadelphia Cherry Blossom Festival",
+    venue: "Fairmount Park Horticulture Center",
     city: "Philly",
     date: "2026-03-28",
     description: "Festival appearance celebrating Japanese culture, music, and spring in Philadelphia.",
@@ -100,7 +100,7 @@ export const events: BandEvent[] = [
   {
     id: "2026-philly-otaku-fest",
     title: "Philly Otaku Fest",
-    venue: "Philly Otaku Fest",
+    venue: "Cherry St Pier",
     city: "Philly",
     date: "2026-04-12",
     description: "Live set at Philly Otaku Fest featuring anime and game covers.",
@@ -108,7 +108,7 @@ export const events: BandEvent[] = [
   },
   {
     id: "2026-gamethemed-open-mic-the-lawn",
-    title: "Game-themed Live and Open Mic @ The Lawn",
+    title: "Game-themed Live and Open Mic",
     venue: "The Lawn",
     city: "Philly",
     date: "2026-05-10",
@@ -118,7 +118,7 @@ export const events: BandEvent[] = [
   },
   {
     id: "2026-full-sized-concert-off-knowneous",
-    title: "3rd Full-sized Concert w/ Off-Knowneous!",
+    title: "3rd Full-sized Concert",
     venue: "PhilaMOCA",
     city: "Philly",
     date: "2026-05-17",
@@ -158,38 +158,38 @@ export const events: BandEvent[] = [
   },
   {
     id: "2025-anime-game-live-music-party-philamoca",
-    title: "Anime & Game Live Music Party",
+    title: "1st Full-sized Concert",
     venue: "PhilaMOCA",
     city: "Philly",
     date: "2025-11-02",
-    description: "Anime and game live music party performance at PhilaMOCA.",
-    type: "showcase",
+    description: "First full-sized concert performance at PhilaMOCA.",
+    type: "concert",
   },
   {
     id: "2025-upenn-activities-fair",
-    title: "UPenn Activities Fair",
-    venue: "UPenn Activities Fair",
+    title: "UPenn Activities Fair Busking",
+    venue: "University of Pennsylvania",
     city: "Philly",
     date: "2025-08-26",
-    description: "Campus activities fair appearance at UPenn.",
-    type: "festival",
+    description: "Busking performance at the UPenn activities fair.",
+    type: "gathering",
   },
   {
     id: "2025-anime-game-live-music-party-philly",
-    title: "Anime & Game Live Music Party in Philly",
-    venue: "TBA",
+    title: "Fall Indoor Live and Open Mic",
+    venue: "Platt House",
     city: "Philly",
     date: "2025-09-21",
-    description: "Anime and game live music party in Philadelphia.",
-    type: "showcase",
+    description: "Fall indoor live performance and open mic event at Platt House.",
+    type: "gathering",
   },
   {
     id: "2025-outdoor-live-music-gathering-anime-penn",
-    title: "Outdoor Live Music Gathering (co-hosted with Anime @ Penn)",
-    venue: "TBA",
+    title: "Fall Outdoor Live and Open Mic",
+    venue: "The Lawn",
     city: "Philly",
     date: "2025-10-19",
-    description: "Outdoor live music gathering co-hosted with Anime @ Penn.",
-    type: "collab",
+    description: "Fall outdoor live performance and open mic event at The Lawn.",
+    type: "gathering",
   },
 ];
