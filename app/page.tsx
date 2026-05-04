@@ -11,9 +11,9 @@ export default function HomePage() {
   return (
     <div className="flex flex-col">
       <HeroMain />
-      <div className="h-28 md:h-44 lg:h-15" aria-hidden="true" />
+      <div className="h-10 md:h-14 lg:h-8" aria-hidden="true" />
       <UpcomingEvents />
-      <div className="h-28 md:h-44 lg:h-15" aria-hidden="true" />
+      <div className="h-10 md:h-14 lg:h-8" aria-hidden="true" />
       <WhoWeAre />
       <WherePlayed />
     </div>

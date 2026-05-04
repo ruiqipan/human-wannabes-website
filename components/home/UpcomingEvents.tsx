@@ -49,11 +49,10 @@ export default function UpcomingEvents() {
                   href={href}
                   target={isExternal ? "_blank" : undefined}
                   rel={isExternal ? "noopener noreferrer" : undefined}
-                  className="hw-mobile-only hw-card hw-card-link"
+                  className="grid md:hidden hw-card hw-card-link"
                   style={{
                     border: "1px solid rgba(204,17,51,0.28)",
                     background: "rgba(10,0,5,0.58)",
-                    display: "grid",
                     gridTemplateColumns: "auto 1px 1fr",
                     alignItems: "center",
                     gap: "0 1.25rem",
@@ -89,7 +88,7 @@ export default function UpcomingEvents() {
 
                 {/* Desktop: events-page style card */}
                 <div
-                  className="hw-desktop-only hw-card hw-card-link"
+                  className="hidden md:block hw-card hw-card-link"
                   style={{
                     background: "var(--bg-surface)",
                     border: "1px solid rgba(204,17,51,0.18)",

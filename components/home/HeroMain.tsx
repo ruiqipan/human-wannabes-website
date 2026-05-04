@@ -23,14 +23,14 @@ export default function HeroMain() {
             sizes="100vw"
             unoptimized
             className="absolute inset-0 w-full h-full object-cover pointer-events-none"
-            style={{ objectPosition: "center 24%", opacity: 0.8 }}
+            style={{ objectPosition: "center 24%", opacity: 0.95 }}
             aria-hidden
           />
           <div
             className="absolute inset-0 pointer-events-none"
             style={{
               background:
-                "linear-gradient(180deg, rgba(10,0,5,0.45) 0%, rgba(10,0,5,0.55) 35%, rgba(10,0,5,0.78) 100%)",
+                "linear-gradient(180deg, rgba(10,0,5,0.22) 0%, rgba(10,0,5,0.34) 35%, rgba(10,0,5,0.62) 100%)",
             }}
           />
         </>
@@ -84,36 +84,21 @@ export default function HeroMain() {
         </motion.div>
 
         {/* Headline */}
-        <div className="overflow-hidden mb-2 md:mb-3">
+        <div className="overflow-hidden mb-10 md:mb-12">
           <motion.div
             initial={{ y: 90, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.7, delay: 0.38, ease: [0.16, 1, 0.3, 1] }}
             style={{
               fontFamily: "var(--font-bebas)",
-              fontSize: "clamp(5rem, 17vw, 13rem)",
-              color: "var(--text-primary)",
-              letterSpacing: "0.01em",
-              lineHeight: 0.92,
-            }}
-          >
-            HUMAN
-          </motion.div>
-        </div>
-        <div className="overflow-hidden mb-10 md:mb-12">
-          <motion.div
-            initial={{ y: 90, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.7, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            style={{
-              fontFamily: "var(--font-bebas)",
-              fontSize: "clamp(5rem, 17vw, 13rem)",
+              fontSize: "clamp(2.9rem, 11.4vw, 8.75rem)",
               color: "var(--accent-cream)",
               letterSpacing: "0.01em",
               lineHeight: 0.92,
+              whiteSpace: "nowrap",
             }}
           >
-            WANNABES
+            HUMAN WANNABES
           </motion.div>
         </div>
 
@@ -143,7 +128,7 @@ export default function HeroMain() {
               fontFamily: "var(--font-space-grotesk)",
             }}
           >
-            Live Dates
+            Event Schedule
           </Link>
           <a
             href="https://www.youtube.com/playlist?list=PLdoWMpbmbJL_uFuHmBrRtHgDXGgOTo1ht"
