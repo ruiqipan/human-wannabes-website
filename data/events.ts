@@ -134,7 +134,7 @@ export const events: BandEvent[] = [
     date: "2026-05-29",
     description: "",
     type: "concert",
-    comingSoon: true,
+    ticketUrl: "https://posh.vip/e/25-hour-studio-girls-band-night?t=humanwannabesband",
   },
   {
     id: "2026-west-philly-porchfest",
