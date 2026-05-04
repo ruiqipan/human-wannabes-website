@@ -7,6 +7,8 @@ export type BandEvent = {
   time?: string;
   description: string;
   ticketUrl?: string;
+  detailsUrl?: string;
+  comingSoon?: boolean;
   type: "festival" | "showcase" | "concert" | "collab" | "gathering";
 };
 
@@ -112,6 +114,7 @@ export const events: BandEvent[] = [
     date: "2026-05-10",
     description: "Game-themed live performance and open mic event at The Lawn.",
     type: "gathering",
+    detailsUrl: "https://www.instagram.com/p/DXaCA1PgU1P/",
   },
   {
     id: "2026-full-sized-concert-off-knowneous",
@@ -131,6 +134,7 @@ export const events: BandEvent[] = [
     date: "2026-05-29",
     description: "",
     type: "concert",
+    comingSoon: true,
   },
   {
     id: "2026-west-philly-porchfest",

@@ -6,11 +6,11 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 export default function WherePlayed() {
   return (
     <section
-      className="py-36 md:py-52"
+      className="hw-page-section"
       style={{
         background: "var(--bg-surface)",
-        borderTop: "1px solid rgba(204,17,51,0.15)",
         borderBottom: "1px solid rgba(204,17,51,0.15)",
+        paddingBlock: "clamp(2rem, 3.5vw, 3.5rem)",
       }}
     >
       <div className="hw-page-container">
@@ -50,15 +50,7 @@ export default function WherePlayed() {
         </div>
 
         <div
-          aria-hidden
-          style={{
-            height: "clamp(36px, 7vw, 88px)",
-          }}
-        />
-
-        <div
-          className="pt-10 md:pt-14"
-          style={{ borderTop: "1px solid rgba(204,17,51,0.18)" }}
+          style={{ marginTop: "3rem", paddingTop: "2rem", borderTop: "1px solid rgba(204,17,51,0.18)" }}
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
           {stats.map((s, i) => (
@@ -92,13 +84,6 @@ export default function WherePlayed() {
           ))}
           </div>
         </div>
-
-        <div
-          aria-hidden
-          style={{
-            height: "clamp(44px, 7vw, 110px)",
-          }}
-        />
       </div>
     </section>
   );

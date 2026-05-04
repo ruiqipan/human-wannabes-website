@@ -136,6 +136,31 @@ export default function EventsPage() {
                         >
                           Get Tickets
                         </a>
+                      ) : event.detailsUrl ? (
+                        <a
+                          href={event.detailsUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hw-btn-red inline-flex w-full min-h-[54px] items-center justify-center text-[11px] sm:text-xs md:text-sm font-bold tracking-[0.14em] md:tracking-[0.16em] uppercase px-4 sm:px-6 md:px-7 py-3 md:py-0 mt-1 md:mt-0 md:w-auto md:self-stretch md:ml-auto md:min-h-full md:min-w-[160px] whitespace-nowrap leading-none"
+                          style={{
+                            background: "var(--accent-red)",
+                            color: "#fff",
+                            fontFamily: "var(--font-space-grotesk)",
+                          }}
+                        >
+                          Details
+                        </a>
+                      ) : event.comingSoon ? (
+                        <span
+                          className="inline-flex w-full min-h-[54px] items-center justify-center text-[11px] sm:text-xs md:text-sm font-bold tracking-[0.14em] md:tracking-[0.16em] uppercase px-4 sm:px-6 md:px-7 py-3 md:py-0 mt-1 md:mt-0 md:w-auto md:self-stretch md:ml-auto md:min-h-full md:min-w-[160px] whitespace-nowrap leading-none"
+                          style={{
+                            background: "#6b7280",
+                            color: "#fff",
+                            fontFamily: "var(--font-space-grotesk)",
+                          }}
+                        >
+                          More to come
+                        </span>
                       ) : (
                         <span />
                       )}
@@ -171,8 +196,8 @@ export default function EventsPage() {
               {past.map((event, i) => (
                 <ScrollReveal key={event.id} delay={i * 0.06}>
                   <div
-                    className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 py-4 sm:py-6 border-b"
-                    style={{ borderColor: "rgba(204,17,51,0.12)" }}
+                    className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 border-b"
+                    style={{ borderColor: "rgba(204,17,51,0.12)", paddingBlock: "0.75rem" }}
                   >
                     <span
                       className="flex-shrink-0 text-xs sm:text-sm w-auto sm:w-36 tracking-wide"

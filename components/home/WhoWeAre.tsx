@@ -4,7 +4,15 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export default function WhoWeAre() {
   return (
-    <section className="py-28 md:py-40" style={{ background: "var(--bg-base)" }}>
+    <section
+      className="hw-page-section"
+      style={{
+        background: "var(--bg-base)",
+        borderTop: "1px solid rgba(204,17,51,0.15)",
+        borderBottom: "1px solid rgba(204,17,51,0.15)",
+        paddingBlock: "clamp(2rem, 3.5vw, 3.5rem)",
+      }}
+    >
       <div className="hw-page-container grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-24 items-start">
         <ScrollReveal>
           <SectionHeading

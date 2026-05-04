@@ -45,13 +45,13 @@ function DiscordIcon() {
 export default function Footer() {
   return (
     <footer
-      className="mt-16 md:mt-24 lg:mt-28"
+      className=""
       style={{
         background: "var(--bg-surface)",
         borderTop: "1px solid rgba(204,17,51,0.2)",
       }}
     >
-      <div className="hw-page-container py-20 md:py-28">
+      <div className="hw-page-container" style={{ paddingBlock: "clamp(1.5rem, 2.5vw, 2rem)" }}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20">
           {/* Brand */}
           <div className="md:col-span-1">
@@ -135,7 +135,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t" style={{ borderColor: "rgba(204,17,51,0.15)" }}>
-        <div className="hw-page-container py-6 md:py-8 flex flex-col sm:flex-row items-center justify-between gap-2">
+        <div className="hw-page-container flex flex-col sm:flex-row items-center justify-between gap-2" style={{ paddingBlock: "0.75rem" }}>
           <p
             className="text-xs tracking-widest uppercase"
             style={{ color: "var(--text-secondary)", fontFamily: "var(--font-space-grotesk)" }}

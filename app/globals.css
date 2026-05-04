@@ -105,7 +105,7 @@ body {
 }
 
 .hw-page-section {
-  padding-block: clamp(4.5rem, 8vw, 7.5rem);
+  padding-block: clamp(2rem, 3.5vw, 3.5rem);
 }
 
 .hw-page-section-surface {

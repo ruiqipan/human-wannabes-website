@@ -10,8 +10,8 @@ export default function HeroMain() {
 
   return (
     <section
-      className="noise-bg relative min-h-[72svh] md:min-h-[78svh] flex flex-col justify-center overflow-hidden pt-24 pb-16 md:pt-28 md:pb-20"
-      style={{ background: "var(--bg-base)" }}
+      className="noise-bg relative min-h-[72svh] md:min-h-[78svh] flex flex-col overflow-hidden pt-24 pb-16 md:pt-28 md:pb-20"
+      style={{ background: "var(--bg-base)", paddingTop: "clamp(5.5rem, 9vw, 8rem)" }}
     >
       {/* Optional background image behind hero graphics/text */}
       {heroBackgroundImage && (
@@ -65,8 +65,8 @@ export default function HeroMain() {
         style={{ background: "var(--accent-cream)", opacity: 0.07 }}
       />
 
-      {/* Main content */}
-      <div className="relative z-10 w-full hw-page-container">
+      {/* Main text content */}
+      <div className="relative z-10 w-full hw-page-container flex-1 flex flex-col justify-center">
         {/* Eyebrow */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
@@ -122,13 +122,15 @@ export default function HeroMain() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.75 }}
-          className="text-sm md:text-base tracking-[0.3em] uppercase mb-16 md:mb-20"
+          className="text-sm md:text-base tracking-[0.3em] uppercase"
           style={{ color: "var(--text-secondary)", fontFamily: "var(--font-space-grotesk)" }}
         >
           Anime · Game · Vocaloid Cover Band
         </motion.p>
+      </div>
 
-        {/* CTAs */}
+      {/* CTAs — pinned to bottom of hero */}
+      <div className="relative z-10 w-full hw-page-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
