@@ -4,6 +4,7 @@ import PageHero from "@/components/layout/PageHero";
 import { createClient } from "@supabase/supabase-js";
 import type { Metadata } from "next";
 
+export const dynamic = "force-dynamic";
 export const metadata: Metadata = { title: "Photos" };
 
 type SupabasePhotoRow = {
@@ -35,8 +36,7 @@ async function getSupabasePhotos(): Promise<Parameters<typeof PhotoGrid>[0]["pho
     .select("id,image_path,caption,event_name,credits,width,height")
     .eq("is_published", true)
     .order("sort_order", { ascending: true })
-    .order("created_at", { ascending: false })
-    .limit(60);
+    .order("created_at", { ascending: false });
 
   if (error || !data) return [];
 
