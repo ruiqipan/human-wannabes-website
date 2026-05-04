@@ -34,21 +34,25 @@ export default function UpcomingEvents() {
             const href = event.ticketUrl ?? event.detailsUrl ?? "/events";
 
             return (
-              <div
+              <a
                 key={event.id}
-                className="hw-card"
+                href={href}
+                target={event.ticketUrl || event.detailsUrl ? "_blank" : undefined}
+                rel={event.ticketUrl || event.detailsUrl ? "noopener noreferrer" : undefined}
+                className="hw-card hw-card-link"
                 style={{
                   border: "1px solid rgba(204,17,51,0.28)",
                   background: "rgba(10,0,5,0.58)",
                   display: "grid",
-                  gridTemplateColumns: "auto 1px 1fr auto",
+                  gridTemplateColumns: "auto 1px 1fr",
                   alignItems: "center",
-                  gap: "0 1.75rem",
-                  padding: "1.25rem 1.5rem",
+                  gap: "0 1.25rem",
+                  padding: "1.25rem 1rem",
+                  textDecoration: "none",
                 }}
               >
                 {/* Date */}
-                <div style={{ display: "flex", flexDirection: "column", alignItems: "center", minWidth: "3.5rem" }}>
+                <div style={{ display: "flex", flexDirection: "column", alignItems: "center", minWidth: "2.25rem" }}>
                   <span
                     style={{
                       fontFamily: "var(--font-bebas)",
@@ -109,28 +113,7 @@ export default function UpcomingEvents() {
                     </span>
                   </div>
                 </div>
-
-                {/* CTA */}
-                <a
-                  href={href}
-                  target={event.ticketUrl || event.detailsUrl ? "_blank" : undefined}
-                  rel={event.ticketUrl || event.detailsUrl ? "noopener noreferrer" : undefined}
-                  className="text-xs font-semibold uppercase tracking-[0.2em]"
-                  style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    height: "2.75rem",
-                    padding: "0 1.25rem",
-                    border: "1px solid rgba(245,230,200,0.45)",
-                    color: "var(--accent-cream)",
-                    fontFamily: "var(--font-space-grotesk)",
-                    whiteSpace: "nowrap",
-                  }}
-                >
-                  {event.ticketUrl ? "Get Tickets" : event.detailsUrl ? "Details" : "Info"}
-                </a>
-              </div>
+              </a>
             );
           })}
         </div>
