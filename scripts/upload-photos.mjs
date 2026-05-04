@@ -75,6 +75,17 @@ function requireNumber(value, fieldName, index) {
   return value;
 }
 
+function getContentType(filePath) {
+  const ext = path.extname(filePath).toLowerCase();
+
+  if (ext === ".jpg" || ext === ".jpeg") return "image/jpeg";
+  if (ext === ".webp") return "image/webp";
+  if (ext === ".gif") return "image/gif";
+  if (ext === ".png") return "image/png";
+
+  return "application/octet-stream";
+}
+
 async function main() {
   const manifestArg = process.argv[2];
 
@@ -149,7 +160,7 @@ async function main() {
     const { error: uploadError } = await supabase.storage
       .from(manifest.bucket)
       .upload(item.path, buffer, {
-        contentType: "image/png",
+        contentType: getContentType(item.file),
         upsert: true,
       });
 
