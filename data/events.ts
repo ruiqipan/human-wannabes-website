@@ -10,6 +10,7 @@ export type BandEvent = {
   detailsUrl?: string;
   comingSoon?: boolean;
   type: "festival" | "showcase" | "concert" | "collab" | "gathering" | "convention";
+  posterUrl?: string;
 };
 
 /**
@@ -38,6 +39,7 @@ export const events: BandEvent[] = [
     description: "Convention performance featuring anime and game music in the DMV area.",
     type: "convention",
     ticketUrl: "https://anime-otapia.com/",
+    posterUrl: "https://mfqjhbucsxcewpsrykcg.supabase.co/storage/v1/object/public/photos/posters/anime-otapia.jpg",
   },
   {
     id: "2026-vocaloid-only-night-platt-house",
@@ -47,26 +49,29 @@ export const events: BandEvent[] = [
     date: "2026-01-31",
     description: "A dedicated Vocaloid live and open mic event at Platt House.",
     type: "gathering",
+    posterUrl: "https://mfqjhbucsxcewpsrykcg.supabase.co/storage/v1/object/public/photos/posters/vocaloid-only-platt-house.jpg",
   },
   {
     id: "2026-headline-philamoca",
-    title: "2nd Headline Show at PhilaMOCA",
+    title: "Anime & Vocaloid Live Music Party w/ Jasmine Tea Oishii",
     venue: "PhilaMOCA",
     city: "Philly",
     date: "2026-02-21",
     description: "Second headline concert show at PhilaMOCA.",
     type: "concert",
     ticketUrl: "https://www.ticketleap.events/tickets/human-wannabes/hw-feb-2026",
+    posterUrl: "https://mfqjhbucsxcewpsrykcg.supabase.co/storage/v1/object/public/photos/posters/2nd-headline-philamoca.jpg",
   },
   {
     id: "2026-mikuonly-nyc",
-    title: "Miku Only 2026",
+    title: "MikuOnly NYC 2026",
     venue: "Melrose Ballroom",
     city: "NYC",
     date: "2026-03-07",
     description: "Special guest performance at MikuOnly NYC.",
     type: "convention",
     ticketUrl: "https://www.ny-miku-only.com/",
+    posterUrl: "https://mfqjhbucsxcewpsrykcg.supabase.co/storage/v1/object/public/photos/posters/mikuonly-nyc-2026.jpg",
   },
   {
     id: "2026-jrock-jpop-platt-house",
@@ -76,6 +81,7 @@ export const events: BandEvent[] = [
     date: "2026-03-15",
     description: "J-Rock and J-Pop live performance and open mic at Platt House.",
     type: "gathering",
+    posterUrl: "https://mfqjhbucsxcewpsrykcg.supabase.co/storage/v1/object/public/photos/posters/jrock-jpop-platt-house.png",
   },
   {
     id: "2026-kazha-with-human-wannabes",
@@ -86,6 +92,7 @@ export const events: BandEvent[] = [
     description: "Collaborative show featuring Kazha and Human Wannabes.",
     type: "concert",
     ticketUrl: "https://www.bandsintown.com/e/107781654?affil_code=js_www.kazha.net&app_id=js_www.kazha.net&came_from=242&utm_campaign=event&utm_medium=web&utm_source=widget",
+    posterUrl: "https://mfqjhbucsxcewpsrykcg.supabase.co/storage/v1/object/public/photos/posters/kazha-with-human-wannabes.jpg",
   },
   {
     id: "2026-philadelphia-cherry-blossom-festival",
@@ -96,6 +103,7 @@ export const events: BandEvent[] = [
     description: "Festival appearance celebrating Japanese culture, music, and spring in Philadelphia.",
     type: "festival",
     ticketUrl: "https://linktr.ee/phillyotaku?utm_source=linktree_profile_share&ltsid=bdd7a2bd-0d48-4511-84c9-8c0c9a114a80",
+    posterUrl: "https://mfqjhbucsxcewpsrykcg.supabase.co/storage/v1/object/public/photos/posters/cherry-blossom-festival.jpg",
   },
   {
     id: "2026-philly-otaku-fest",
@@ -105,6 +113,7 @@ export const events: BandEvent[] = [
     date: "2026-04-12",
     description: "Live set at Philly Otaku Fest featuring anime and game covers.",
     type: "festival",
+    posterUrl: "https://mfqjhbucsxcewpsrykcg.supabase.co/storage/v1/object/public/photos/posters/philly-otaku-fest.jpg",
   },
   {
     id: "2026-gamethemed-open-mic-the-lawn",
@@ -115,16 +124,18 @@ export const events: BandEvent[] = [
     description: "Game-themed live performance and open mic event at The Lawn.",
     type: "gathering",
     detailsUrl: "https://www.instagram.com/p/DXaCA1PgU1P/",
+    posterUrl: "https://mfqjhbucsxcewpsrykcg.supabase.co/storage/v1/object/public/photos/posters/game-themed-open-mic.jpg",
   },
   {
     id: "2026-full-sized-concert-off-knowneous",
-    title: "3rd Full-sized Concert",
+    title: "Anime & Game Live Music Party w/ OFF-KNOWNEOUS",
     venue: "PhilaMOCA",
     city: "Philly",
     date: "2026-05-17",
     description: "Third full-sized headline concert with Off-Knowneous.",
     type: "concert",
     ticketUrl: "https://events.ticketleap.com/tickets/human-wannabes/hw-may-2026",
+    posterUrl: "https://mfqjhbucsxcewpsrykcg.supabase.co/storage/v1/object/public/photos/posters/3rd-full-sized-concert.jpg",
   },
   {
     id: "2026-girls-band-night-25hr-studio",
@@ -135,6 +146,7 @@ export const events: BandEvent[] = [
     description: "",
     type: "concert",
     ticketUrl: "https://posh.vip/e/25-hour-studio-girls-band-night?t=humanwannabesband",
+    posterUrl: "https://mfqjhbucsxcewpsrykcg.supabase.co/storage/v1/object/public/photos/posters/girls-band-night.png",
   },
   {
     id: "2026-west-philly-porchfest",
@@ -145,6 +157,7 @@ export const events: BandEvent[] = [
     description: "Community festival performance as part of West Philly PorchFest.",
     type: "festival",
     ticketUrl: "https://westphillyporchfest.com/pages",
+    posterUrl: "https://mfqjhbucsxcewpsrykcg.supabase.co/storage/v1/object/public/photos/posters/west-philly-porchfest.webp",
   },
   {
     id: "2026-anime-live-music-party-bluemoon-sanitizer",
@@ -155,6 +168,7 @@ export const events: BandEvent[] = [
     description: "Anime live music party concert with BLUEMOON SANITIZER in San Diego.",
     type: "concert",
     ticketUrl: "https://events.ticketleap.com/tickets/human-wannabes/anime-live-music-party-acl2026",
+    posterUrl: "https://mfqjhbucsxcewpsrykcg.supabase.co/storage/v1/object/public/photos/posters/bluemoon-sanitizer.png",
   },
   {
     id: "2025-anime-game-live-music-party-philamoca",
@@ -164,6 +178,7 @@ export const events: BandEvent[] = [
     date: "2025-11-02",
     description: "First full-sized concert performance at PhilaMOCA.",
     type: "concert",
+    posterUrl: "https://mfqjhbucsxcewpsrykcg.supabase.co/storage/v1/object/public/photos/posters/1st-full-sized-concert.png",
   },
   {
     id: "2025-upenn-activities-fair",
@@ -173,6 +188,7 @@ export const events: BandEvent[] = [
     date: "2025-08-26",
     description: "Busking performance at the UPenn activities fair.",
     type: "gathering",
+    posterUrl: "https://mfqjhbucsxcewpsrykcg.supabase.co/storage/v1/object/public/photos/posters/anime-games-music-club-penn.jpg",
   },
   {
     id: "2025-anime-game-live-music-party-philly",
@@ -182,6 +198,7 @@ export const events: BandEvent[] = [
     date: "2025-09-21",
     description: "Fall indoor live performance and open mic event at Platt House.",
     type: "gathering",
+    posterUrl: "https://mfqjhbucsxcewpsrykcg.supabase.co/storage/v1/object/public/photos/posters/anime-games-music-club-penn.jpg",
   },
   {
     id: "2025-outdoor-live-music-gathering-anime-penn",
@@ -191,5 +208,6 @@ export const events: BandEvent[] = [
     date: "2025-10-19",
     description: "Fall outdoor live performance and open mic event at The Lawn.",
     type: "gathering",
+    posterUrl: "https://mfqjhbucsxcewpsrykcg.supabase.co/storage/v1/object/public/photos/posters/anime-games-music-club-penn.jpg",
   },
 ];

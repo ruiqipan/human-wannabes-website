@@ -3,6 +3,8 @@ import WhoWeAre from "@/components/home/WhoWeAre";
 import WherePlayed from "@/components/home/WherePlayed";
 import UpcomingEvents from "@/components/home/UpcomingEvents";
 
+export const dynamic = "force-dynamic";
+
 export const metadata = {
   title: "Human Wannabes",
 };

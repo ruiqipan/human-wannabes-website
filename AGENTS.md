@@ -95,3 +95,71 @@ The script will:
 - Default caption: `"Human Wannabes live photo"` unless the user says otherwise.
 - Use absolute local file paths in manifests so the command works from any directory.
 - The photos metadata table is `public.photos` in Supabase.
+
+---
+
+# Event Poster Upload
+
+Use this workflow whenever attaching a poster image to an event. Posters display on the Events page and Home page event cards.
+
+## Storage location
+
+Bucket: `photos` (same as live photos), folder: `posters/`.  
+All poster paths follow the pattern `posters/<event-slug>.ext`.
+
+## Database table
+
+`public.event_posters` — one row per event. Schema: `supabase/event-posters-schema.sql`.  
+If the table does not exist yet, run that SQL file in the Supabase SQL Editor before uploading.
+
+## Upload command
+
+```bash
+node scripts/upload-event-posters.mjs path/to/manifest.json
+```
+
+The script will:
+- Upload the file to Supabase Storage under `posters/` with `upsert: true`
+- Upsert a row in `public.event_posters` keyed by `event_id`
+- Print the public URL for each uploaded poster
+
+## Manifest format
+
+```json
+{
+  "bucket": "photos",
+  "storageFolder": "posters",
+  "items": [
+    {
+      "eventId": "2026-girls-band-night-25hr-studio",
+      "file": "/absolute/path/to/poster.png",
+      "path": "posters/girls-band-night.png",
+      "width": 1536,
+      "height": 1920
+    }
+  ]
+}
+```
+
+## After upload — update `data/events.ts`
+
+Set `posterUrl` on the matching event entry to the public URL returned by the script:
+
+```ts
+{
+  id: "2026-girls-band-night-25hr-studio",
+  ...
+  posterUrl: "https://mfqjhbucsxcewpsrykcg.supabase.co/storage/v1/object/public/photos/posters/girls-band-night.png",
+}
+```
+
+The Events page and Home page will pick it up automatically — no other files need changing.
+
+## Rules for agents
+- Always use `scripts/upload-event-posters.mjs` — do not write inline upload code.
+- `eventId` must exactly match the `id` field in `data/events.ts`.
+- Use absolute local file paths in manifests.
+- Never print credentials back to the user.
+- Storage path convention: `posters/<kebab-event-title>.<ext>`.
+- Get image pixel dimensions with `sips -g pixelWidth -g pixelHeight <file>` on macOS.
+- After upload, always update `posterUrl` in `data/events.ts` — the DB row alone is not enough.

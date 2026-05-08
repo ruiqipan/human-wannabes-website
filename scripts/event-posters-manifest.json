@@ -1,0 +1,55 @@
+{
+  "bucket": "photos",
+  "storageFolder": "posters",
+  "items": [
+    {
+      "eventId": "2026-anime-live-music-party-bluemoon-sanitizer",
+      "file": "/Users/rickypan/Desktop/bluemoon sanitizer w human wannabes.png",
+      "path": "posters/bluemoon-sanitizer.png",
+      "width": 1086,
+      "height": 1448
+    },
+    {
+      "eventId": "2026-mikuonly-nyc",
+      "file": "/Users/rickypan/Desktop/MikuOnly NYC 2026.jpg",
+      "path": "posters/mikuonly-nyc-2026.jpg",
+      "width": 1080,
+      "height": 1080
+    },
+    {
+      "eventId": "2026-girls-band-night-25hr-studio",
+      "file": "/Users/rickypan/Desktop/25 Hour Studio- Girls Band Night.png",
+      "path": "posters/girls-band-night.png",
+      "width": 1536,
+      "height": 1920
+    },
+    {
+      "eventId": "2025-anime-game-live-music-party-philamoca",
+      "file": "/Users/rickypan/Desktop/1st Full-sized Concert.png",
+      "path": "posters/1st-full-sized-concert.png",
+      "width": 1280,
+      "height": 1808
+    },
+    {
+      "eventId": "2026-headline-philamoca",
+      "file": "/Users/rickypan/Desktop/2nd Headline Show at PhilaMOCA.jpg",
+      "path": "posters/2nd-headline-philamoca.jpg",
+      "width": 1280,
+      "height": 1618
+    },
+    {
+      "eventId": "2026-gamethemed-open-mic-the-lawn",
+      "file": "/Users/rickypan/Desktop/Game-themed Live and Open Mic.jpg",
+      "path": "posters/game-themed-open-mic.jpg",
+      "width": 1280,
+      "height": 1656
+    },
+    {
+      "eventId": "2026-jrock-jpop-platt-house",
+      "file": "/Users/rickypan/Desktop/J-Rock & J-Pop Live and Open Mic.png",
+      "path": "posters/jrock-jpop-platt-house.png",
+      "width": 1038,
+      "height": 1470
+    }
+  ]
+}

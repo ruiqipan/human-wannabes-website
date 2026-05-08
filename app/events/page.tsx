@@ -1,19 +1,106 @@
+import Image from "next/image";
 import { events } from "@/data/events";
-import { isPast, parseLocalDate } from "@/lib/utils";
+import { isPast, parseLocalDate, formatDate } from "@/lib/utils";
 import PageHero from "@/components/layout/PageHero";
-import ScrollReveal from "@/components/ui/ScrollReveal";
 import type { Metadata } from "next";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = { title: "Events" };
 
-const typeColors: Record<string, string> = {
-  festival: "rgba(204,17,51,0.9)",
-  showcase: "rgba(180,90,20,0.9)",
-  concert:  "rgba(30,110,170,0.9)",
-  collab:   "rgba(80,30,160,0.9)",
-  gathering: "rgba(180,90,20,0.9)",
-  convention: "rgba(80,30,160,0.9)",
-};
+const DEFAULT_POSTER = "/photos/hw.png";
+
+function EventCard({ event, past = false }: { event: (typeof events)[number]; past?: boolean }) {
+  const linkUrl = event.ticketUrl ?? event.detailsUrl;
+
+  const info = (
+    <>
+      <div className="relative aspect-[3/4] overflow-hidden">
+        <Image
+          src={event.posterUrl ?? DEFAULT_POSTER}
+          alt={event.title}
+          fill
+          className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+        />
+      </div>
+
+      <div
+        className="px-5 pt-4 pb-5 flex flex-col"
+        style={{
+          borderTop: "1px solid rgba(204,17,51,0.2)",
+          background: "var(--bg-surface)",
+        }}
+      >
+        <p
+          className="text-xs font-semibold tracking-[0.18em] uppercase"
+          style={{ color: "var(--accent-red)", fontFamily: "var(--font-space-grotesk)", marginBottom: "3px" }}
+        >
+          {formatDate(event.date)}
+          {event.time ? ` · ${event.time}` : ""}
+        </p>
+        <h3
+          className="font-normal leading-tight"
+          style={{
+            fontFamily: "var(--font-bebas)",
+            fontSize: "clamp(1.5rem, 3.5vw, 1.9rem)",
+            color: "var(--text-primary)",
+            letterSpacing: "0.03em",
+            marginBottom: "4px",
+          }}
+        >
+          {event.title}
+        </h3>
+
+        <div className="flex flex-wrap items-center gap-2">
+          <p
+            className="text-xs tracking-wide"
+            style={{ color: "var(--text-secondary)", fontFamily: "var(--font-space-grotesk)" }}
+          >
+            {event.venue !== "TBA" ? event.venue : "Venue TBA"}
+          </p>
+          <span
+            className="text-xs tracking-[0.08em] uppercase rounded-full"
+            style={{
+              color: "var(--accent-red)",
+              border: "1px solid rgba(204,17,51,0.4)",
+              background: "rgba(204,17,51,0.07)",
+              fontFamily: "var(--font-space-grotesk)",
+              padding: "2px 12px",
+            }}
+          >
+            {event.city}
+          </span>
+        </div>
+
+      </div>
+    </>
+  );
+
+  const cardStyle: React.CSSProperties = {
+    border: "1px solid rgba(204,17,51,0.18)",
+  };
+
+  if (!past && linkUrl) {
+    return (
+      <a
+        href={linkUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group block hw-card overflow-hidden transition-shadow duration-300 hover:shadow-[0_8px_32px_rgba(0,0,0,0.45)]"
+        style={cardStyle}
+      >
+        {info}
+      </a>
+    );
+  }
+
+  return (
+    <div className="group hw-card overflow-hidden" style={cardStyle}>
+      {info}
+    </div>
+  );
+}
 
 export default function EventsPage() {
   const upcoming = events
@@ -33,246 +120,37 @@ export default function EventsPage() {
       />
 
       <div className="hw-page-container hw-page-section">
-        {/* Upcoming */}
         {upcoming.length > 0 && (
           <section>
-            <ScrollReveal>
-              <h2
-                className="text-xs tracking-[0.4em] uppercase mb-8"
-                style={{ color: "var(--accent-red)", fontFamily: "var(--font-space-grotesk)" }}
-              >
-                Upcoming
-              </h2>
-            </ScrollReveal>
-            <div className="flex flex-col gap-4 sm:gap-6">
-              {upcoming.map((event, i) => (
-                <ScrollReveal key={event.id} delay={i * 0.07}>
-                  {(() => {
-                    const eventDate = parseLocalDate(event.date);
-
-                    return (
-                  <div
-                    className="hw-card flex flex-col sm:flex-row gap-5 md:gap-8 p-5 sm:p-7 md:p-10"
-                    style={{
-                      background: "var(--bg-surface)",
-                      border: "1px solid rgba(204,17,51,0.18)",
-                    }}
-                  >
-                    {/* Date */}
-                    <div className="flex-shrink-0 sm:w-24 text-left sm:text-left">
-                      <span
-                        className="block leading-none font-normal"
-                        style={{ fontFamily: "var(--font-bebas)", fontSize: "clamp(2.6rem, 10vw, 3.4rem)", color: "var(--accent-red)" }}
-                      >
-                        {eventDate.getDate()}
-                      </span>
-                      <span
-                        className="block text-xs tracking-widest uppercase"
-                        style={{ color: "var(--text-secondary)", fontFamily: "var(--font-space-grotesk)" }}
-                      >
-                        {eventDate.toLocaleString("en-US", { month: "short" })} {eventDate.getFullYear()}
-                      </span>
-                    </div>
-
-                    <div className="hidden sm:block w-px self-stretch" style={{ background: "rgba(204,17,51,0.22)" }} />
-
-                    {/* Info + action */}
-                    <div className="flex-1 min-w-0 flex flex-col md:flex-row md:items-center md:justify-between gap-5 md:gap-8">
-                      <div className="min-w-0">
-                      <div className="flex flex-col items-start gap-2 mb-3 sm:flex-row sm:flex-wrap sm:items-start sm:gap-3">
-                        <h3
-                          className="font-normal leading-tight text-balance"
-                          style={{
-                            fontFamily: "var(--font-bebas)",
-                            fontSize: "clamp(1.45rem, 7.2vw, 2.2rem)",
-                            color: "var(--text-primary)",
-                            letterSpacing: "0.02em",
-                          }}
-                        >
-                          {event.title}
-                        </h3>
-                        <span
-                          className="text-[10px] sm:text-xs tracking-[0.13em] sm:tracking-[0.15em] uppercase px-2.5 py-1 flex-shrink-0"
-                          style={{
-                            fontFamily: "var(--font-space-grotesk)",
-                            background: typeColors[event.type] ?? "rgba(204,17,51,0.9)",
-                            color: "#fff",
-                          }}
-                        >
-                          {event.type}
-                        </span>
-                      </div>
-                      <div className="mb-3 flex flex-wrap items-center gap-2">
-                        <p
-                          className="text-[11px] sm:text-xs tracking-wide"
-                          style={{ color: "var(--accent-red)", fontFamily: "var(--font-space-grotesk)" }}
-                        >
-                          {event.venue !== "TBA" ? event.venue : "Venue TBA"}
-                          {event.time && ` · ${event.time}`}
-                        </p>
-                        <span
-                          className="inline-flex items-center justify-center min-w-[74px] text-[10px] sm:text-xs tracking-[0.07em] sm:tracking-[0.08em] uppercase px-2.5 sm:px-3 py-1.5 rounded-full whitespace-nowrap"
-                          style={{
-                            color: "var(--accent-red)",
-                            border: "1px solid rgba(204,17,51,0.45)",
-                            background: "rgba(204,17,51,0.08)",
-                            fontFamily: "var(--font-space-grotesk)",
-                          }}
-                        >
-                          {event.city}
-                        </span>
-                      </div>
-                      </div>
-                      {event.ticketUrl ? (
-                        <a
-                          href={event.ticketUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="hw-btn-red inline-flex w-full min-h-[54px] items-center justify-center text-[11px] sm:text-xs md:text-sm font-bold tracking-[0.14em] md:tracking-[0.16em] uppercase px-4 sm:px-6 md:px-7 py-3 md:py-0 mt-1 md:mt-0 md:w-auto md:self-stretch md:ml-auto md:min-h-full md:min-w-[160px] whitespace-nowrap leading-none"
-                          style={{
-                            background: "var(--accent-red)",
-                            color: "#fff",
-                            fontFamily: "var(--font-space-grotesk)",
-                          }}
-                        >
-                          Get Tickets
-                        </a>
-                      ) : event.detailsUrl ? (
-                        <a
-                          href={event.detailsUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="hw-btn-red inline-flex w-full min-h-[54px] items-center justify-center text-[11px] sm:text-xs md:text-sm font-bold tracking-[0.14em] md:tracking-[0.16em] uppercase px-4 sm:px-6 md:px-7 py-3 md:py-0 mt-1 md:mt-0 md:w-auto md:self-stretch md:ml-auto md:min-h-full md:min-w-[160px] whitespace-nowrap leading-none"
-                          style={{
-                            background: "var(--accent-red)",
-                            color: "#fff",
-                            fontFamily: "var(--font-space-grotesk)",
-                          }}
-                        >
-                          Details
-                        </a>
-                      ) : event.comingSoon ? (
-                        <span
-                          className="inline-flex w-full min-h-[54px] items-center justify-center text-[11px] sm:text-xs md:text-sm font-bold tracking-[0.14em] md:tracking-[0.16em] uppercase px-4 sm:px-6 md:px-7 py-3 md:py-0 mt-1 md:mt-0 md:w-auto md:self-stretch md:ml-auto md:min-h-full md:min-w-[160px] whitespace-nowrap leading-none"
-                          style={{
-                            background: "#6b7280",
-                            color: "#fff",
-                            fontFamily: "var(--font-space-grotesk)",
-                          }}
-                        >
-                          More to come
-                        </span>
-                      ) : (
-                        <span />
-                      )}
-                    </div>
-                  </div>
-                    );
-                  })()}
-                </ScrollReveal>
+            <h2
+              className="text-xs tracking-[0.4em] uppercase mb-8"
+              style={{ color: "var(--accent-red)", fontFamily: "var(--font-space-grotesk)" }}
+            >
+              Upcoming
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+              {upcoming.map((event) => (
+                <EventCard key={event.id} event={event} />
               ))}
             </div>
           </section>
         )}
 
         {upcoming.length > 0 && past.length > 0 && (
-          <div
-            aria-hidden
-            style={{ height: "clamp(56px, 8vw, 120px)" }}
-          />
+          <div aria-hidden style={{ height: "clamp(56px, 8vw, 120px)" }} />
         )}
 
-        {/* Past */}
         {past.length > 0 && (
           <section>
-            <ScrollReveal>
-              <h2
-                className="text-xs tracking-[0.4em] uppercase mb-8"
-                style={{ color: "var(--text-secondary)", fontFamily: "var(--font-space-grotesk)" }}
-              >
-                Past Events
-              </h2>
-            </ScrollReveal>
-            <div className="flex flex-col gap-4 sm:gap-6">
-              {past.map((event, i) => (
-                <ScrollReveal key={event.id} delay={i * 0.06}>
-                  {(() => {
-                    const eventDate = parseLocalDate(event.date);
-
-                    return (
-                  <div
-                    className="hw-card flex flex-col sm:flex-row gap-5 md:gap-8 p-5 sm:p-7 md:p-10"
-                    style={{
-                      background: "var(--bg-surface)",
-                      border: "1px solid rgba(204,17,51,0.18)",
-                    }}
-                  >
-                    <div className="flex-shrink-0 sm:w-24 text-left sm:text-left">
-                      <span
-                        className="block leading-none font-normal"
-                        style={{ fontFamily: "var(--font-bebas)", fontSize: "clamp(2.6rem, 10vw, 3.4rem)", color: "var(--accent-red)" }}
-                      >
-                        {eventDate.getDate()}
-                      </span>
-                      <span
-                        className="block text-xs tracking-widest uppercase"
-                        style={{ color: "var(--text-secondary)", fontFamily: "var(--font-space-grotesk)" }}
-                      >
-                        {eventDate.toLocaleString("en-US", { month: "short" })} {eventDate.getFullYear()}
-                      </span>
-                    </div>
-
-                    <div className="hidden sm:block w-px self-stretch" style={{ background: "rgba(204,17,51,0.22)" }} />
-
-                    <div className="flex-1 min-w-0 flex flex-col justify-center">
-                      <div className="flex flex-col items-start gap-2 mb-3 sm:flex-row sm:flex-wrap sm:items-start sm:gap-3">
-                        <h3
-                          className="font-normal leading-tight text-balance"
-                          style={{
-                            fontFamily: "var(--font-bebas)",
-                            fontSize: "clamp(1.45rem, 7.2vw, 2.2rem)",
-                            color: "var(--text-primary)",
-                            letterSpacing: "0.02em",
-                          }}
-                        >
-                          {event.title}
-                        </h3>
-                        <span
-                          className="text-[10px] sm:text-xs tracking-[0.13em] sm:tracking-[0.15em] uppercase px-2.5 py-1 flex-shrink-0"
-                          style={{
-                            fontFamily: "var(--font-space-grotesk)",
-                            background: typeColors[event.type] ?? "rgba(204,17,51,0.9)",
-                            color: "#fff",
-                          }}
-                        >
-                          {event.type}
-                        </span>
-                      </div>
-                      <div className="mb-3 flex flex-wrap items-center gap-2">
-                        <p
-                          className="text-[11px] sm:text-xs tracking-wide"
-                          style={{ color: "var(--accent-red)", fontFamily: "var(--font-space-grotesk)" }}
-                        >
-                          {event.venue !== "TBA" ? event.venue : "Venue TBA"}
-                          {event.time && ` Â· ${event.time}`}
-                        </p>
-                        <span
-                          className="inline-flex items-center justify-center min-w-[74px] text-[10px] sm:text-xs tracking-[0.07em] sm:tracking-[0.08em] uppercase px-2.5 sm:px-3 py-1.5 rounded-full whitespace-nowrap"
-                          style={{
-                            color: "var(--accent-red)",
-                            border: "1px solid rgba(204,17,51,0.45)",
-                            background: "rgba(204,17,51,0.08)",
-                            fontFamily: "var(--font-space-grotesk)",
-                          }}
-                        >
-                          {event.city}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                    );
-                  })()}
-                </ScrollReveal>
+            <h2
+              className="text-xs tracking-[0.4em] uppercase mb-8"
+              style={{ color: "var(--text-secondary)", fontFamily: "var(--font-space-grotesk)" }}
+            >
+              Past Events
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+              {past.map((event) => (
+                <EventCard key={event.id} event={event} past />
               ))}
             </div>
           </section>
