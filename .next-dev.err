@@ -1,0 +1,4 @@
+[browser] Image with src "https://mfqjhbucsxcewpsrykcg.supabase.co/storage/v1/object/public/photos/imported/DSCF3854.JPG" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[browser] Image with src "https://mfqjhbucsxcewpsrykcg.supabase.co/storage/v1/object/public/photos/imported/DSCF3854.JPG" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading

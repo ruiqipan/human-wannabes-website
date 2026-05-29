@@ -1,8 +1,10 @@
-import { bandDescription } from "@/data/band-info";
+import { bandDescription, hazStudioUrl } from "@/data/band-info";
 import SectionHeading from "@/components/ui/SectionHeading";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export default function WhoWeAre() {
+  const [descriptionBeforeHaz, descriptionAfterHaz] = bandDescription.split("Haz Studio");
+
   return (
     <section
       className="hw-page-section"
@@ -28,7 +30,16 @@ export default function WhoWeAre() {
               className="text-base leading-relaxed mb-6"
               style={{ color: "var(--text-secondary)", fontFamily: "var(--font-space-grotesk)" }}
             >
-              {bandDescription}
+              {descriptionBeforeHaz}
+              <a
+                href={hazStudioUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hw-link font-semibold text-[var(--accent-cream)] underline decoration-[var(--accent-red)] underline-offset-4"
+              >
+                Haz Studio
+              </a>
+              {descriptionAfterHaz}
             </p>
           </div>
         </ScrollReveal>

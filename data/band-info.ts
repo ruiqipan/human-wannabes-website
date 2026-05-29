@@ -15,6 +15,7 @@ export const socialLinks = {
 };
 
 export const youtubePlaylistId = "PLdoWMpbmbJL_uFuHmBrRtHgDXGgOTo1ht";
+export const hazStudioUrl = "https://space.bilibili.com/483770554";
 
 const supabaseUrl =
   process.env.NEXT_PUBLIC_SUPABASE_URL ?? "https://mfqjhbucsxcewpsrykcg.supabase.co";

@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
@@ -7,6 +8,7 @@ import { heroBackgroundImageCandidates, socialLinks } from "@/data/band-info";
 
 export default function HeroMain() {
   const heroBackgroundImage = heroBackgroundImageCandidates[0];
+  const [isWeChatOpen, setIsWeChatOpen] = useState(false);
 
   return (
     <section
@@ -152,8 +154,65 @@ export default function HeroMain() {
           >
             Join Discord
           </a>
+          <button
+            type="button"
+            onClick={() => setIsWeChatOpen(true)}
+            className="hw-btn-ghost inline-flex h-14 w-full items-center justify-center whitespace-nowrap border px-5 text-center text-xs font-semibold uppercase leading-none tracking-[0.18em] text-[var(--accent-cream)] sm:min-h-[52px] sm:w-auto sm:px-8 sm:text-sm sm:tracking-widest md:min-w-[220px] md:border-[var(--accent-red)] md:bg-white md:text-[var(--accent-red)]"
+            style={{
+              fontFamily: "var(--font-space-grotesk)",
+            }}
+          >
+            Join WeChat
+          </button>
         </motion.div>
       </div>
+
+      {isWeChatOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/75 p-5"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="wechat-dialog-title"
+          onClick={() => setIsWeChatOpen(false)}
+        >
+          <div
+            className="w-full max-w-[360px] border border-[rgba(245,230,200,0.22)] bg-[var(--bg-surface)] p-5 text-center shadow-2xl"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <h2
+              id="wechat-dialog-title"
+              className="text-sm font-semibold uppercase tracking-[0.22em] text-[var(--accent-cream)]"
+              style={{ fontFamily: "var(--font-space-grotesk)" }}
+            >
+              Join WeChat
+            </h2>
+            <div className="mt-5 overflow-hidden bg-white p-3">
+              <Image
+                src="/photos/wechat-qr.jpg"
+                alt="WeChat QR code for Dr-Haz"
+                width={700}
+                height={700}
+                className="h-auto w-full"
+                unoptimized
+              />
+            </div>
+            <p
+              className="mt-5 text-sm leading-6 text-[var(--text-secondary)]"
+              style={{ fontFamily: "var(--font-space-grotesk)" }}
+            >
+              Add Dr-Haz as a contact to join the audience group chat.
+            </p>
+            <button
+              type="button"
+              onClick={() => setIsWeChatOpen(false)}
+              className="mt-5 inline-flex h-11 w-full items-center justify-center border border-[var(--accent-red)] bg-[var(--accent-red)] px-5 text-xs font-semibold uppercase tracking-[0.18em] text-white"
+              style={{ fontFamily: "var(--font-space-grotesk)" }}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
