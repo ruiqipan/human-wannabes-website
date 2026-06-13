@@ -160,6 +160,17 @@ export const events: BandEvent[] = [
     posterUrl: "https://mfqjhbucsxcewpsrykcg.supabase.co/storage/v1/object/public/photos/posters/west-philly-porchfest.webp",
   },
   {
+    id: "2026-ultimate-anime-band-live",
+    title: "The Ultimate Anime Band Live",
+    venue: "PhilaMOCA",
+    city: "Philly",
+    date: "2026-11-07",
+    description: "Fourth headline anime and game live music party presented by Human Wannabes.",
+    type: "concert",
+    ticketUrl: "https://events.ticketleap.com/tickets/human-wannabes/human-wannabes-nov-2026-4th-anime-game-live-music-party",
+    posterUrl: "https://mfqjhbucsxcewpsrykcg.supabase.co/storage/v1/object/public/photos/posters/ultimate-anime-band-live.jpg",
+  },
+  {
     id: "2026-anime-live-music-party-bluemoon-sanitizer",
     title: "Anime Live Music Party W/ BLUEMOON SANITIZER",
     venue: "Rock and Roll San Diego",
