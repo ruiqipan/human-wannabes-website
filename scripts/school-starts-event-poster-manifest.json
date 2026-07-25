@@ -1,0 +1,13 @@
+{
+  "bucket": "photos",
+  "storageFolder": "posters",
+  "items": [
+    {
+      "eventId": "2026-school-starts-anime-band-live",
+      "file": "C:\\Users\\z_har\\Downloads\\poster-26-8.png",
+      "path": "posters/school-starts-anime-band-live.png",
+      "width": 1103,
+      "height": 1426
+    }
+  ]
+}

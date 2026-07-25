@@ -1,0 +1,13 @@
+{
+  "bucket": "photos",
+  "storageFolder": "posters",
+  "items": [
+    {
+      "eventId": "2026-silicon-valley-anime-music-madness",
+      "file": "C:\\Users\\z_har\\Downloads\\poster-26-10.png",
+      "path": "posters/silicon-valley-anime-music-madness.png",
+      "width": 1103,
+      "height": 1426
+    }
+  ]
+}
