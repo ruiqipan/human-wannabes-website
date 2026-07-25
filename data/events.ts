@@ -165,7 +165,6 @@ export const events: BandEvent[] = [
     venue: "34th & Walnut St",
     city: "Philly",
     date: "2026-08-25",
-    time: "4:00 PM",
     description: "A back-to-school anime band performance in University City.",
     type: "showcase",
     posterUrl: "https://mfqjhbucsxcewpsrykcg.supabase.co/storage/v1/object/public/photos/posters/school-starts-anime-band-live.png",
