@@ -161,7 +161,7 @@ export const events: BandEvent[] = [
   },
   {
     id: "2026-school-starts-anime-band-live",
-    title: "School Starts! Anime Band Live",
+    title: "School Starts! Anime Busking",
     venue: "34th & Walnut St",
     city: "Philly",
     date: "2026-08-25",
@@ -177,6 +177,7 @@ export const events: BandEvent[] = [
     date: "2026-10-02",
     description: "An anime music showcase at Quarter Note in Sunnyvale.",
     type: "showcase",
+    ticketUrl: "https://events.ticketleap.com/tickets/human-wannabes/silicon-valley-anime-music-madness",
     posterUrl: "https://mfqjhbucsxcewpsrykcg.supabase.co/storage/v1/object/public/photos/posters/silicon-valley-anime-music-madness.png",
   },
   {
