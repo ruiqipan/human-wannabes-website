@@ -128,7 +128,7 @@ export const events: BandEvent[] = [
   },
   {
     id: "2026-full-sized-concert-off-knowneous",
-    title: "THE 3RD HUMAN WANNABES LIVE",
+    title: "THE 3RD HUMAN WANNABES LIVE W/ OFF-KNOWNEOUS",
     venue: "PhilaMOCA",
     city: "Philly",
     date: "2026-05-17",
