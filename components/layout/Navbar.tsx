@@ -13,6 +13,7 @@ const navLinks = [
   { href: "/video", label: "Video" },
   { href: "/music", label: "Music" },
   { href: "/photos", label: "Photos" },
+  { href: "/contact", label: "Contact" },
 ];
 
 function InstagramIcon() {
@@ -117,7 +118,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop links */}
-          <div className="hidden md:flex items-center gap-8 lg:gap-10">
+          <div className="hidden md:flex items-center gap-5 lg:gap-8">
             {navLinks.map((l) => {
               const active = pathname === l.href;
               return (
@@ -145,7 +146,7 @@ export default function Navbar() {
 
           {/* Social + hamburger */}
           <div className="flex items-center gap-5">
-            <div className="hidden sm:flex items-center gap-4">
+            <div className="hidden lg:flex items-center gap-4">
               <a
                 href={socialLinks.instagram}
                 target="_blank"
