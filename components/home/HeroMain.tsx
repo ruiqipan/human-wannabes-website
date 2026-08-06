@@ -69,51 +69,72 @@ export default function HeroMain() {
 
       {/* Main content */}
       <div className="relative z-10 w-full hw-page-container flex-1 flex flex-col justify-center pb-16 md:pb-24">
-        {/* Eyebrow */}
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="mb-7 md:mb-9"
-        >
-          <span
-            className="block text-xs tracking-[0.5em] uppercase mb-3"
-            style={{ color: "var(--text-secondary)", fontFamily: "var(--font-space-grotesk)" }}
-          >
-            Philadelphia · Est. 2025
-          </span>
-          <div className="w-12 h-px" style={{ background: "var(--accent-red)" }} />
-        </motion.div>
-
-        {/* Headline */}
-        <div className="overflow-hidden mb-10 md:mb-12">
+        <div className="flex items-center gap-4 sm:gap-6 md:gap-9">
           <motion.div
-            initial={{ y: 90, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.7, delay: 0.38, ease: [0.16, 1, 0.3, 1] }}
-            style={{
-              fontFamily: "var(--font-bebas)",
-              fontSize: "clamp(2.9rem, 11.4vw, 8.75rem)",
-              color: "var(--accent-cream)",
-              letterSpacing: "0.01em",
-              lineHeight: 0.92,
-              whiteSpace: "nowrap",
-            }}
+            initial={{ opacity: 0, x: -24 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="shrink-0"
           >
-            HUMAN WANNABES
+            <Image
+              src="/photos/hw_full_logo_transparent.png"
+              alt="Human Wannabes logo"
+              width={6000}
+              height={6000}
+              sizes="(max-width: 640px) 88px, (max-width: 1024px) 128px, 176px"
+              className="h-auto w-[clamp(5.5rem,14vw,11rem)] object-contain"
+              unoptimized
+            />
           </motion.div>
-        </div>
 
-        {/* Sub-label */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.75 }}
-          className="text-sm md:text-base tracking-[0.3em] uppercase"
-          style={{ color: "var(--text-secondary)", fontFamily: "var(--font-space-grotesk)" }}
-        >
-          Anime · Game · Vocaloid Cover Band
-        </motion.p>
+          <div className="min-w-0">
+            {/* Eyebrow */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="mb-4 md:mb-6"
+            >
+              <span
+                className="block text-[0.6rem] tracking-[0.3em] uppercase mb-3 sm:text-xs sm:tracking-[0.5em]"
+                style={{ color: "var(--text-secondary)", fontFamily: "var(--font-space-grotesk)" }}
+              >
+                Philadelphia · Est. 2025
+              </span>
+              <div className="w-12 h-px" style={{ background: "var(--accent-red)" }} />
+            </motion.div>
+
+            {/* Headline */}
+            <div className="overflow-hidden mb-5 md:mb-7">
+              <motion.div
+                initial={{ y: 90, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.7, delay: 0.38, ease: [0.16, 1, 0.3, 1] }}
+                style={{
+                  fontFamily: "var(--font-bebas)",
+                  fontSize: "clamp(2.25rem, 8.8vw, 7rem)",
+                  color: "var(--accent-cream)",
+                  letterSpacing: "0.01em",
+                  lineHeight: 0.92,
+                  whiteSpace: "nowrap",
+                }}
+              >
+                HUMAN WANNABES
+              </motion.div>
+            </div>
+
+            {/* Sub-label */}
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.75 }}
+              className="text-[0.6rem] tracking-[0.16em] uppercase sm:text-sm sm:tracking-[0.3em] md:text-base"
+              style={{ color: "var(--text-secondary)", fontFamily: "var(--font-space-grotesk)" }}
+            >
+              Anime · Game · Vocaloid Cover Band
+            </motion.p>
+          </div>
+        </div>
 
         {/* CTAs */}
         <motion.div

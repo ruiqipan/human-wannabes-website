@@ -92,7 +92,7 @@ export default function Navbar() {
             onClick={() => setOpen(false)}
           >
             <Image
-              src="/photos/hw_full_logo_transparent.png"
+              src="/photos/hw-simp-logo-white.png"
               alt=""
               width={6000}
               height={6000}
