@@ -1,8 +1,8 @@
 export const stats = [
+  { value: "400+",  label: "Local Fans" },
+  { value: "100+",  label: "Avg. Event Turnout" },
   { value: "60K+",  label: "Online Following" },
   { value: "300K+", label: "Online Views" },
-  { value: "100+",  label: "Avg. Monthly Turnout" },
-  { value: "400+",  label: "Local Fans" },
 ];
 
 export const sponsors = ["Xvive", "NUX", "Mackie"];
@@ -26,12 +26,12 @@ export const heroBackgroundImageCandidates = [
 ];
 
 export const bandDescription =
-  "The Human Wannabes is a Philadelphia-based cover band performing anime, game, and vocaloid music — founded by music influencer Haz Studio. Since August 2025, we've built a local fan community of 400+ and host monthly live events with 100+ average turnout. Our videos have accumulated 300K+ views online. We are sponsored by Xvive, NUX, Mackie, and Direct Sound.";
+  "The Human Wannabes are a highly active, semi-professional cover band performing anime, game, and vocaloid music, founded by music influencer Haz Studio. Since August 2025, we've built a local fan community of 400+ in Philadelphia. We consistently host and and perform locally and nationally at live music events with 100+ turnout. Our videos have accumulated 300K+ views online. We are sponsored by Xvive, NUX, Mackie, and Direct Sound. We are commissioned by video game campaigns like Persona.";
 
 export const conventions = [
-  "5+ local concerts",
-  "Anime Otapia 2026",
-  "Miku Only 2026",
+  "Major anime concerts, Philadelphia",
+  "Anime Otapia 2026, DC",
+  "Miku Only 2026, NYC",
   "Philadelphia Cherry Blossom Festival 2026",
   "Philly OtakuFest 2026",
   "Persona 30th Anniversary",
