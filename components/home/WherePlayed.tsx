@@ -1,4 +1,5 @@
 import { conventions } from "@/data/band-info";
+import Link from "next/link";
 import SectionHeading from "@/components/ui/SectionHeading";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
@@ -47,6 +48,25 @@ export default function WherePlayed() {
             </ScrollReveal>
           ))}
         </div>
+
+        <ScrollReveal delay={0.12}>
+          <p
+            className="mt-6 md:mt-7 text-sm md:text-base leading-relaxed max-w-2xl"
+            style={{
+              color: "var(--text-secondary)",
+              fontFamily: "var(--font-space-grotesk)",
+            }}
+          >
+            ... and{" "}
+            <Link
+              href="/events"
+              className="hw-link underline decoration-[var(--accent-red)] underline-offset-4"
+            >
+              much more
+            </Link>
+            .
+          </p>
+        </ScrollReveal>
 
       </div>
     </section>

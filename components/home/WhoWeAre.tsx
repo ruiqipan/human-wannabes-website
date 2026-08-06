@@ -20,7 +20,7 @@ export default function WhoWeAre() {
           <SectionHeading
             eyebrow="The Band"
             title="Who We Are"
-            subtitle="Bringing anime, game, and vocaloid music to life in the heart of Philadelphia."
+            subtitle="Bringing anime, game, and vocaloid music to life in Philadelphia, New York, DC, and beyond."
           />
         </ScrollReveal>
 
