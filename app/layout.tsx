@@ -1,14 +1,17 @@
 import type { Metadata, Viewport } from "next";
-import { Orbitron, Bebas_Neue, Space_Grotesk, Inter } from "next/font/google";
+import { Bebas_Neue, Space_Grotesk, Inter } from "next/font/google";
+import localFont from "next/font/local";
 import { Analytics } from "@vercel/analytics/next";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import "./globals.css";
 
-const orbitron = Orbitron({
-  subsets: ["latin"],
+const orbitron = localFont({
+  src: [
+    { path: "./fonts/orbitron-700.woff2", weight: "700", style: "normal" },
+    { path: "./fonts/orbitron-900.woff2", weight: "900", style: "normal" },
+  ],
   variable: "--font-orbitron",
-  weight: ["700", "900"],
   display: "swap",
 });
 
