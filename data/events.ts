@@ -192,6 +192,16 @@ export const events: BandEvent[] = [
     posterUrl: "https://mfqjhbucsxcewpsrykcg.supabase.co/storage/v1/object/public/photos/posters/ultimate-anime-band-live.jpg",
   },
   {
+    id: "2026-girls-band-night-ii-25hr-studio",
+    title: "Girls Band Night II w/ 25HR Studio",
+    venue: "21-38 44th Rd",
+    city: "NYC",
+    date: "2026-12-06",
+    description: "Girls Band Night returns to 25HR Studio in New York City.",
+    type: "collab",
+    comingSoon: true,
+  },
+  {
     id: "2026-anime-live-music-party-bluemoon-sanitizer",
     title: "Anime Live Music Party W/ BLUEMOON SANITIZER",
     venue: "Rock and Roll San Diego",

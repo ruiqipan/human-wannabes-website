@@ -16,13 +16,26 @@ function EventCard({ event, past = false }: { event: (typeof events)[number]; pa
   const info = (
     <>
       <div className="relative aspect-[3/4] overflow-hidden">
-        <Image
-          src={event.posterUrl ?? DEFAULT_POSTER}
-          alt={event.title}
-          fill
-          className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-        />
+        {event.comingSoon ? (
+          <div
+            className="absolute inset-0 flex items-center justify-center border text-xs uppercase tracking-[0.3em]"
+            style={{
+              color: "var(--text-secondary)",
+              borderColor: "rgba(204,17,51,0.35)",
+              fontFamily: "var(--font-space-grotesk)",
+            }}
+          >
+            Coming Soon
+          </div>
+        ) : (
+          <Image
+            src={event.posterUrl ?? DEFAULT_POSTER}
+            alt={event.title}
+            fill
+            className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          />
+        )}
       </div>
 
       <div
