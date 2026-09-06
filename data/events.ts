@@ -170,6 +170,16 @@ export const events: BandEvent[] = [
     posterUrl: "https://mfqjhbucsxcewpsrykcg.supabase.co/storage/v1/object/public/photos/posters/school-starts-anime-band-live.png",
   },
   {
+    id: "2026-fall-outdoor-live-open-mic",
+    title: "Fall Outdoor Live and Open Mic",
+    venue: "The Lawn",
+    city: "Philly",
+    date: "2026-09-13",
+    description: "Fall outdoor live performance and open mic event at The Lawn.",
+    type: "gathering",
+    posterUrl: "https://mfqjhbucsxcewpsrykcg.supabase.co/storage/v1/object/public/photos/posters/fall-outdoor-live-open-mic.png",
+  },
+  {
     id: "2026-silicon-valley-anime-music-madness",
     title: "Silicon Valley Anime Music Madness w/ Star Tune",
     venue: "Quarter Note",
