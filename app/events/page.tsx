@@ -12,6 +12,7 @@ const DEFAULT_POSTER = "/photos/hw.png";
 
 function EventCard({ event, past = false }: { event: (typeof events)[number]; past?: boolean }) {
   const linkUrl = event.ticketUrl ?? event.detailsUrl;
+  const isLongTitle = event.title.length > 52;
 
   const info = (
     <>
@@ -56,9 +57,9 @@ function EventCard({ event, past = false }: { event: (typeof events)[number]; pa
           className="font-normal leading-tight"
           style={{
             fontFamily: "var(--font-bebas)",
-            fontSize: "clamp(1.5rem, 3.5vw, 1.9rem)",
+            fontSize: isLongTitle ? "clamp(1.28rem, 3vw, 1.62rem)" : "clamp(1.5rem, 3.5vw, 1.9rem)",
             color: "var(--text-primary)",
-            letterSpacing: "0.03em",
+            letterSpacing: 0,
             marginBottom: "4px",
           }}
         >

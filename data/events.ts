@@ -181,7 +181,7 @@ export const events: BandEvent[] = [
   },
   {
     id: "2026-silicon-valley-anime-music-madness",
-    title: "Silicon Valley Anime Music Madness w/ Star Tune",
+    title: "Silicon Valley Anime Music Madness w/ Take Turns, Star Tune",
     venue: "Quarter Note",
     city: "Bay Area",
     date: "2026-10-02",
