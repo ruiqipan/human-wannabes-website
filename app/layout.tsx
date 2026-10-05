@@ -1,16 +1,9 @@
 import type { Metadata, Viewport } from "next";
-import { Orbitron, Bebas_Neue, Space_Grotesk, Inter } from "next/font/google";
+import { Bebas_Neue, Space_Grotesk, Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import "./globals.css";
-
-const orbitron = Orbitron({
-  subsets: ["latin"],
-  variable: "--font-orbitron",
-  weight: ["700", "900"],
-  display: "swap",
-});
 
 const bebasNeue = Bebas_Neue({
   subsets: ["latin"],
@@ -56,7 +49,7 @@ export default function RootLayout({
       lang="en"
       data-theme="c"
       data-scroll-behavior="smooth"
-      className={`${orbitron.variable} ${bebasNeue.variable} ${spaceGrotesk.variable} ${inter.variable}`}
+      className={`${bebasNeue.variable} ${spaceGrotesk.variable} ${inter.variable}`}
     >
       <body className="flex flex-col min-h-screen" style={{ background: "var(--bg-base)" }}>
         <Navbar />

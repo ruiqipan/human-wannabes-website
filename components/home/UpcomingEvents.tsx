@@ -30,6 +30,7 @@ export default function UpcomingEvents() {
           {upcoming.map((event) => {
             const linkUrl = event.ticketUrl ?? event.detailsUrl ?? "/events";
             const isExternal = !!(event.ticketUrl || event.detailsUrl);
+            const isLongTitle = event.title.length > 52;
             const cardStyle: React.CSSProperties = {
               border: "1px solid rgba(204,17,51,0.18)",
             };
@@ -76,9 +77,9 @@ export default function UpcomingEvents() {
                     className="font-normal leading-tight"
                     style={{
                       fontFamily: "var(--font-bebas)",
-                      fontSize: "clamp(1.5rem, 3.5vw, 1.9rem)",
+                      fontSize: isLongTitle ? "clamp(1.28rem, 3vw, 1.62rem)" : "clamp(1.5rem, 3.5vw, 1.9rem)",
                       color: "var(--text-primary)",
-                      letterSpacing: "0.03em",
+                      letterSpacing: 0,
                       marginBottom: "4px",
                     }}
                   >

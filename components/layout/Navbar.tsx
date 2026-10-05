@@ -385,7 +385,7 @@ export default function Navbar() {
               className="mt-5 text-sm leading-6 text-[var(--text-secondary)]"
               style={{ fontFamily: "var(--font-space-grotesk)" }}
             >
-              Add Dr-Haz as a contact to join the audience group chat.
+              Add Dr-Haz as a contact to join the audience group chat. Write "Human Wannabes" in the message line.
             </p>
             <button
               type="button"
