@@ -1,0 +1,13 @@
+{
+  "bucket": "photos",
+  "storageFolder": "posters",
+  "items": [
+    {
+      "eventId": "2026-ultimate-anime-band-live",
+      "file": "/Users/rickypan/Desktop/11072026.png",
+      "path": "posters/ultimate-anime-band-live.png",
+      "width": 3000,
+      "height": 4155
+    }
+  ]
+}

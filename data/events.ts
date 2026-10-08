@@ -199,7 +199,7 @@ export const events: BandEvent[] = [
     description: "Fourth headline anime and game live music party presented by Human Wannabes.",
     type: "concert",
     ticketUrl: "https://events.ticketleap.com/tickets/human-wannabes/human-wannabes-nov-2026-4th-anime-game-live-music-party",
-    posterUrl: "https://mfqjhbucsxcewpsrykcg.supabase.co/storage/v1/object/public/photos/posters/ultimate-anime-band-live.jpg",
+    posterUrl: "https://mfqjhbucsxcewpsrykcg.supabase.co/storage/v1/object/public/photos/posters/ultimate-anime-band-live.png",
   },
   {
     id: "2026-girls-band-night-ii-25hr-studio",
@@ -209,7 +209,7 @@ export const events: BandEvent[] = [
     date: "2026-12-06",
     description: "Girls Band Night returns to 25HR Studio in New York City.",
     type: "collab",
-    comingSoon: true,
+    posterUrl: "/photos/hw.png",
   },
   {
     id: "2026-anime-live-music-party-bluemoon-sanitizer",
