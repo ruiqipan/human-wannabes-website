@@ -1,0 +1,13 @@
+{
+  "bucket": "photos",
+  "storageFolder": "posters",
+  "items": [
+    {
+      "eventId": "2026-philly-butler-cafe-little-big-planet",
+      "file": "C:\\Users\\z_har\\OneDrive\\Documents\\GitHub\\human-wannabes-website\\public\\photos\\posters\\philly-butler-cafe-little-big-planet.jpg",
+      "path": "posters/philly-butler-cafe-little-big-planet.jpg",
+      "width": 1545,
+      "height": 1999
+    }
+  ]
+}

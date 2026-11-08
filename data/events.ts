@@ -202,6 +202,17 @@ export const events: BandEvent[] = [
     posterUrl: "https://mfqjhbucsxcewpsrykcg.supabase.co/storage/v1/object/public/photos/posters/ultimate-anime-band-live.png",
   },
   {
+    id: "2026-philly-butler-cafe-little-big-planet",
+    title: "Philly Butler Cafe w/ Jasmine Tea Oishii, P1 and the Madcatz",
+    venue: "Little Big Planet, 1123 Walnut St, 2nd Floor",
+    city: "Philly",
+    date: "2026-12-02",
+    time: "7 PM",
+    description: "An anime butler cafe night at Little Big Planet with themed drinks, full menu service, cosplay, and live music (21+).",
+    type: "collab",
+    posterUrl: "https://mfqjhbucsxcewpsrykcg.supabase.co/storage/v1/object/public/photos/posters/philly-butler-cafe-little-big-planet.jpg",
+  },
+  {
     id: "2026-girls-band-night-ii-25hr-studio",
     title: "Girls Band Night II w/ 25HR Studio",
     venue: "21-38 44th Rd",
