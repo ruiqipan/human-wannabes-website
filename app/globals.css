@@ -218,3 +218,20 @@ body {
 
 .hw-view-all { transition: color 0.2s; }
 .hw-view-all:hover { color: var(--text-primary); }
+
+/* Horizontal scroller for Home "Upcoming Events" when there are more than 3 */
+.hw-events-scroller {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(204, 17, 51, 0.6) transparent;
+  -webkit-overflow-scrolling: touch;
+}
+.hw-events-scroller::-webkit-scrollbar {
+  height: 6px;
+}
+.hw-events-scroller::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+.hw-events-scroller::-webkit-scrollbar-thumb {
+  background: rgba(204, 17, 51, 0.6);
+  border-radius: 999px;
+}

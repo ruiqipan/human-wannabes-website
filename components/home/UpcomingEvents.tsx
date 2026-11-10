@@ -8,10 +8,13 @@ const DEFAULT_POSTER = "/photos/hw.png";
 export default function UpcomingEvents() {
   const upcoming = events
     .filter((e) => !isPast(e.date))
-    .sort((a, b) => parseLocalDate(a.date).getTime() - parseLocalDate(b.date).getTime())
-    .slice(0, 3);
+    .sort((a, b) => parseLocalDate(a.date).getTime() - parseLocalDate(b.date).getTime());
 
   if (upcoming.length === 0) return null;
+
+  // With more than 3 upcoming events, show a horizontally scrollable row
+  // (3 cards visible on desktop, 2 on tablet, ~1 on mobile) instead of a grid.
+  const scrollable = upcoming.length > 3;
 
   return (
     <section style={{ background: "var(--bg-base)", paddingBlock: "clamp(2rem, 4vw, 3.5rem)" }}>
@@ -26,7 +29,13 @@ export default function UpcomingEvents() {
           <div className="h-px w-12" style={{ background: "var(--accent-red)" }} />
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 sm:gap-6">
+        <div
+          className={
+            scrollable
+              ? "hw-events-scroller flex gap-5 sm:gap-6 overflow-x-auto snap-x snap-mandatory pb-4"
+              : "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 sm:gap-6"
+          }
+        >
           {upcoming.map((event) => {
             const linkUrl = event.ticketUrl ?? event.detailsUrl ?? "/events";
             const isExternal = !!(event.ticketUrl || event.detailsUrl);
@@ -115,7 +124,11 @@ export default function UpcomingEvents() {
                 href={linkUrl}
                 target={isExternal ? "_blank" : undefined}
                 rel={isExternal ? "noopener noreferrer" : undefined}
-                className="group block hw-card overflow-hidden transition-shadow duration-300 hover:shadow-[0_8px_32px_rgba(0,0,0,0.45)]"
+                className={`group block hw-card overflow-hidden transition-shadow duration-300 hover:shadow-[0_8px_32px_rgba(0,0,0,0.45)]${
+                  scrollable
+                    ? " shrink-0 snap-start w-[85%] sm:w-[calc((100%-1.5rem)/2)] md:w-[calc((100%-3rem)/3)]"
+                    : ""
+                }`}
                 style={cardStyle}
               >
                 {inner}

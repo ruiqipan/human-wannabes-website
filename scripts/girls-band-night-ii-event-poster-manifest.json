@@ -1,0 +1,13 @@
+{
+  "bucket": "photos",
+  "storageFolder": "posters",
+  "items": [
+    {
+      "eventId": "2026-girls-band-night-ii-25hr-studio",
+      "file": "C:\\Users\\z_har\\Downloads\\girls-band-night-ii.png",
+      "path": "posters/girls-band-night-ii.png",
+      "width": 1536,
+      "height": 1920
+    }
+  ]
+}
