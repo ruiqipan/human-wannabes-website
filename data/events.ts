@@ -223,6 +223,17 @@ export const events: BandEvent[] = [
     posterUrl: "/photos/hw.png",
   },
   {
+    id: "2027-ultimate-anime-cover-show-musik-ink",
+    title: "Ultimate Anime Cover Show w/ Blue Moon Sanitizer and Aimai Mirai",
+    venue: "Musik Ink",
+    city: "Bay Area",
+    date: "2027-01-23",
+    time: "6 PM",
+    description: "An anime cover show at Musik Ink in San Jose with Blue Moon Sanitizer and Aimai Mirai.",
+    type: "collab",
+    posterUrl: "/photos/hw.png",
+  },
+  {
     id: "2026-anime-live-music-party-bluemoon-sanitizer",
     title: "Anime Live Music Party W/ BLUEMOON SANITIZER",
     venue: "Rock and Roll San Diego",
