@@ -1,0 +1,13 @@
+{
+  "bucket": "photos",
+  "storageFolder": "posters",
+  "items": [
+    {
+      "eventId": "2027-ultimate-anime-cover-show-musik-ink",
+      "file": "C:\\Users\\z_har\\Downloads\\ultimate-anime-cover-show-musik-ink.jpg",
+      "path": "posters/ultimate-anime-cover-show-musik-ink.jpg",
+      "width": 2160,
+      "height": 2880
+    }
+  ]
+}

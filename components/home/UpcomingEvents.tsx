@@ -19,14 +19,24 @@ export default function UpcomingEvents() {
   return (
     <section style={{ background: "var(--bg-base)", paddingBlock: "clamp(2rem, 4vw, 3.5rem)" }}>
       <div className="hw-page-container">
-        <div style={{ marginBottom: "1.5rem" }}>
-          <p
-            className="text-xs uppercase tracking-[0.4em]"
-            style={{ color: "var(--accent-red)", fontFamily: "var(--font-space-grotesk)", marginBottom: "1.25rem" }}
-          >
-            Upcoming Events
-          </p>
-          <div className="h-px w-12" style={{ background: "var(--accent-red)" }} />
+        <div className="flex items-end justify-between gap-4" style={{ marginBottom: "1.5rem" }}>
+          <div>
+            <p
+              className="text-xs uppercase tracking-[0.4em]"
+              style={{ color: "var(--accent-red)", fontFamily: "var(--font-space-grotesk)", marginBottom: "1.25rem" }}
+            >
+              Upcoming Events
+            </p>
+            <div className="h-px w-12" style={{ background: "var(--accent-red)" }} />
+          </div>
+          {scrollable && (
+            <p
+              className="hw-scroll-hint text-xs uppercase tracking-[0.25em]"
+              style={{ color: "var(--text-secondary)", fontFamily: "var(--font-space-grotesk)" }}
+            >
+              <span className="hidden sm:inline">Scroll for more</span><span className="sm:hidden">Swipe</span> <span className="hw-scroll-hint-arrow" aria-hidden="true">→</span>
+            </p>
+          )}
         </div>
 
         <div

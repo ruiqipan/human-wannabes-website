@@ -235,3 +235,17 @@ body {
   background: rgba(204, 17, 51, 0.6);
   border-radius: 999px;
 }
+
+.hw-scroll-hint { white-space: nowrap; }
+.hw-scroll-hint-arrow {
+  display: inline-block;
+  color: var(--accent-red);
+  animation: hw-scroll-nudge 1.4s ease-in-out infinite;
+}
+@keyframes hw-scroll-nudge {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(6px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hw-scroll-hint-arrow { animation: none; }
+}

@@ -231,7 +231,7 @@ export const events: BandEvent[] = [
     time: "6 PM",
     description: "An anime cover show at Musik Ink in San Jose with Blue Moon Sanitizer and Aimai Mirai.",
     type: "collab",
-    posterUrl: "/photos/hw.png",
+    posterUrl: "https://mfqjhbucsxcewpsrykcg.supabase.co/storage/v1/object/public/photos/posters/ultimate-anime-cover-show-musik-ink.jpg",
   },
   {
     id: "2027-philadelphia-cherry-blossom-festival",
