@@ -41,3 +41,17 @@ dev-server.*.log
 *.tsbuildinfo
 next-env.d.ts
 /.claude-tmp
+
+# Disposable upload manifests and local upload artifacts
+/.media-uploads/
+/scripts/*manifest*.json
+
+# Photos and posters belong in Supabase, never in the repository.
+# Only these static logos and QR codes may live in public/photos.
+/public/photos/*
+!/public/photos/hw-simp-logo-white.png
+!/public/photos/hw-simp-logo.png
+!/public/photos/hw.png
+!/public/photos/hw_full_logo_transparent.png
+!/public/photos/rednote-qr.jpg
+!/public/photos/wechat-qr.jpg

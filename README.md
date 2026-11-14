@@ -5,10 +5,10 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 Photo uploads now have a direct local workflow. Add the Supabase project URL and service-role key to a local `.env.local`, then run:
 
 ```bash
-node scripts/upload-photos.mjs path/to/manifest.json
+node scripts/upload-photos.mjs .media-uploads/photos.json
 ```
 
-See `docs/photo-upload-workflow.md` for the manifest format and agent instructions.
+Keep both upload scripts as reusable tools. Create per-upload manifests in the ignored `.media-uploads/` directory and delete them after verification; the website reads uploaded media from Supabase. See `docs/photo-upload-workflow.md` for manifest setup, cleanup, and poster instructions.
 
 ## Getting Started
 

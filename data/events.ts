@@ -209,7 +209,7 @@ export const events: BandEvent[] = [
     date: "2026-12-06",
     description: "Girls Band Night returns to 25HR Studio in New York City.",
     type: "collab",
-    posterUrl: "https://mfqjhbucsxcewpsrykcg.supabase.co/storage/v1/object/public/photos/posters/girls-band-night-ii.png",
+    posterUrl: "https://mfqjhbucsxcewpsrykcg.supabase.co/storage/v1/object/public/photos/posters/girls-band-night-ii-2026-11-14.png",
   },
   {
     id: "2027-ultimate-anime-cover-show-musik-ink",

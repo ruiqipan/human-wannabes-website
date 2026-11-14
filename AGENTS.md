@@ -4,162 +4,81 @@
 This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
 <!-- END:nextjs-agent-rules -->
 
----
 
-# Event Authoring
+# Events
 
-Use these rules whenever adding or editing events. The single source of truth is `data/events.ts`. The Home and Events pages consume it automatically.
+Edit `data/events.ts`, the single source for Home and Events. Ordinary event updates need no UI changes.
 
-## Input
-- `date`: month/day (or full date)
-- `title`: public event title
-- `link`: ticket/info URL used by the Home page event button
+Given a date, public title, and ticket/info link:
 
-## Rules
-- **Year:** default to the active season year (`2026`) unless the user specifies otherwise.
-- **ISO date:** store as `YYYY-MM-DD`.
-- **ID:** stable kebab-case — `YYYY-<short-title>`.
-- **Title:** keep the exact public event name as provided.
-- **Venue:**
-  - Extract from `@ <venue>` or `at <venue>` in the title.
-  - If no clear venue, set `"TBA"`.
-- **City badge:**
-  - Philadelphia area → `"Philly"`
-  - DC/Maryland/Virginia → `"DMV"`
-  - New York area → `"NYC"`
-  - Otherwise infer the best short label.
-- **Type mapping:**
-  - Contains `Festival` / `Fest` → `festival`
-  - Contains `Concert` / `Headline Show` → `concert`
-  - Contains `w/` (collaboration) → `collab`
-  - Informal gathering / open mic → `gathering`
-  - Otherwise → `showcase`
-- **Description:** one concise English sentence.
-- **ticketUrl:** set whenever a public ticket or event info page exists. Home buttons open this URL directly; if absent, they fall back to `/events`.
+- Default to season year **2026** unless specified; store dates as `YYYY-MM-DD`.
+- Use a stable `YYYY-<short-title>` ID; preserve existing IDs and exact public titles.
+- Extract the venue from `@ <venue>` or `at <venue>`; otherwise use `"TBA"`.
+- City badges: Philadelphia area → `"Philly"`; DC/Maryland/Virginia → `"DMV"`; New York area → `"NYC"`; otherwise infer a short label.
+- Type: `Festival`/`Fest` → `festival`; `Concert`/`Headline Show` → `concert`; `w/` → `collab`; informal gathering/open mic → `gathering`; otherwise `showcase`.
+- Write one concise English description sentence.
+- Set `ticketUrl` whenever a public ticket/info page exists. Home buttons open it directly, falling back to `/events`.
 
-## Output target
-Always edit `data/events.ts`. No other files need changing for event updates.
+# Media storage
 
----
+Store photo/poster bytes in Supabase Storage, bucket `photos`, with metadata in the corresponding table:
 
-# Photo Upload
+| Media | Storage path | Metadata |
+| --- | --- | --- |
+| Photos/backgrounds | `imported/<filename>` | `public.photos` |
+| Event posters | `posters/<event-slug>.<ext>` | `public.event_posters`, keyed by `event_id` |
 
-Use this workflow for all photo uploads. It bypasses browser sign-in and lets any agent upload directly using local credentials.
+- Never commit photos, background photographs, or posters anywhere in the repository. Upload from source paths outside the repo. Static icons, logos, and QR codes may stay in Git; `public/photos/` permits only the six static assets allowed by `.gitignore`. Do not add media exceptions.
+- Before deleting repository media, verify both metadata and Storage bytes against the local file using SHA-256, plus a working public URL. Upload missing media first and replace local application references with Supabase URLs. Background URLs belong in the existing band configuration.
+- Preserve existing metadata and gallery visibility. Use `published: false` when archiving unused/background photos. Never bulk-import the whole bucket into the gallery: it also contains posters and unpublished backgrounds.
+- Review `git diff --stat`, `git status --short`, and tracked image paths before committing. Ignore rules do not remove tracked files; delete those from the working tree. Do not rewrite Git history unless requested.
 
-## One-time local setup
+# Upload workflow
 
-Add to `.env.local` in the repo root (already gitignored — never commit these):
+Keep the reusable `scripts/upload-photos.mjs` and `scripts/upload-event-posters.mjs` tools in Git. Always use them for uploads, without browser sign-in or inline upload code. The website does not run these tools or read their manifests at runtime.
 
-```
+Run from the repository root. Read credentials from ignored `.env.local`; never print or commit secrets:
+
+```dotenv
 NEXT_PUBLIC_SUPABASE_URL=https://mfqjhbucsxcewpsrykcg.supabase.co
 SUPABASE_SERVICE_ROLE_KEY=<service_role_key>
 NEXT_PUBLIC_SUPABASE_PHOTOS_BUCKET=photos
 ```
 
-## Upload command
+Create disposable manifests in the OS temporary directory or ignored `.media-uploads/`, using absolute image paths. Never commit actual manifests or machine-specific source paths. After verifying Storage bytes, metadata, public URLs, and required event changes, delete temporary manifests and verification downloads; keep failed manifests for retry. Preserve the user's source images unless deletion is requested.
+
+## Photos
+
+Copy `docs/photo-upload-manifest.example.json` to a temporary manifest and fill in file paths and metadata. Keep the generic example in Git. See [photo upload documentation](docs/photo-upload-workflow.md) for the full format.
 
 ```bash
-node scripts/upload-photos.mjs path/to/manifest.json
+node scripts/upload-photos.mjs .media-uploads/photos.json
 ```
 
-The script will:
-- Upload each file to Supabase Storage with `upsert: true`
-- Update the existing `public.photos` row when `image_path` already exists
-- Insert a new row when it does not exist
-- Auto-assign `sort_order` values if omitted
+The tool uploads with overwrite enabled, updates metadata by `image_path` or inserts a new row, and assigns `sortOrder` if omitted. Default caption: `"Human Wannabes live photo"` unless requested otherwise.
 
-## Manifest format
+## Event posters
 
-```json
-{
-  "bucket": "photos",
-  "defaultEvent": "PhilaMOCA",
-  "defaultCaption": "Human Wannabes live photo",
-  "items": [
-    {
-      "file": "/absolute/path/to/photo.png",
-      "path": "imported/photo.png",
-      "credits": "Jimmy Yang",
-      "width": 1024,
-      "height": 682,
-      "sortOrder": 505
-    }
-  ]
-}
-```
-
-## Rules for agents
-- Always use this script — do not write browser-based upload code.
-- Read `.env.local` for credentials; never print secrets back to the user.
-- Storage bucket: `photos`, folder convention: `imported/`.
-- Default caption: `"Human Wannabes live photo"` unless the user says otherwise.
-- Use absolute local file paths in manifests so the command works from any directory.
-- The photos metadata table is `public.photos` in Supabase.
-
----
-
-# Event Poster Upload
-
-Use this workflow whenever attaching a poster image to an event. Posters display on the Events page and Home page event cards.
-
-## Storage location
-
-Bucket: `photos` (same as live photos), folder: `posters/`.  
-All poster paths follow the pattern `posters/<event-slug>.ext`.
-
-## Database table
-
-`public.event_posters` — one row per event. Schema: `supabase/event-posters-schema.sql`.  
-If the table does not exist yet, run that SQL file in the Supabase SQL Editor before uploading.
-
-## Upload command
-
-```bash
-node scripts/upload-event-posters.mjs path/to/manifest.json
-```
-
-The script will:
-- Upload the file to Supabase Storage under `posters/` with `upsert: true`
-- Upsert a row in `public.event_posters` keyed by `event_id`
-- Print the public URL for each uploaded poster
-
-## Manifest format
+Get dimensions with `sips -g pixelWidth -g pixelHeight <file>` on macOS. Create a temporary manifest:
 
 ```json
 {
   "bucket": "photos",
   "storageFolder": "posters",
-  "items": [
-    {
-      "eventId": "2026-girls-band-night-25hr-studio",
-      "file": "/absolute/path/to/poster.png",
-      "path": "posters/girls-band-night.png",
-      "width": 1536,
-      "height": 1920
-    }
-  ]
+  "items": [{
+    "eventId": "2026-girls-band-night-25hr-studio",
+    "file": "/absolute/path/to/poster.png",
+    "path": "posters/girls-band-night.png",
+    "width": 1536,
+    "height": 1920
+  }]
 }
 ```
 
-## After upload — update `data/events.ts`
-
-Set `posterUrl` on the matching event entry to the public URL returned by the script:
-
-```ts
-{
-  id: "2026-girls-band-night-25hr-studio",
-  ...
-  posterUrl: "https://mfqjhbucsxcewpsrykcg.supabase.co/storage/v1/object/public/photos/posters/girls-band-night.png",
-}
+```bash
+node scripts/upload-event-posters.mjs .media-uploads/posters.json
 ```
 
-The Events page and Home page will pick it up automatically — no other files need changing.
-
-## Rules for agents
-- Always use `scripts/upload-event-posters.mjs` — do not write inline upload code.
-- `eventId` must exactly match the `id` field in `data/events.ts`.
-- Use absolute local file paths in manifests.
-- Never print credentials back to the user.
-- Storage path convention: `posters/<kebab-event-title>.<ext>`.
-- Get image pixel dimensions with `sips -g pixelWidth -g pixelHeight <file>` on macOS.
-- After upload, always update `posterUrl` in `data/events.ts` — the DB row alone is not enough.
+- `eventId` must exactly match `data/events.ts`. If the table is missing, run `supabase/event-posters-schema.sql` in Supabase SQL Editor first.
+- The tool uploads with overwrite enabled, upserts metadata by `event_id`, and returns a public URL. **Always set the matching event's `posterUrl` in `data/events.ts` to that URL**; the database row alone does not update Home or Events.
+- For replacements, use a new path such as `posters/<event-slug>-<revision-date>.png` in the manifest and event URL to avoid stale caches. Preserve the event ID.
