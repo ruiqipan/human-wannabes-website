@@ -209,6 +209,7 @@ export const events: BandEvent[] = [
     date: "2026-12-06",
     description: "Girls Band Night returns to 25HR Studio in New York City.",
     type: "collab",
+    ticketUrl: "https://posh.vip/e/25-hour-studio-girls-band-night-1?t=home",
     posterUrl: "https://mfqjhbucsxcewpsrykcg.supabase.co/storage/v1/object/public/photos/posters/girls-band-night-ii-2026-11-14.png",
   },
   {
@@ -230,6 +231,7 @@ export const events: BandEvent[] = [
     date: "2027-04-03",
     description: "Festival appearance celebrating Japanese culture, music, and spring in Philadelphia.",
     type: "festival",
+    ticketUrl: "https://japanphilly.org/programs/festivals/cbf-2027/",
     posterUrl: "https://mfqjhbucsxcewpsrykcg.supabase.co/storage/v1/object/public/photos/posters/cherry-blossom-festival.jpg",
   },
   {
