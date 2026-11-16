@@ -209,7 +209,7 @@ export const events: BandEvent[] = [
     date: "2026-12-06",
     description: "Girls Band Night returns to 25HR Studio in New York City.",
     type: "collab",
-    ticketUrl: "https://posh.vip/e/25-hour-studio-girls-band-night-1?t=home",
+    ticketUrl: "https://posh.vip/f/f8021?t=humanwannabesband",
     posterUrl: "https://mfqjhbucsxcewpsrykcg.supabase.co/storage/v1/object/public/photos/posters/girls-band-night-ii-2026-11-14.png",
   },
   {
